@@ -53,9 +53,6 @@
 
     .header {
       padding: 18px;
-      position: sticky;
-      top: 12px;
-      z-index: 10;
       background: rgba(255,255,255,0.92);
     }
 
@@ -75,17 +72,17 @@
     }
 
     .brand-mark {
-      width: 42px;
       height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 800;
-      letter-spacing: .02em;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
       flex: 0 0 auto;
+      overflow: hidden;
     }
+    .brand-mark img { height: 30px; width: auto; display: block; }
 
     .eyebrow {
       font-size: 12px;
@@ -462,7 +459,7 @@
     <section class="header card">
       <div class="header-top">
         <div class="brand">
-          <div class="brand-mark">ILA</div>
+          <div class="brand-mark"><img src="assets/images/logo.jpg" alt="ILA Logo"></div>
           <div>
             <div class="eyebrow">Parent-friendly dashboard</div>
             <h1>Monthly Learning Report</h1>

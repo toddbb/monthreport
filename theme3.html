@@ -42,10 +42,20 @@
             padding-bottom: 40px;
             margin-bottom: 40px;
             display: flex;
+            flex-direction: column;
+            gap: 20px;
+         }
+         .header-top-row {
+            display: flex;
             justify-content: space-between;
             align-items: flex-end;
             flex-wrap: wrap;
             gap: 20px;
+         }
+         .header-logo img {
+            height: 36px;
+            width: auto;
+            display: block;
          }
 
          .student-info h1 {
@@ -307,6 +317,10 @@
    <body>
       <div class="container">
          <header>
+            <div class="header-logo">
+               <img src="assets/images/logo.jpg" alt="ILA Logo">
+            </div>
+            <div class="header-top-row">
             <div class="student-info">
                <p>BÁO CÁO HÀNG THÁNG / MONTHLY REPORT</p>
                <h1>Bùi Mỹ Hằng</h1>
@@ -318,6 +332,7 @@
                   <span>97%</span>
                </div>
             </div>
+            </div><!-- /header-top-row -->
          </header>
 
          <div class="dashboard-grid">
