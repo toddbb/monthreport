@@ -1,5 +1,7 @@
 {
    "GET_LESSONS": "[\"SJ_PR_001\", \"SJ_PR_002\", \"SJ_PR_003\", \"SJ_PR_003\"]",
+   "PROGRAM_NAME": "Super Juniors",
+   "LEVEL": "1A",
    "DATE RANGE": "{\"start\": \"01/03/2026\", \"end\" \"31/03/2026\"}",
    "TEACHERS": "[\"David Franklin\", \"Nguyen Mai Thi\"]",
    "TAS": "[\"Pham Trinh Tu\", \"Dao Khoi Anh\", \"Trinh Trieu Thanh\"]",
