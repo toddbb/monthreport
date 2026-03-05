@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe – Monthly Report</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #e8e8e8;
+      color: #333;
+      padding: 16px;
+    }
+
+    /* ── Wireframe aesthetic ── */
+    .wf-box {
+      background: #d4d4d4;
+      border: 2px dashed #999;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .wf-card {
+      background: #fff;
+      border: 2px solid #bbb;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .wf-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .wf-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed #ccc;
+    }
+    .wf-bar-track {
+      height: 10px;
+      background: #e0e0e0;
+      border-radius: 99px;
+      margin: 4px 0 10px;
+      overflow: hidden;
+    }
+    .wf-bar-fill {
+      height: 100%;
+      background: #bbb;
+      border-radius: 99px;
+    }
+    .wf-row {
+      display: flex;
+      gap: 10px;
+    }
+    .wf-col { flex: 1; }
+    .wf-stat-val {
+      font-size: 22px;
+      font-weight: 700;
+      color: #888;
+    }
+    .wf-stat-sub {
+      font-size: 10px;
+      color: #aaa;
+    }
+    .wf-skill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .wf-skill-item {
+      background: #f0f0f0;
+      border: 1px dashed #bbb;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+    .wf-skill-score {
+      font-size: 20px;
+      font-weight: 700;
+      color: #888;
+    }
+    .wf-skill-name {
+      font-size: 10px;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .wf-stars {
+      color: #ccc;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    .wf-pbl-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dashed #eee;
+      font-size: 12px;
+      color: #777;
+    }
+    .wf-test-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #777;
+      padding: 5px 0;
+      border-bottom: 1px dashed #eee;
+    }
+    .wf-test-score {
+      font-weight: 700;
+      color: #999;
+    }
+    .wf-header-strip {
+      background: #ccc;
+      border-radius: 12px;
+      padding: 20px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .wf-name-box {
+      background: #bbb;
+      height: 20px;
+      width: 60%;
+      border-radius: 4px;
+    }
+    .wf-sub-box {
+      background: #b5b5b5;
+      height: 12px;
+      border-radius: 4px;
+    }
+    .wf-attendance-badge {
+      background: #b0b0b0;
+      border-radius: 99px;
+      padding: 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+    }
+
+    /* Breakpoint toggle labels */
+    .bp-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin: 20px 0 8px;
+    }
+    .wf-viewport {
+      margin: 0 auto;
+      border: 3px solid #aaa;
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 16px;
+      background: #e8e8e8;
+    }
+
+    /* Annotation callouts */
+    .annotation {
+      font-size: 10px;
+      color: #e07000;
+      border: 1px solid #e07000;
+      border-radius: 4px;
+      padding: 2px 6px;
+      display: inline-block;
+      margin: 2px 0;
+    }
+    .annotations-panel {
+      background: #fff8f0;
+      border: 1px solid #e07000;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 11px;
+      color: #555;
+      line-height: 1.8;
+    }
+    .annotations-panel h3 {
+      font-size: 12px;
+      color: #e07000;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="max-width:900px; margin:0 auto;">
+
+    <h2 style="font-size:14px; color:#555; text-align:center; margin-bottom:4px; text-transform:uppercase; letter-spacing:.1em;">WIREFRAME</h2>
+    <p style="font-size:11px; color:#888; text-align:center; margin-bottom:20px;">Monthly Student Progress Report — Layout Proposal</p>
+
+    <!-- Annotations -->
+    <div class="annotations-panel">
+      <h3>Layout Notes</h3>
+      <strong>[A]</strong> Header always visible — student name, month, teachers, attendance at a glance<br>
+      <strong>[B]</strong> Skills section uses a 2×2 card grid with a score + bar — easy to scan<br>
+      <strong>[C]</strong> Homework &amp; Vocabulary sit side-by-side — each shows score + completion rate<br>
+      <strong>[D]</strong> PBL uses star ratings with plain-English labels (no jargon)<br>
+      <strong>[E]</strong> Test results (Cambridge / Progress Test) show as a simple score list<br>
+      <strong>[F]</strong> Any section with no data is hidden — layout reflows automatically<br>
+      <strong>[G]</strong> On desktop, sections tile into 2 columns; on mobile they stack
+    </div>
+
+
+    <!-- ══════════════════════════════════════════ -->
+    <!--  MOBILE WIREFRAME                          -->
+    <!-- ══════════════════════════════════════════ -->
+    <div class="bp-label">📱 Mobile (375px)</div>
+    <div class="wf-viewport" style="max-width:375px;">
+
+      <!-- SECTION A: Header -->
+      <div class="wf-header-strip">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <div class="wf-label">Monthly Report · March 2026</div>
+            <div class="wf-name-box"></div>
+            <div style="margin-top:6px; display:flex; flex-direction:column; gap:4px;">
+              <div class="wf-sub-box" style="width:80%"></div>
+              <div class="wf-sub-box" style="width:55%"></div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div class="wf-label">Attendance</div>
+            <div class="wf-stat-val">97%</div>
+          </div>
+        </div>
+        <span class="annotation">[A] Student identity + quick attendance stat</span>
+      </div>
+
+      <!-- SECTION B: Skills (OUTCOMES) -->
+      <div class="wf-card">
+        <div class="wf-title">📚 English Skills <span class="annotation">[B]</span></div>
+        <div class="wf-skill-grid">
+          <div class="wf-skill-item">
+            <div class="wf-skill-name">Reading</div>
+            <div class="wf-skill-score">4.2<span style="font-size:11px;color:#bbb">/5</span></div>
+            <div class="wf-bar-track"><div class="wf-bar-fill" style="width:84%"></div></div>
+          </div>
+          <div class="wf-skill-item">
+            <div class="wf-skill-name">Writing</div>
+            <div class="wf-skill-score">3.8<span style="font-size:11px;color:#bbb">/5</span></div>
+            <div class="wf-bar-track"><div class="wf-bar-fill" style="width:76%"></div></div>
+          </div>
+          <div class="wf-skill-item">
+            <div class="wf-skill-name">Speaking</div>
+            <div class="wf-skill-score">3.5<span style="font-size:11px;color:#bbb">/5</span></div>
+            <div class="wf-bar-track"><div class="wf-bar-fill" style="width:70%"></div></div>
+          </div>
+          <div class="wf-skill-item">
+            <div class="wf-skill-name">Listening</div>
+            <div class="wf-skill-score">4.6<span style="font-size:11px;color:#bbb">/5</span></div>
+            <div class="wf-bar-track"><div class="wf-bar-fill" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION C: Homework + Vocabulary -->
+      <div class="wf-card">
+        <div class="wf-title">✏️ Practice <span class="annotation">[C]</span></div>
+        <div class="wf-row">
+          <div class="wf-col" style="background:#f5f5f5; border-radius:8px; padding:10px; border:1px dashed #ccc;">
+            <div class="wf-label">Homework</div>
+            <div class="wf-stat-val">84<span style="font-size:12px;color:#bbb">%</span></div>
+            <div class="wf-stat-sub">avg score</div>
+            <div style="margin-top:6px;">
+              <div class="wf-bar-track"><div class="wf-bar-fill" style="width:84%"></div></div>
+            </div>
+            <div class="wf-stat-sub">92% completed</div>
+          </div>
+          <div class="wf-col" style="background:#f5f5f5; border-radius:8px; padding:10px; border:1px dashed #ccc;">
+            <div class="wf-label">Vocabulary</div>
+            <div class="wf-stat-val">94<span style="font-size:12px;color:#bbb">%</span></div>
+            <div class="wf-stat-sub">avg score</div>
+            <div style="margin-top:6px;">
+              <div class="wf-bar-track"><div class="wf-bar-fill" style="width:94%"></div></div>
+            </div>
+            <div class="wf-stat-sub">67% completed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION D: PBL -->
+      <div class="wf-card">
+        <div class="wf-title">🌟 Project Work (PBL) <span class="annotation">[D]</span></div>
+        <div class="wf-pbl-row"><span>Creativity</span><span class="wf-stars">★★★★★</span></div>
+        <div class="wf-pbl-row"><span>Teamwork</span><span class="wf-stars">★★★★☆</span></div>
+        <div class="wf-pbl-row"><span>Critical Thinking</span><span class="wf-stars">★★★★☆</span></div>
+        <div class="wf-pbl-row"><span>Communication</span><span class="wf-stars">★★★★★</span></div>
+        <div class="wf-pbl-row"><span>Self-Reflection</span><span class="wf-stars">★★★★☆</span></div>
+        <div class="wf-pbl-row" style="border:none;"><span>Digital Skills</span><span class="wf-stars">★★★☆☆</span></div>
+      </div>
+
+      <!-- SECTION E: Test Results -->
+      <div class="wf-card">
+        <div class="wf-title">🏆 Test Results <span class="annotation">[E]</span></div>
+        <div class="wf-label">Cambridge Exam</div>
+        <div class="wf-test-row"><span>Reading &amp; Writing</span><span class="wf-test-score">87%</span></div>
+        <div class="wf-test-row"><span>Speaking</span><span class="wf-test-score">92%</span></div>
+        <div class="wf-test-row" style="margin-bottom:12px;"><span>Listening</span><span class="wf-test-score">74%</span></div>
+        <div class="wf-label" style="margin-top:8px;">Progress Test</div>
+        <div class="wf-test-row"><span>Reading, Writing &amp; Grammar</span><span class="wf-test-score">89%</span></div>
+        <div class="wf-test-row"><span>Speaking</span><span class="wf-test-score">92%</span></div>
+        <div class="wf-test-row" style="border:none;"><span>Listening</span><span class="wf-test-score">72%</span></div>
+      </div>
+
+      <!-- SECTION F: Hidden module note -->
+      <div style="border:2px dashed #bbb; border-radius:8px; padding:10px; text-align:center; opacity:0.5;">
+        <div class="wf-label">[ Section hidden when data is blank ] <span class="annotation">[F]</span></div>
+      </div>
+
+    </div><!-- /mobile viewport -->
+
+
+    <!-- ══════════════════════════════════════════ -->
+    <!--  TABLET WIREFRAME                          -->
+    <!-- ══════════════════════════════════════════ -->
+    <div class="bp-label" style="margin-top:32px;">📟 Tablet (768px)</div>
+    <div class="wf-viewport" style="max-width:768px;">
+
+      <!-- Header — full width -->
+      <div class="wf-header-strip" style="flex-direction:row; align-items:center; justify-content:space-between;">
+        <div>
+          <div class="wf-label">Monthly Report · March 2026</div>
+          <div class="wf-name-box" style="width:200px; height:22px;"></div>
+          <div style="margin-top:6px; display:flex; gap:8px;">
+            <div class="wf-sub-box" style="width:160px;"></div>
+            <div class="wf-sub-box" style="width:100px;"></div>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <div class="wf-label">Attendance</div>
+          <div class="wf-stat-val" style="font-size:32px;">97%</div>
+        </div>
+      </div>
+
+      <!-- Skills — 4 across -->
+      <div class="wf-card">
+        <div class="wf-title">📚 English Skills</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px;">
+          <div class="wf-skill-item"><div class="wf-skill-name">Reading</div><div class="wf-skill-score">4.2</div><div class="wf-bar-track"><div class="wf-bar-fill" style="width:84%"></div></div></div>
+          <div class="wf-skill-item"><div class="wf-skill-name">Writing</div><div class="wf-skill-score">3.8</div><div class="wf-bar-track"><div class="wf-bar-fill" style="width:76%"></div></div></div>
+          <div class="wf-skill-item"><div class="wf-skill-name">Speaking</div><div class="wf-skill-score">3.5</div><div class="wf-bar-track"><div class="wf-bar-fill" style="width:70%"></div></div></div>
+          <div class="wf-skill-item"><div class="wf-skill-name">Listening</div><div class="wf-skill-score">4.6</div><div class="wf-bar-track"><div class="wf-bar-fill" style="width:92%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Homework + Vocabulary + PBL in 2-col -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="wf-card" style="margin-bottom:0;">
+          <div class="wf-title">✏️ Practice</div>
+          <div style="display:flex; gap:8px;">
+            <div style="flex:1; background:#f5f5f5; border-radius:8px; padding:10px; border:1px dashed #ccc;">
+              <div class="wf-label">Homework</div>
+              <div class="wf-stat-val">84%</div>
+              <div class="wf-bar-track"><div class="wf-bar-fill" style="width:84%"></div></div>
+              <div class="wf-stat-sub">92% done</div>
+            </div>
+            <div style="flex:1; background:#f5f5f5; border-radius:8px; padding:10px; border:1px dashed #ccc;">
+              <div class="wf-label">Vocab</div>
+              <div class="wf-stat-val">94%</div>
+              <div class="wf-bar-track"><div class="wf-bar-fill" style="width:94%"></div></div>
+              <div class="wf-stat-sub">67% done</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-card" style="margin-bottom:0;">
+          <div class="wf-title">🌟 Project Work</div>
+          <div class="wf-pbl-row"><span>Creativity</span><span class="wf-stars">★★★★★</span></div>
+          <div class="wf-pbl-row"><span>Teamwork</span><span class="wf-stars">★★★★☆</span></div>
+          <div class="wf-pbl-row"><span>Thinking</span><span class="wf-stars">★★★★☆</span></div>
+          <div class="wf-pbl-row"><span>Communication</span><span class="wf-stars">★★★★★</span></div>
+          <div class="wf-pbl-row"><span>Reflection</span><span class="wf-stars">★★★★☆</span></div>
+          <div class="wf-pbl-row" style="border:none;"><span>Digital Skills</span><span class="wf-stars">★★★☆☆</span></div>
+        </div>
+      </div>
+
+      <!-- Test Results — full width, 2-col inside -->
+      <div class="wf-card" style="margin-top:12px;">
+        <div class="wf-title">🏆 Test Results <span class="annotation">[G] 2-col on wider screens</span></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div>
+            <div class="wf-label">Cambridge Exam</div>
+            <div class="wf-test-row"><span>Reading &amp; Writing</span><span class="wf-test-score">87%</span></div>
+            <div class="wf-test-row"><span>Speaking</span><span class="wf-test-score">92%</span></div>
+            <div class="wf-test-row" style="border:none;"><span>Listening</span><span class="wf-test-score">74%</span></div>
+          </div>
+          <div>
+            <div class="wf-label">Progress Test</div>
+            <div class="wf-test-row"><span>Reading, Writing &amp; Grammar</span><span class="wf-test-score">89%</span></div>
+            <div class="wf-test-row"><span>Speaking</span><span class="wf-test-score">92%</span></div>
+            <div class="wf-test-row" style="border:none;"><span>Listening</span><span class="wf-test-score">72%</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tablet viewport -->
+
+  </div><!-- /max-width wrapper -->
+</body>
+</html>
