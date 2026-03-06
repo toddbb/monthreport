@@ -101,6 +101,42 @@
          .card:hover .card-arrow {
             color: var(--primary);
          }
+
+         .card-with-selector {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+         }
+
+         .student-row {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+         }
+
+         .student-row label {
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            color: var(--gray-500);
+            white-space: nowrap;
+         }
+
+         .student-select {
+            flex: 1;
+            padding: var(--space-1) var(--space-2);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            background-color: var(--white);
+            font-size: var(--font-size-xs);
+            color: var(--gray-700);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+         }
+
+         .student-select:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+         }
       </style>
    </head>
    <body>
@@ -109,10 +145,20 @@
          <p>Select a theme to view the report</p>
       </header>
 
-      <div class="card-grid">
-         <a href="theme1.html" class="card">
-            <span class="card-label">Theme 1</span>
-         </a>
+      <div class="card-grid" id="theme-grid">
+         <div class="card-with-selector">
+            <div class="student-row">
+               <label for="student-select">Student</label>
+               <select class="student-select" id="student-select">
+                  <option value="1">Student 1</option>
+                  <option value="2">Student 2</option>
+                  <option value="3">Student 3</option>
+               </select>
+            </div>
+            <a href="theme1.html" class="card">
+               <span class="card-label">Theme 1</span>
+            </a>
+         </div>
          <a href="theme2.html" class="card">
             <span class="card-label">Theme 2</span>
          </a>
@@ -120,5 +166,19 @@
             <span class="card-label">Theme 3</span>
          </a>
       </div>
+
+      <script>
+         const select = document.getElementById("student-select");
+         const grid   = document.getElementById("theme-grid");
+
+         function updateLinks() {
+            const val = select.value;
+            const link = grid.querySelector("a[href^='theme1']");
+            if (link) link.href = `theme1.html?student=${val}`;
+         }
+
+         select.addEventListener("change", updateLinks);
+         updateLinks();
+      </script>
    </body>
 </html>

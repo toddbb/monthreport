@@ -213,25 +213,31 @@
          .share-btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(255,255,255,0.35);
-            background: rgba(255,255,255,0.12);
+            gap: 6px;
+            height: 30px;
+            padding: 0 12px 0 10px;
+            border-radius: 99px;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.12);
             color: #fff;
             cursor: pointer;
-            padding: 0;
-            transition: background 0.15s, border-color 0.15s;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition:
+               background 0.15s,
+               border-color 0.15s;
             flex-shrink: 0;
+            font-family: var(--font);
          }
          .share-btn:hover {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.6);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
          }
          .share-btn svg {
-            width: 15px;
-            height: 15px;
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
          }
          .period-badge {
             font-size: 0.65rem;
@@ -265,6 +271,13 @@
             width: 34px;
             height: 34px;
             opacity: 0.7;
+         }
+         .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
          }
          .student-name {
             font-size: clamp(1.5rem, 6vw, 2.1rem);
@@ -628,14 +641,23 @@
             margin-bottom: 6px;
          }
 
-         /* ── NEXT STEPS ─────────────────────────────────── */
-         .next-steps ul {
+         /* ── RECOMMENDATIONS ────────────────────────────── */
+         .recommendations ul {
             margin: 0;
             padding-left: 20px;
             display: grid;
             gap: 8px;
             color: var(--ink-2);
             font-size: 0.88rem;
+         }
+         .recommendations ul ul {
+            margin-top: 6px;
+            padding-left: 20px;
+            display: grid;
+            gap: 5px;
+            list-style-type: circle;
+            font-size: 0.83rem;
+            /* color: var(--ink-3); */
          }
 
          /* ── Help icon ──────────────────────────────────── */
@@ -659,7 +681,9 @@
             font-weight: 700;
             cursor: pointer;
             padding: 0;
-            transition: background 0.15s, color 0.15s;
+            transition:
+               background 0.15s,
+               color 0.15s;
          }
          .help-icon:hover {
             background: var(--header-a);
@@ -746,11 +770,6 @@
             line-height: 1.7;
             margin: 0;
          }
-         .feedback-divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 0;
-         }
          @media (min-width: 560px) {
             .feedback-card {
                padding: 24px;
@@ -832,18 +851,19 @@
                   <div class="period-badge">Monthly Report<br /><span id="hdr-period"></span></div>
                   <button class="share-btn" type="button" onclick="shareReport()" title="Share this report">
                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="18" cy="5" r="3"/>
-                        <circle cx="6" cy="12" r="3"/>
-                        <circle cx="18" cy="19" r="3"/>
-                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
                      </svg>
+                     Share
                   </button>
                </div>
             </div>
 
             <div class="header-student">
-               <div class="avatar">
+               <div class="avatar" id="avatar-wrap">
                   <svg viewBox="0 0 24 24" fill="none">
                      <circle cx="12" cy="8" r="4" fill="white" />
                      <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" fill="white" opacity=".65" />
@@ -872,11 +892,6 @@
                <div class="feedback-body">
                   <div class="feedback-block">
                      <p id="feedback-summary"></p>
-                  </div>
-                  <hr class="feedback-divider hidden" id="feedback-divider" />
-                  <div class="feedback-block hidden" id="feedback-recs-block">
-                     <h4>Recommendations for Continued Improvement</h4>
-                     <p id="feedback-recommendations"></p>
                   </div>
                </div>
             </div>
@@ -1017,13 +1032,13 @@
          <!-- /dashboard -->
 
          <!-- ═══════════════ NEXT STEPS ═══════════════ -->
-         <div class="section rise next-steps">
+         <div class="section rise recommendations">
             <div class="card">
                <div class="sec-head">
-                  <h2 class="sec-head-title">What To Do Next</h2>
+                  <h2 class="sec-head-title">Recommendations</h2>
                   <div class="badge">At home support</div>
                </div>
-               <ul id="next-steps-list"></ul>
+               <ul id="recommendations-list"></ul>
             </div>
          </div>
 
@@ -1044,7 +1059,9 @@
                <details id="faq-lang-skills">
                   <summary>How are Language Skills assessed?</summary>
                   <div class="faq-content">
-                     Language Skills are based on the Teacher's assessment in every lesson. They reflect the student's current performance in class and are a key factor in determining their overall course progress. A score of 3 or above indicates the student is meeting expectations for their level, while scores of 1–2 suggest areas where additional focus and practice may be needed.
+                     Language Skills are based on the Teacher's assessment in every lesson. They reflect the student's current performance in class and are a key factor in
+                     determining their overall course progress. A score of 3 or above indicates the student is meeting expectations for their level, while scores of 1–2 suggest
+                     areas where additional focus and practice may be needed.
                   </div>
                </details>
                <details>
@@ -1104,19 +1121,26 @@
             return nums.reduce((a, b) => a + b, 0) / nums.length;
          }
 
-         function performanceNote(avg, completion) {
+         function performanceNote(avg, completion, cfg) {
             const a = num(avg) ?? 0;
             const c = num(completion) ?? 0;
-            if (a >= 85 && c >= 80) return "Strong performance and steady practice.";
-            if (a >= 80) return "Good accuracy. More regular completion will strengthen progress.";
-            if (c >= 80) return "Practice is happening. Focus on accuracy during review.";
-            return "This area needs more regular practice at home.";
+            const pn = cfg?.performanceNote ?? {};
+            const strongScore = pn.strongScoreMin ?? 85;
+            const goodScore   = pn.goodScoreMin ?? 80;
+            const strongComp  = pn.strongCompletionMin ?? 80;
+            const msgs        = pn.messages ?? {};
+            if (a >= strongScore && c >= strongComp) return msgs.strong      ?? "Strong performance and steady practice.";
+            if (a >= goodScore)                       return msgs.goodScore   ?? "Good accuracy. More regular completion will strengthen progress.";
+            if (c >= strongComp)                      return msgs.goodCompletion ?? "Practice is happening. Focus on accuracy during review.";
+            return msgs.default ?? "This area needs more regular practice at home.";
          }
 
          /* ── Colour logic (0–100 scale) ──────────────── */
-         function col(pct) {
-            if (pct >= 85) return { cls: "c-green", fill: "var(--green)", trk: "var(--green-trk)" };
-            if (pct >= 70) return { cls: "c-yellow", fill: "var(--yellow)", trk: "var(--yellow-trk)" };
+         function col(pct, cfg) {
+            const g = cfg?.colors?.greenMin ?? 85;
+            const y = cfg?.colors?.yellowMin ?? 70;
+            if (pct >= g) return { cls: "c-green", fill: "var(--green)", trk: "var(--green-trk)" };
+            if (pct >= y) return { cls: "c-yellow", fill: "var(--yellow)", trk: "var(--yellow-trk)" };
             return { cls: "c-red", fill: "var(--red)", trk: "var(--red-trk)" };
          }
 
@@ -1131,10 +1155,25 @@
          function shareReport() {
             const url = window.location.href;
             const name = document.getElementById("hdr-name")?.textContent || "Student";
+            const school = document.querySelector(".brand-name")?.textContent || "XYX School";
+            const period = document.getElementById("hdr-period")?.textContent || "";
+            const program = document.getElementById("hdr-program")?.textContent || "";
+            const title = `${name}'s Monthly Report — ${school}`;
+            const text = [
+               `📊 ${name} just received their monthly learning report from ${school}!`,
+               program ? `Program: ${program}` : "",
+               period ? `Period: ${period}` : "",
+               ``,
+               `At ${school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.`,
+               ``,
+               `Tap the link to view the full report 👇`,
+            ]
+               .filter(Boolean)
+               .join("\n");
             if (navigator.share) {
-               navigator.share({ title: `Monthly Report — ${name}`, url });
+               navigator.share({ title, text, url });
             } else {
-               navigator.clipboard?.writeText(url).then(() => alert("Link copied to clipboard."));
+               navigator.clipboard?.writeText(`${title}\n\n${text}\n\n${url}`).then(() => alert("Link copied to clipboard."));
             }
          }
 
@@ -1156,9 +1195,9 @@
          /* ── Donut chart (r=45, circ≈283) ───────────── */
          const CIRC = 282.74;
 
-         function buildDonut(score, idSuffix) {
+         function buildDonut(score, idSuffix, cfg) {
             const pct = Math.min(100, Math.max(0, num(score) ?? 0));
-            const c = col(pct);
+            const c = col(pct, cfg);
             return `
     <div class="donut-wrap">
       <svg class="donut-svg" viewBox="0 0 110 110">
@@ -1180,7 +1219,7 @@
          /* ════════════════════════════════════════════
    RENDER
 ════════════════════════════════════════════ */
-         function render(d) {
+         function render(d, cfg) {
             /* Header */
             $("hdr-name").textContent = d.student.name || "";
             const courseProgramLevel = [d.student.courseCode, d.student.program, d.student.level].filter((x) => !blank(x)).join(" - ");
@@ -1194,11 +1233,6 @@
             if (d.feedback?.summary) {
                $("feedback-summary").textContent = d.feedback.summary;
             }
-            if (d.feedback?.recommendations) {
-               $("feedback-recommendations").textContent = d.feedback.recommendations;
-               $("feedback-recs-block").classList.remove("hidden");
-               $("feedback-divider").classList.remove("hidden");
-            }
 
             /* Language skills average (used for Final Score) */
             const outcomesAvgRaw = d.languageSkills && !blank(d.languageSkills) ? average(Object.values(d.languageSkills)) : null;
@@ -1206,21 +1240,23 @@
             /* Attendance */
             if (!blank(d.attendance)) {
                const pct = num(d.attendance);
-               const c = col(pct);
+               const c = col(pct, cfg);
                $("att-num").textContent = pct + "%";
                $("att-num").className = "att-num " + c.cls;
                $("att-fill").style.width = pct + "%";
                $("att-fill").style.background = c.fill;
                $("att-track").style.background = c.trk;
                $("att-msg").className = "att-msg " + c.cls;
-               $("att-msg").textContent =
-                  pct >= 95
-                     ? "Outstanding attendance this month! 🌟"
-                     : pct >= 85
-                       ? "Great attendance — well done!"
-                       : pct >= 75
-                         ? "Good, but let's aim a little higher!"
-                         : "Attendance needs attention. Please contact us.";
+               const attCfg = cfg?.attendance ?? {};
+               const attThresholds = attCfg.thresholds ?? [
+                  { min: 95, message: "Outstanding attendance this month!" },
+                  { min: 85, message: "Great attendance — well done!" },
+                  { min: 75, message: "Good, but let's aim a little higher!" }
+               ];
+               const attMsg = (attThresholds.find((t) => pct >= t.min) ?? {}).message
+                  ?? attCfg.defaultMessage
+                  ?? "Attendance needs attention. Please contact us.";
+               $("att-msg").textContent = attMsg;
             } else {
                $("sec-att").classList.add("hidden");
             }
@@ -1257,10 +1293,10 @@
             if (hwOk) {
                const score = num(hw.averageScore);
                const comp = num(hw.completionRate);
-               $("hw-donut-wrap").innerHTML = score != null ? buildDonut(score, "hw") : "";
+               $("hw-donut-wrap").innerHTML = score != null ? buildDonut(score, "hw", cfg) : "";
                if (score != null) $("hw-avg").textContent = score + "%";
                if (comp != null) $("hw-completion").textContent = comp + "%";
-               $("hw-note").textContent = performanceNote(hw.averageScore, hw.completionRate);
+               $("hw-note").textContent = performanceNote(hw.averageScore, hw.completionRate, cfg);
                requestAnimationFrame(() =>
                   setTimeout(() => {
                      if (score != null) animateDonut("hw", score);
@@ -1276,10 +1312,10 @@
             if (vOk) {
                const score = num(vcb.averageScore);
                const comp = num(vcb.completionRate);
-               $("vocab-donut-wrap").innerHTML = score != null ? buildDonut(score, "vocab") : "";
+               $("vocab-donut-wrap").innerHTML = score != null ? buildDonut(score, "vocab", cfg) : "";
                if (score != null) $("vocab-avg").textContent = score + "%";
                if (comp != null) $("vocab-completion").textContent = comp + "%";
-               $("vocab-note").textContent = performanceNote(vcb.averageScore, vcb.completionRate);
+               $("vocab-note").textContent = performanceNote(vcb.averageScore, vcb.completionRate, cfg);
                requestAnimationFrame(() =>
                   setTimeout(() => {
                      if (score != null) animateDonut("vocab", score);
@@ -1339,7 +1375,7 @@
                   const v = camb[key];
                   if (v === null || v === undefined || v === "") continue;
                   const score = num(v);
-                  const c = col(score);
+                  const c = col(score, cfg);
                   html += `
         <div class="mini-card">
           <div class="mini-label">${lbl}</div>
@@ -1366,7 +1402,7 @@
                   const v = prog[key];
                   if (v === null || v === undefined || v === "") continue;
                   const score = num(v);
-                  const c = col(score);
+                  const c = col(score, cfg);
                   html += `
         <div class="mini-card">
           <div class="mini-label">${lbl}</div>
@@ -1391,7 +1427,7 @@
 
             const finalScore = finalCandidates.length ? average(finalCandidates) : null;
             if (finalScore !== null) {
-               $("final-donut-wrap").innerHTML = buildDonut(finalScore, "final");
+               $("final-donut-wrap").innerHTML = buildDonut(finalScore, "final", cfg);
                $("final-note").textContent =
                   `This score averages available assessment data for this month. It currently shows ${Math.round(finalScore)} out of 100. You can replace this with your official scoring formula.`;
                requestAnimationFrame(() => setTimeout(() => animateDonut("final", finalScore), 150));
@@ -1399,20 +1435,61 @@
                $("sec-final").classList.add("hidden");
             }
 
-            /* Next Steps */
-            const steps = [];
+            /* Recommendations */
+            const recCfg = cfg?.recommendations ?? {};
+            const lessonRetryCfg = cfg?.lessonRetry ?? {};
+            const THRESHOLDS = {
+               homework:   lessonRetryCfg.homeworkThreshold   ?? 80,
+               vocabulary: lessonRetryCfg.vocabularyThreshold ?? 80
+            };
+
+            const recommendations = [];
             const vocabComp = vOk ? num(vcb.completionRate) : null;
             const hwComp = hwOk ? num(hw.completionRate) : null;
             const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
-            if (vocabComp !== null && vocabComp < 80) steps.push("Review vocabulary for 5–10 minutes, three times each week.");
-            if (hwComp !== null && hwComp < 85) steps.push("Set a regular homework time at home to improve completion.");
-            if (speaking !== null && speaking < 4) steps.push("Ask your child to answer simple English questions aloud at home.");
-            if (!steps.length) {
-               steps.push("Keep a short and regular English routine at home.");
-               steps.push("Encourage your child to speak in complete English sentences.");
-               steps.push("Celebrate small wins to keep motivation high.");
+            if (vocabComp !== null && vocabComp < (recCfg.vocabulary?.completionThreshold ?? 80))
+               recommendations.push(recCfg.vocabulary?.message ?? "Review vocabulary for 5–10 minutes, three times each week.");
+            if (hwComp !== null && hwComp < (recCfg.homework?.completionThreshold ?? 85))
+               recommendations.push(recCfg.homework?.message ?? "Set a regular homework time at home to improve completion.");
+            if (speaking !== null && speaking < (recCfg.speaking?.threshold ?? 4))
+               recommendations.push(recCfg.speaking?.message ?? "Ask your child to answer simple English questions aloud at home.");
+            if (!recommendations.length) {
+               const defaults = recCfg.defaults ?? [
+                  "Keep a short and regular English routine at home.",
+                  "Encourage your child to speak in complete English sentences.",
+                  "Celebrate small wins to keep motivation high."
+               ];
+               defaults.forEach((s) => recommendations.push(s));
             }
-            $("next-steps-list").innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
+
+            /* Lesson retry recommendations */
+            const retryLessons = (d.lessons || [])
+               .filter((lesson) => {
+                  const hw = lesson.homework;
+                  const voc = lesson.vocabulary;
+                  const hwLow = hw === undefined || hw === null || hw < THRESHOLDS.homework;
+                  const vocLow = voc === undefined || voc === null || voc < THRESHOLDS.vocabulary;
+                  return hwLow || vocLow;
+               })
+               .map((lesson) => {
+                  const hw = lesson.homework;
+                  const voc = lesson.vocabulary;
+                  const hwLow = hw === undefined || hw === null || hw < THRESHOLDS.homework;
+                  const vocLow = voc === undefined || voc === null || voc < THRESHOLDS.vocabulary;
+                  const flags = [];
+                  if (hwLow) flags.push(hw === undefined || hw === null ? "homework not submitted" : `Homework: ${hw}%`);
+                  if (vocLow) flags.push(voc === undefined || voc === null ? "vocabulary not completed" : `Vocabulary: ${voc}%`);
+                  const label = lesson.title ? `${lesson.title}` : lesson.id;
+                  const date = lesson.date ? ` (${lesson.date})` : "";
+                  return `${label}${date} — ${flags.join(", ")}`;
+               });
+
+            if (retryLessons.length) {
+               const subItems = retryLessons.map((l) => `<li>${l}</li>`).join("");
+               recommendations.push(`Based on the results, it's recommended your child retry the following:<ul>${subItems}</ul>`);
+            }
+
+            $("recommendations-list").innerHTML = recommendations.map((s) => `<li>${s}</li>`).join("");
 
             /* Footer */
             $("ftr-course").textContent = d.student.courseCode ? `Course ${d.student.courseCode}` : "";
@@ -1422,13 +1499,28 @@
          /* ── Load data and render ────────────────────── */
          const studentParam = new URLSearchParams(window.location.search).get("student") || "1";
          const dataFile = `data${studentParam}.json`;
-         fetch(dataFile)
-            .then((r) => {
+
+         /* ── Student photo (with SVG fallback) ──────── */
+         (function () {
+            const wrap = document.getElementById("avatar-wrap");
+            const fallbackSVG = wrap.innerHTML;
+            const img = new Image();
+            img.src = `assets/images/student${studentParam}.png`;
+            img.alt = "Student photo";
+            img.onload = () => { wrap.innerHTML = ""; wrap.appendChild(img); };
+         })();
+         Promise.all([
+            fetch(dataFile).then((r) => {
                if (!r.ok) throw new Error(`Failed to load ${dataFile} (${r.status})`);
                return r.json();
+            }),
+            fetch("config.json").then((r) => {
+               if (!r.ok) throw new Error(`Failed to load config.json (${r.status})`);
+               return r.json();
             })
-            .then((data) => render(data))
-            .catch((err) => console.error("Report data error:", err));
+         ])
+            .then(([data, config]) => render(data, config))
+            .catch((err) => console.error("Report load error:", err));
       </script>
    </body>
 </html>

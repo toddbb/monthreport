@@ -1,0 +1,48 @@
+{
+   "attendance": {
+      "thresholds": [
+         { "min": 95, "message": "Outstanding attendance this month!" },
+         { "min": 85, "message": "Great attendance — well done!" },
+         { "min": 75, "message": "Good, but let's aim a little higher!" }
+      ],
+      "defaultMessage": "Attendance needs attention. Please contact us."
+   },
+   "colors": {
+      "greenMin": 85,
+      "yellowMin": 70
+   },
+   "performanceNote": {
+      "strongScoreMin": 85,
+      "goodScoreMin": 80,
+      "strongCompletionMin": 80,
+      "messages": {
+         "strong": "Strong performance and steady practice.",
+         "goodScore": "Good accuracy. More regular completion will strengthen progress.",
+         "goodCompletion": "Practice is happening. Focus on accuracy during review.",
+         "default": "This area needs more regular practice at home."
+      }
+   },
+   "recommendations": {
+      "vocabulary": {
+         "completionThreshold": 80,
+         "message": "Review vocabulary for 5–10 minutes, three times each week."
+      },
+      "homework": {
+         "completionThreshold": 85,
+         "message": "Set a regular homework time at home to improve completion."
+      },
+      "speaking": {
+         "threshold": 4,
+         "message": "Ask your child to answer simple English questions aloud at home."
+      },
+      "defaults": [
+         "Keep a short and regular English routine at home.",
+         "Encourage your child to speak in complete English sentences.",
+         "Celebrate small wins to keep motivation high."
+      ]
+   },
+   "lessonRetry": {
+      "homeworkThreshold": 80,
+      "vocabularyThreshold": 80
+   }
+}
