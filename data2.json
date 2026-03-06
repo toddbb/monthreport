@@ -1,0 +1,59 @@
+{
+   "student": {
+      "name": "Tran Van Minh",
+      "courseCode": "H99YJ-1A-2601",
+      "program": "Super Juniors",
+      "level": "1A"
+   },
+   "period": {
+      "start": "01/03/2026",
+      "end": "31/03/2026"
+   },
+   "staff": {
+      "teachers": ["David Franklin", "Nguyen Mai Thi"],
+      "assistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
+   },
+   "attendance": 68,
+   "languageSkills": {
+      "reading": 2.1,
+      "writing": 1.8,
+      "speaking": 1.5,
+      "listening": 2.4
+   },
+   "homework": {
+      "averageScore": 54,
+      "completionRate": 45
+   },
+   "vocabulary": {
+      "averageScore": 61,
+      "completionRate": 38
+   },
+   "centurySkills": {
+      "dates": ["25/03/2026", "26/03/2026"],
+      "scores": {
+         "creativity": 2,
+         "collaboration": 3,
+         "criticalThinking": 2,
+         "communication": 2,
+         "selfReflection": 1,
+         "digitalLiteracy": 2
+      }
+   },
+   "cambridgeTest": {
+      "type": "Cambridge Starters",
+      "scores": {
+         "readingWriting": 52,
+         "speaking": 61,
+         "listening": 48
+      }
+   },
+   "progressTest": {
+      "readingWritingGrammarVocabulary": 55,
+      "speaking": 58,
+      "listening": 47
+   },
+   "feedback": {
+      "summary": "This month, Van Minh had difficulty maintaining regular attendance (68%), which affected his ability to keep up with classroom activities and lessons. Performance across reading, writing, speaking, and listening was below the expected level for this stage of the course, and additional support will be needed in all four skill areas. Homework completion was low at 45%, and the average score of 54% suggests that tasks attempted were also challenging. Vocabulary practice outside of class was limited, and more consistent effort here will help reinforce what is covered in lessons. Project work showed some engagement, particularly in collaboration, but confidence and communication skills need further development.",
+      "recommendations": "To help Van Minh improve, it is important to prioritise regular attendance so that he does not miss key lessons and practice opportunities. Establishing a consistent homework routine at home — even 10 to 15 minutes per day — will help build familiarity with the language and improve both completion and scores over time. Encouraging Van Minh to review vocabulary regularly using the app or flashcards will strengthen retention. Speaking practice at home, such as simple conversations or describing pictures in English, will help build confidence. If there are ongoing challenges, please reach out to the Teaching Assistant so we can provide additional support."
+   }
+}

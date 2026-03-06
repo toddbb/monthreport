@@ -205,6 +205,34 @@
             opacity: 0.5;
             margin-top: 1px;
          }
+         .header-top-right {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+         }
+         .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.15s, border-color 0.15s;
+            flex-shrink: 0;
+         }
+         .share-btn:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.6);
+         }
+         .share-btn svg {
+            width: 15px;
+            height: 15px;
+         }
          .period-badge {
             font-size: 0.65rem;
             font-weight: 600;
@@ -610,6 +638,34 @@
             font-size: 0.88rem;
          }
 
+         /* ── Help icon ──────────────────────────────────── */
+         .module-title-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+         }
+         .help-icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: none;
+            background: var(--border);
+            color: var(--ink-2);
+            font-size: 0.65rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.15s, color 0.15s;
+         }
+         .help-icon:hover {
+            background: var(--header-a);
+            color: #fff;
+         }
+
          /* ── FAQ ────────────────────────────────────────── */
          details {
             border: 1px solid var(--border);
@@ -636,6 +692,69 @@
             padding: 0 0 12px;
             font-size: 0.84rem;
             line-height: 1.65;
+         }
+
+         /* ── AI FEEDBACK ────────────────────────────────── */
+         .feedback-section {
+            margin-top: 20px;
+         }
+         .feedback-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 20px;
+         }
+         .feedback-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+         }
+         .feedback-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--ink);
+         }
+         .ai-badge {
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #6d28d9;
+            background: #ede9fe;
+            border: 1px solid #c4b5fd;
+            border-radius: 99px;
+            padding: 3px 9px;
+            white-space: nowrap;
+            flex-shrink: 0;
+         }
+         .feedback-body {
+            display: grid;
+            gap: 16px;
+         }
+         .feedback-block h4 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 6px;
+            letter-spacing: 0.01em;
+         }
+         .feedback-block p {
+            font-size: 0.88rem;
+            color: var(--ink-2);
+            line-height: 1.7;
+            margin: 0;
+         }
+         .feedback-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0;
+         }
+         @media (min-width: 560px) {
+            .feedback-card {
+               padding: 24px;
+            }
          }
 
          /* ── FOOTER ─────────────────────────────────────── */
@@ -693,7 +812,6 @@
             }
          }
 
-
          .hidden {
             display: none !important;
          }
@@ -705,12 +823,23 @@
          <div class="header-inner">
             <div class="header-top">
                <div class="brand">
-                  <div class="brand-mark"><img src="assets/images/logo.jpg" alt="ILA Logo" /></div>
+                  <div class="brand-mark"><img src="https://placehold.co/50x50/FFFFFF/333?text=Logo" alt="ILA Logo" /></div>
                   <div>
-                     <div class="brand-name">ILA Vietnam</div>
+                     <div class="brand-name">XYX School</div>
                   </div>
                </div>
-               <div class="period-badge">Monthly Report<br /><span id="hdr-period"></span></div>
+               <div class="header-top-right">
+                  <div class="period-badge">Monthly Report<br /><span id="hdr-period"></span></div>
+                  <button class="share-btn" type="button" onclick="shareReport()" title="Share this report">
+                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"/>
+                        <circle cx="6" cy="12" r="3"/>
+                        <circle cx="18" cy="19" r="3"/>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                     </svg>
+                  </button>
+               </div>
             </div>
 
             <div class="header-student">
@@ -733,12 +862,32 @@
       </header>
 
       <div class="page">
+         <!-- ═══════════════ AI FEEDBACK ═══════════════ -->
+         <section class="feedback-section">
+            <div class="feedback-card">
+               <div class="feedback-header">
+                  <span class="feedback-title">Monthly Learning Summary</span>
+                  <span class="ai-badge">Summary</span>
+               </div>
+               <div class="feedback-body">
+                  <div class="feedback-block">
+                     <p id="feedback-summary"></p>
+                  </div>
+                  <hr class="feedback-divider hidden" id="feedback-divider" />
+                  <div class="feedback-block hidden" id="feedback-recs-block">
+                     <h4>Recommendations for Continued Improvement</h4>
+                     <p id="feedback-recommendations"></p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
          <!-- ═══════════════ DASHBOARD GRID ═══════════════ -->
          <div class="dashboard" id="dashboard">
             <!-- ATTENDANCE -->
             <article class="card module rise" id="sec-att">
                <div class="module-head">
-                  <div class="mod-icon">%</div>
+                  <div class="mod-icon">A</div>
                   <div>
                      <h3>Attendance</h3>
                      <p class="small-note">Regular attendance supports stronger progress.</p>
@@ -758,10 +907,13 @@
             <!-- LANGUAGE SKILLS -->
             <article class="card module rise" id="sec-outcomes">
                <div class="module-head">
-                  <div class="mod-icon">▮</div>
+                  <div class="mod-icon">L</div>
                   <div>
-                     <h3>Language Skills</h3>
-                     <p class="small-note">Scores out of 5.0.</p>
+                     <div class="module-title-row">
+                        <h3>Language Skills</h3>
+                        <button class="help-icon" type="button" onclick="openFaq('faq-lang-skills')" title="How are Language Skills assessed?">?</button>
+                     </div>
+                     <p class="small-note">Based on Teacher Assessment in every lesson.</p>
                   </div>
                </div>
                <div class="skills-list" id="skills-list"></div>
@@ -792,7 +944,7 @@
                   <div class="mod-icon">V</div>
                   <div>
                      <h3>Vocabulary</h3>
-                     <p class="small-note">Word practice and review.</p>
+                     <p class="small-note">Word practice outside of class.</p>
                   </div>
                </div>
                <div class="split two-col">
@@ -810,8 +962,8 @@
                <div class="module-head">
                   <div class="mod-icon">★</div>
                   <div>
-                     <h3>Project Skills</h3>
-                     <p class="small-note">Project-based learning skills, rated out of 5.</p>
+                     <h3>21st Century Skills</h3>
+                     <p class="small-note" id="pbl-dates-note"></p>
                   </div>
                </div>
                <div id="pbl-rows"></div>
@@ -822,8 +974,8 @@
                <div class="module-head">
                   <div class="mod-icon">C</div>
                   <div>
-                     <h3>Cambridge Test</h3>
-                     <p class="small-note">Practice test performance.</p>
+                     <h3>Cambridge Practice Test</h3>
+                     <p class="small-note" id="cambridge-note"></p>
                   </div>
                </div>
                <div class="mini-grid" id="cambridge-grid"></div>
@@ -835,7 +987,7 @@
                   <div class="mod-icon">PT</div>
                   <div>
                      <h3>Progress Test</h3>
-                     <p class="small-note">Monthly checkpoint results.</p>
+                     <p class="small-note">Checkpoint results from in-class tests.</p>
                   </div>
                </div>
                <div class="mini-grid" id="progress-grid"></div>
@@ -854,7 +1006,10 @@
                   <div id="final-donut-wrap"></div>
                   <div class="note-card">
                      <strong>How this is calculated</strong>
-                     <span id="final-note">This score gives a quick overall view of the month.</span>
+                     <span id="final-note"
+                        >This shows the overall English proficieny at the end of the course for this level. It includes results of Teacher assessment, homework, projects, and
+                        progress tests.</span
+                     >
                   </div>
                </div>
             </article>
@@ -877,13 +1032,19 @@
             <div class="card">
                <div class="sec-head">
                   <h2 class="sec-head-title">Notes &amp; FAQ</h2>
-                  <div class="badge">Parent help</div>
+                  <div class="badge">Help</div>
                </div>
                <details>
                   <summary>What do these scores mean?</summary>
                   <div class="faq-content">
                      This report is designed to be easy to understand. Higher numbers and fuller charts indicate stronger performance or more completed practice. Sections that are
                      missing simply have no data available for this month.
+                  </div>
+               </details>
+               <details id="faq-lang-skills">
+                  <summary>How are Language Skills assessed?</summary>
+                  <div class="faq-content">
+                     Language Skills are based on the Teacher's assessment in every lesson. They reflect the student's current performance in class and are a key factor in determining their overall course progress. A score of 3 or above indicates the student is meeting expectations for their level, while scores of 1–2 suggest areas where additional focus and practice may be needed.
                   </div>
                </details>
                <details>
@@ -894,7 +1055,11 @@
                </details>
                <details>
                   <summary>Who should I contact if I have questions?</summary>
-                  <div class="faq-content">Please reach out to your child's teacher or the school reception. Contact details can be added here by the school.</div>
+                  <div class="faq-content">Please reach out to your child's Teaching Assistant or your Admissions Officer at your center.</div>
+               </details>
+               <details>
+                  <summary>Can I view this report in English / Tôi có thể xem báo cáo này bằng tiếng Việt được không?</summary>
+                  <div class="faq-content">Yes. Change your Profile settings to whichever language you prefer.</div>
                </details>
             </div>
          </div>
@@ -908,26 +1073,6 @@
       <!-- /page -->
 
       <script>
-         /* ════════════════════════════════════════════
-   DATA  — update this object each month
-════════════════════════════════════════════ */
-         const DATA = {
-            STUDENT_NAME: "Bui My Hang",
-            COURSE_CODE: "H99YJ-1A-2601",
-            PROGRAM_NAME: "Super Juniors",
-            LEVEL: "1A",
-            DATE_RANGE: { start: "01/03/2026", end: "31/03/2026" },
-            TEACHERS: ["David Franklin", "Nguyen Mai Thi"],
-            TAS: ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"],
-            ATTENDANCE: 97,
-            OUTCOMES: { reading: 4.2, writing: 3.8, speaking: 3.5, listening: 4.6 },
-            HOMEWORK: { average_score: 84, completion_rate: 92 },
-            VOCABULARY: { average_score: 94, completion_rate: 67 },
-            PBL: { creativity: 5, collaboration: 4, critical_thinking: 4, communication: 5, self_reflection: 4, digital_literacy: 3 },
-            CAMBRIDGE: { reading_writing: 87, speaking: 92, listening: 74 },
-            PROGRESS_TEST: { reading_writing_grammar_vocabulary: 89, speaking: 92, listening: 72 },
-         };
-
          /* ── Utilities ───────────────────────────────── */
          const $ = (id) => document.getElementById(id);
 
@@ -947,9 +1092,9 @@
             return `${parseInt(d)} ${["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+m - 1]} ${y}`;
          }
 
-         function monthName(dr) {
-            if (!dr) return "";
-            const [, m, y] = dr.start.split("/");
+         function monthName(period) {
+            if (!period) return "";
+            const [, m, y] = period.start.split("/");
             return `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][+m - 1]} ${y}`;
          }
 
@@ -975,10 +1120,36 @@
             return { cls: "c-red", fill: "var(--red)", trk: "var(--red-trk)" };
          }
 
+         /* ── Language skill colour (1–5 scale) ──────── */
+         function skillCol(score) {
+            if (score >= 3) return { cls: "c-green", fill: "var(--green)", trk: "var(--green-trk)" };
+            if (score >= 2) return { cls: "c-yellow", fill: "var(--yellow)", trk: "var(--yellow-trk)" };
+            return { cls: "c-red", fill: "var(--red)", trk: "var(--red-trk)" };
+         }
+
+         /* ── Share ───────────────────────────────────── */
+         function shareReport() {
+            const url = window.location.href;
+            const name = document.getElementById("hdr-name")?.textContent || "Student";
+            if (navigator.share) {
+               navigator.share({ title: `Monthly Report — ${name}`, url });
+            } else {
+               navigator.clipboard?.writeText(url).then(() => alert("Link copied to clipboard."));
+            }
+         }
+
+         /* ── FAQ scroll + open ──────────────────────── */
+         function openFaq(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.open = true;
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+         }
+
          /* ── PBL star colour (1–5 scale) ─────────────── */
          function starFill(score) {
-            if (score >= 5) return "var(--green)"; /* 5/5 — excellent */
-            if (score >= 3) return "var(--star-on)"; /* 3–4/5 — good    */
+            if (score >= 4) return "var(--green)"; /* 4–5/5 — excellent */
+            if (score >= 3) return "var(--yellow)"; /* 3/5 — good        */
             return "var(--red)"; /* 1–2/5 — needs work */
          }
 
@@ -1009,26 +1180,32 @@
          /* ════════════════════════════════════════════
    RENDER
 ════════════════════════════════════════════ */
-         function render() {
-            const d = DATA;
-
+         function render(d) {
             /* Header */
-            $("hdr-name").textContent = d.STUDENT_NAME || "";
-            const courseProgramLevel = [d.COURSE_CODE, d.PROGRAM_NAME, d.LEVEL].filter((x) => !blank(x)).join(" - ");
+            $("hdr-name").textContent = d.student.name || "";
+            const courseProgramLevel = [d.student.courseCode, d.student.program, d.student.level].filter((x) => !blank(x)).join(" - ");
             $("hdr-course").textContent = courseProgramLevel || "";
-            // $("hdr-program").textContent = `${courseProgramLevel || ""}`;
-            // $("hdr-level").textContent = d.LEVEL ? `- ${d.LEVEL}` : "";
-            if (d.DATE_RANGE) {
-               $("hdr-period").textContent = `${fmtDate(d.DATE_RANGE.start)} – ${fmtDate(d.DATE_RANGE.end)}`;
-               document.title = `${monthName(d.DATE_RANGE)} Report – ${d.STUDENT_NAME}`;
+            if (d.period) {
+               $("hdr-period").textContent = `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)}`;
+               document.title = `${monthName(d.period)} Report – ${d.student.name}`;
             }
 
-            /* Outcomes average (used for Final Score) */
-            const outcomesAvgRaw = !blank(d.OUTCOMES) ? average(Object.values(d.OUTCOMES)) : null;
+            /* Feedback */
+            if (d.feedback?.summary) {
+               $("feedback-summary").textContent = d.feedback.summary;
+            }
+            if (d.feedback?.recommendations) {
+               $("feedback-recommendations").textContent = d.feedback.recommendations;
+               $("feedback-recs-block").classList.remove("hidden");
+               $("feedback-divider").classList.remove("hidden");
+            }
+
+            /* Language skills average (used for Final Score) */
+            const outcomesAvgRaw = d.languageSkills && !blank(d.languageSkills) ? average(Object.values(d.languageSkills)) : null;
 
             /* Attendance */
-            if (!blank(d.ATTENDANCE)) {
-               const pct = num(d.ATTENDANCE);
+            if (!blank(d.attendance)) {
+               const pct = num(d.attendance);
                const c = col(pct);
                $("att-num").textContent = pct + "%";
                $("att-num").className = "att-num " + c.cls;
@@ -1049,15 +1226,15 @@
             }
 
             /* Language Skills */
-            if (!blank(d.OUTCOMES)) {
+            if (d.languageSkills && !blank(d.languageSkills)) {
                const labels = { reading: "Reading", writing: "Writing", speaking: "Speaking", listening: "Listening" };
                let html = "";
                for (const [key, lbl] of Object.entries(labels)) {
-                  const v = d.OUTCOMES[key];
+                  const v = d.languageSkills[key];
                   if (v === null || v === undefined || v === "") continue;
                   const score = num(v);
                   const pct = (score / 5) * 100;
-                  const c = col(pct);
+                  const c = skillCol(score);
                   html += `
         <div class="skill-row">
           <div class="skill-name">${lbl}</div>
@@ -1075,15 +1252,15 @@
             }
 
             /* Homework */
-            const hw = d.HOMEWORK;
-            const hwOk = !blank(hw);
+            const hw = d.homework;
+            const hwOk = hw && !blank(hw);
             if (hwOk) {
-               const score = num(hw.average_score);
-               const comp = num(hw.completion_rate);
+               const score = num(hw.averageScore);
+               const comp = num(hw.completionRate);
                $("hw-donut-wrap").innerHTML = score != null ? buildDonut(score, "hw") : "";
                if (score != null) $("hw-avg").textContent = score + "%";
                if (comp != null) $("hw-completion").textContent = comp + "%";
-               $("hw-note").textContent = performanceNote(hw.average_score, hw.completion_rate);
+               $("hw-note").textContent = performanceNote(hw.averageScore, hw.completionRate);
                requestAnimationFrame(() =>
                   setTimeout(() => {
                      if (score != null) animateDonut("hw", score);
@@ -1094,15 +1271,15 @@
             }
 
             /* Vocabulary */
-            const vcb = d.VOCABULARY;
-            const vOk = !blank(vcb);
+            const vcb = d.vocabulary;
+            const vOk = vcb && !blank(vcb);
             if (vOk) {
-               const score = num(vcb.average_score);
-               const comp = num(vcb.completion_rate);
+               const score = num(vcb.averageScore);
+               const comp = num(vcb.completionRate);
                $("vocab-donut-wrap").innerHTML = score != null ? buildDonut(score, "vocab") : "";
                if (score != null) $("vocab-avg").textContent = score + "%";
                if (comp != null) $("vocab-completion").textContent = comp + "%";
-               $("vocab-note").textContent = performanceNote(vcb.average_score, vcb.completion_rate);
+               $("vocab-note").textContent = performanceNote(vcb.averageScore, vcb.completionRate);
                requestAnimationFrame(() =>
                   setTimeout(() => {
                      if (score != null) animateDonut("vocab", score);
@@ -1112,20 +1289,21 @@
                $("sec-vocab").classList.add("hidden");
             }
 
-            /* PBL */
-            if (!blank(d.PBL)) {
+            /* 21st Century Skills */
+            const pblScores = d.centurySkills?.scores;
+            if (pblScores && !blank(pblScores)) {
                const labels = {
                   creativity: "Creativity",
                   collaboration: "Collaboration",
-                  critical_thinking: "Critical Thinking",
+                  criticalThinking: "Critical Thinking",
                   communication: "Communication",
-                  self_reflection: "Self-Reflection",
-                  digital_literacy: "Digital Literacy",
+                  selfReflection: "Self-Reflection",
+                  digitalLiteracy: "Digital Literacy",
                };
                const PATH = `<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>`;
                let html = "";
                for (const [key, lbl] of Object.entries(labels)) {
-                  const v = d.PBL[key];
+                  const v = pblScores[key];
                   if (v === null || v === undefined || v === "") continue;
                   const score = Math.round(num(v));
                   const fill = starFill(score);
@@ -1142,15 +1320,17 @@
                }
                $("pbl-rows").innerHTML = html;
                if (!html) $("sec-pbl").classList.add("hidden");
+               const pblDates = Array.isArray(d.centurySkills.dates) && d.centurySkills.dates.length ? d.centurySkills.dates.map(fmtDate).join(" · ") : "";
+               $("pbl-dates-note").textContent = pblDates ? `Lessons: ${pblDates}` : "Project-based learning skills, rated out of 5.";
             } else {
                $("sec-pbl").classList.add("hidden");
             }
 
             /* Cambridge Test */
-            const camb = d.CAMBRIDGE;
-            if (!blank(camb)) {
+            const camb = d.cambridgeTest?.scores;
+            if (camb && !blank(camb)) {
                const labels = [
-                  ["reading_writing", "Reading & Writing"],
+                  ["readingWriting", "Reading & Writing"],
                   ["speaking", "Speaking"],
                   ["listening", "Listening"],
                ];
@@ -1163,20 +1343,21 @@
                   html += `
         <div class="mini-card">
           <div class="mini-label">${lbl}</div>
-          <div class="mini-value ${c.cls}">${Math.round(score)}</div>
+          <div class="mini-value ${c.cls}">${Math.round(score)}%</div>
         </div>`;
                }
                $("cambridge-grid").innerHTML = html;
                if (!html) $("sec-cambridge").classList.add("hidden");
+               $("cambridge-note").textContent = d.cambridgeTest.type ? `Results for ${d.cambridgeTest.type} practice test.` : "Results from the Cambridge practice test.";
             } else {
                $("sec-cambridge").classList.add("hidden");
             }
 
             /* Progress Test */
-            const prog = d.PROGRESS_TEST;
-            if (!blank(prog)) {
+            const prog = d.progressTest;
+            if (prog && !blank(prog)) {
                const labels = [
-                  ["reading_writing_grammar_vocabulary", "Reading, Writing & Grammar"],
+                  ["readingWritingGrammarVocabulary", "Reading, Writing & Grammar"],
                   ["speaking", "Speaking"],
                   ["listening", "Listening"],
                ];
@@ -1189,7 +1370,7 @@
                   html += `
         <div class="mini-card">
           <div class="mini-label">${lbl}</div>
-          <div class="mini-value ${c.cls}">${Math.round(score)}</div>
+          <div class="mini-value ${c.cls}">${Math.round(score)}%</div>
         </div>`;
                }
                $("progress-grid").innerHTML = html;
@@ -1201,10 +1382,10 @@
             /* Final Score */
             const outcomesAvgPct = outcomesAvgRaw !== null ? (outcomesAvgRaw / 5) * 100 : null;
             const finalCandidates = [
-               hwOk ? num(hw.average_score) : null,
-               vOk ? num(vcb.average_score) : null,
-               !blank(camb) ? average(Object.values(camb)) : null,
-               !blank(prog) ? average(Object.values(prog)) : null,
+               hwOk ? num(hw.averageScore) : null,
+               vOk ? num(vcb.averageScore) : null,
+               camb && !blank(camb) ? average(Object.values(camb)) : null,
+               prog && !blank(prog) ? average(Object.values(prog)) : null,
                outcomesAvgPct,
             ].filter((v) => v !== null);
 
@@ -1220,9 +1401,9 @@
 
             /* Next Steps */
             const steps = [];
-            const vocabComp = vOk ? num(vcb.completion_rate) : null;
-            const hwComp = hwOk ? num(hw.completion_rate) : null;
-            const speaking = !blank(d.OUTCOMES) ? num(d.OUTCOMES.speaking) : null;
+            const vocabComp = vOk ? num(vcb.completionRate) : null;
+            const hwComp = hwOk ? num(hw.completionRate) : null;
+            const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
             if (vocabComp !== null && vocabComp < 80) steps.push("Review vocabulary for 5–10 minutes, three times each week.");
             if (hwComp !== null && hwComp < 85) steps.push("Set a regular homework time at home to improve completion.");
             if (speaking !== null && speaking < 4) steps.push("Ask your child to answer simple English questions aloud at home.");
@@ -1234,11 +1415,20 @@
             $("next-steps-list").innerHTML = steps.map((s) => `<li>${s}</li>`).join("");
 
             /* Footer */
-            $("ftr-course").textContent = d.COURSE_CODE ? `Course ${d.COURSE_CODE}` : "";
-            $("ftr-date").textContent = d.DATE_RANGE ? `${monthName(d.DATE_RANGE)} Report` : "Monthly Report";
+            $("ftr-course").textContent = d.student.courseCode ? `Course ${d.student.courseCode}` : "";
+            $("ftr-date").textContent = d.period ? `${monthName(d.period)} Report` : "Monthly Report";
          }
 
-         render();
+         /* ── Load data and render ────────────────────── */
+         const studentParam = new URLSearchParams(window.location.search).get("student") || "1";
+         const dataFile = `data${studentParam}.json`;
+         fetch(dataFile)
+            .then((r) => {
+               if (!r.ok) throw new Error(`Failed to load ${dataFile} (${r.status})`);
+               return r.json();
+            })
+            .then((data) => render(data))
+            .catch((err) => console.error("Report data error:", err));
       </script>
    </body>
 </html>

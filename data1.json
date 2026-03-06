@@ -1,0 +1,59 @@
+{
+   "student": {
+      "name": "Bui My Hang",
+      "courseCode": "H99YJ-1A-2601",
+      "program": "Super Juniors",
+      "level": "1A"
+   },
+   "period": {
+      "start": "01/03/2026",
+      "end": "31/03/2026"
+   },
+   "staff": {
+      "teachers": ["David Franklin", "Nguyen Mai Thi"],
+      "assistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
+   },
+   "attendance": 97,
+   "languageSkills": {
+      "reading": 4.2,
+      "writing": 3.8,
+      "speaking": 3.5,
+      "listening": 4.6
+   },
+   "homework": {
+      "averageScore": 84,
+      "completionRate": 92
+   },
+   "vocabulary": {
+      "averageScore": 94,
+      "completionRate": 67
+   },
+   "centurySkills": {
+      "dates": ["25/03/2026", "26/03/2026"],
+      "scores": {
+         "creativity": 5,
+         "collaboration": 4,
+         "criticalThinking": 4,
+         "communication": 5,
+         "selfReflection": 4,
+         "digitalLiteracy": 3
+      }
+   },
+   "cambridgeTest": {
+      "type": "Cambridge Starters",
+      "scores": {
+         "readingWriting": 87,
+         "speaking": 92,
+         "listening": 74
+      }
+   },
+   "progressTest": {
+      "readingWritingGrammarVocabulary": 89,
+      "speaking": 92,
+      "listening": 72
+   },
+   "feedback": {
+      "summary": "This month, My Hang showed strong participation in class and maintained excellent attendance (97%), allowing full engagement in classroom activities. Performance in reading and listening was very strong, demonstrating good understanding of lesson content. Writing skills are developing steadily, and ideas are becoming clearer. Speaking skills continue to improve, and additional speaking practice will help build confidence. Homework engagement was positive, with 92% of tasks completed and an average score of 84%, showing good effort and understanding. Vocabulary accuracy was strong, and project work demonstrated excellent creativity and communication, with particularly strong speaking results in assessments.",
+      "recommendations": "To continue progressing, My Hang is encouraged to complete all homework and vocabulary exercises regularly, as these activities reinforce the language learned in each lesson. Revisiting homework tasks to improve scores and practicing vocabulary more consistently will help strengthen understanding and retention. Continued practice with listening activities and speaking in English during class and at home will also help build confidence and fluency."
+   }
+}

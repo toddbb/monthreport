@@ -1,0 +1,59 @@
+{
+   "student": {
+      "name": "Le Hoang Nam",
+      "courseCode": "H99YJ-1A-2601",
+      "program": "Super Juniors",
+      "level": "1A"
+   },
+   "period": {
+      "start": "01/03/2026",
+      "end": "31/03/2026"
+   },
+   "staff": {
+      "teachers": ["David Franklin", "Nguyen Mai Thi"],
+      "assistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
+   },
+   "attendance": 78,
+   "languageSkills": {
+      "reading": 3.1,
+      "writing": 2.8,
+      "speaking": 2.6,
+      "listening": 3.3
+   },
+   "homework": {
+      "averageScore": 68,
+      "completionRate": 63
+   },
+   "vocabulary": {
+      "averageScore": 72,
+      "completionRate": 55
+   },
+   "centurySkills": {
+      "dates": ["25/03/2026", "26/03/2026"],
+      "scores": {
+         "creativity": 3,
+         "collaboration": 3,
+         "criticalThinking": 2,
+         "communication": 3,
+         "selfReflection": 2,
+         "digitalLiteracy": 3
+      }
+   },
+   "cambridgeTest": {
+      "type": "Cambridge Starters",
+      "scores": {
+         "readingWriting": 67,
+         "speaking": 71,
+         "listening": 63
+      }
+   },
+   "progressTest": {
+      "readingWritingGrammarVocabulary": 69,
+      "speaking": 72,
+      "listening": 61
+   },
+   "feedback": {
+      "summary": "This month, Hoang Nam showed a reasonable level of effort and attended 78% of classes. Performance across all four language skills sits around the middle of the expected range for this stage of the course, with listening and reading slightly stronger than writing and speaking. Homework was completed at a moderate rate of 63%, and an average score of 68% indicates a basic level of understanding, though there is clear room for improvement. Vocabulary practice was inconsistent, and more regular engagement with the app and review activities would help consolidate what has been learned in class. Project work demonstrated some effort, particularly in collaboration and communication, but deeper engagement with tasks will help build stronger skills.",
+      "recommendations": "To move forward more steadily, Hoang Nam would benefit from attending all scheduled classes to avoid gaps in learning. Setting aside regular time for homework each evening — even in short sessions — will help improve both completion and scores over time. Reviewing vocabulary through the app or with flashcards a few times each week will support retention. Practising speaking at home by retelling stories or describing everyday objects in English will help build fluency and confidence. The Teaching Assistants are available to provide extra support if needed, so please do not hesitate to get in touch."
+   }
+}
