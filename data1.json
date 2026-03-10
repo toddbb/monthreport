@@ -2,6 +2,7 @@
    "student": {
       "name": "Bui My Hang",
       "courseCode": "H99YJ-1A-2601",
+      "centre_id": "TC-HCMC99",
       "program": "Super Juniors",
       "level": "1A"
    },
@@ -58,99 +59,57 @@
    },
    "lessons": [
       {
-         "id": "SJ_PR_001",
+         "id": "SJ_PR_001V2",
+         "classes_seats": {
+            "date": "02/03/2026",
+            "homework": {
+               "hasHomework": true,
+               "score": 85
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 90
+            },
+            "isAttended": true,
+            "behavior": 3,
+            "feedback": "My Hang was attentive and participated well in class activities. She followed instructions and engaged with the lesson content effectively.",
+            "available": 1
+         },
+         "info": {
+            "focus": "Welcome Lesson",
+            "desc_teacher": {
+               "en": "Learners get to know each other, learn the rules, and practice letters Aa-Dd.",
+               "vn": "Người học làm quen, tìm hiểu luật chơi và luyện chữ Aa-Dd."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What's your name? How are you?; Verb be: am, is, are; Pronouns: I, he, she; Imperative commands: Look. Listen. Be quiet. Sit down. Stand up. Be nice."
+            ]
+         },
+
          "outcomes": [
-            { "id": "PR_001", "info": { "skill": "speaking", "result": 3, "description": "Can use basic introductions." } },
-            { "id": "PR_002", "info": { "skill": "speaking", "result": 4, "description": "Can count 1-10." } }
-         ],
-         "date": "02/03/2026",
-         "title": "Getting to Know You.",
-         "homework": 85,
-         "vocabulary": 90,
-         "isAttended": true
-      },
-      {
-         "id": "SJ_PR_002",
-         "date": "04/03/2026",
-         "title": "Classroom and Animals",
-         "isAttended": true,
-         "homework": 92,
-         "vocabulary": 0,
-         "outcomes": [
-            { "id": "PR_003", "info": { "skill": "listening", "result": 5, "description": "Can identify classroom objects when named by the teacher." } },
-            { "id": "PR_004", "info": { "skill": "reading", "result": 4, "description": "Can match simple words to pictures of animals." } }
-         ]
-      },
-      {
-         "id": "SJ_PR_003",
-         "date": "09/03/2026",
-         "title": "Colours Around Us",
-         "isAttended": true,
-         "homework": 78,
-         "vocabulary": 95,
-         "outcomes": [
-            { "id": "PR_005", "info": { "skill": "speaking", "result": 4, "description": "Can name common colours using basic sentence frames." } },
-            { "id": "PR_006", "info": { "skill": "writing", "result": 3, "description": "Can copy and trace simple colour words correctly." } }
-         ]
-      },
-      {
-         "id": "SJ_PR_004",
-         "date": "11/03/2026",
-         "title": "My Body",
-         "isAttended": true,
-         "homework": 65,
-         "vocabulary": 91,
-         "outcomes": [
-            { "id": "PR_007", "info": { "skill": "listening", "result": 4, "description": "Can follow simple instructions involving body parts." } },
-            { "id": "PR_008", "info": { "skill": "speaking", "result": 5, "description": "Can name and point to parts of the body with confidence." } }
-         ]
-      },
-      {
-         "id": "SJ_PR_005",
-         "date": "16/03/2026",
-         "title": "Food I Like",
-         "isAttended": true,
-         "homework": 95,
-         "vocabulary": 100,
-         "outcomes": [
-            { "id": "PR_009", "info": { "skill": "reading", "result": 5, "description": "Can read and understand simple food vocabulary in context." } },
-            { "id": "PR_010", "info": { "skill": "writing", "result": 4, "description": "Can write short sentences about likes using 'I like...'." } }
-         ]
-      },
-      {
-         "id": "SJ_PR_006",
-         "date": "18/03/2026",
-         "title": "What Do You Like?",
-         "isAttended": true,
-         "homework": 82,
-         "vocabulary": 94,
-         "outcomes": [
-            { "id": "PR_011", "info": { "skill": "speaking", "result": 3, "description": "Can ask and answer 'What's your favourite colour?' with prompting." } },
-            { "id": "PR_012", "info": { "skill": "listening", "result": 4, "description": "Can understand and respond to simple yes/no questions." } }
-         ]
-      },
-      {
-         "id": "SJ_PR_007",
-         "date": "23/03/2026",
-         "title": "Numbers and Shapes",
-         "isAttended": true,
-         "homework": 90,
-         "vocabulary": 87,
-         "outcomes": [
-            { "id": "PR_013", "info": { "skill": "writing", "result": 4, "description": "Can write the numbers 1–10 in word form with few errors." } },
-            { "id": "PR_014", "info": { "skill": "reading", "result": 5, "description": "Can read simple shape names and match them to images." } }
-         ]
-      },
-      {
-         "id": "SJ_PR_008",
-         "date": "25/03/2026",
-         "title": "Story Time",
-         "isAttended": true,
-         "homework": 96,
-         "vocabulary": 92,
-         "outcomes": [
-            { "id": "PR_015", "info": { "skill": "listening", "result": 5, "description": "Can follow a short story and identify key characters and objects." } },
-            { "id": "PR_016", "info": { "skill": "speaking", "result": 4, "description": "Can describe a picture using basic vocabulary and sentence starters." } }
+            {
+               "id": "PR_001v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": { "en": "ask and answer questions about feelings and names.", "vn": "hỏi và phản hồi các câu hỏi về cảm xúc và tên gọi." },
+               "result": 3,
+               "result_description": {
+                  "en": "could ask and answer questions about feelings and names but needed some support.",
+                  "vn": "có thể hỏi và trả lời các câu hỏi về cảm xúc và tên nhưng cần được hỗ trợ."
+               }
+            },
+            {
+               "id": "PR_002v2",
+               "skill": "speaking",
+               "system": "pronunciation",
+               "info": { "en": "identify beginning sounds for Aa, Bb, Cc, Dd. ", "vn": "xác định các âm đầu của Aa, Bb, Cc, Dd." },
+               "result": 4,
+               "result_description": {
+                  "en": "could identify beginning sounds for a, b, c, d with very little support.",
+                  "vn": "có thể xác định âm đầu của a, b, c, d với rất ít sự hỗ trợ."
+               }
+            }
          ]
       }
    ]
