@@ -1,7 +1,7 @@
 {
    "student": {
-      "name": "Le Thi Phuong",
-      "courseCode": "H99YJ-1A-2603",
+      "name": "Nguyen Tuan Kiet",
+      "courseCode": "H99YJ-1A-2602",
       "centreId": "TC-HCMC99",
       "program": "Super Juniors",
       "level": "1A"
@@ -21,20 +21,20 @@
          "Trinh Trieu Thanh"
       ]
    },
-   "attendance": 85,
+   "attendance": 72,
    "languageSkills": {
-      "reading": 3,
-      "writing": 2.8,
-      "speaking": 2.7,
-      "listening": 3.2
+      "reading": 1.8,
+      "writing": 1.5,
+      "speaking": 1.6,
+      "listening": 2.1
    },
    "homework": {
-      "averageScore": 74,
-      "completionRate": 87
+      "averageScore": 57,
+      "completionRate": 42
    },
    "vocabulary": {
-      "averageScore": 79,
-      "completionRate": 62
+      "averageScore": 64,
+      "completionRate": 28
    },
    "centurySkills": {
       "dates": [
@@ -42,58 +42,56 @@
          "2026-03-26"
       ],
       "scores": {
-         "creativity": 3,
-         "collaboration": 3,
-         "criticalThinking": 3,
-         "communication": 3,
-         "selfReflection": 3,
-         "digitalLiteracy": 2
+         "creativity": 2,
+         "collaboration": 2,
+         "criticalThinking": 1,
+         "communication": 2,
+         "selfReflection": 2,
+         "digitalLiteracy": 1
       }
    },
    "cambridgeTest": {
       "type": "Cambridge Starters",
       "scores": {
-         "readingWriting": 72,
-         "speaking": 75,
-         "listening": 68
+         "readingWriting": 54,
+         "speaking": 62,
+         "listening": 48
       }
    },
    "progressTest": {
       "testType": "Progress Test 1",
       "scores": {
-         "readingWritingGrammarVocabulary": 74,
-         "speaking": 78,
-         "listening": 70
+         "readingWritingGrammarVocabulary": 52,
+         "speaking": 58,
+         "listening": 50
       }
    },
    "AiFeedback": {
-      "en": "This month, Phuong showed steady progress and a positive attitude in class. Attendance was good at 85%, allowing reasonable engagement with lesson content. Listening skills were a strength, showing solid comprehension of classroom instructions and activities. Reading and writing are developing at a good pace, with ideas becoming clearer. Speaking participation was consistent, though additional practice will help build fluency and confidence. Homework was completed regularly and at a satisfactory level. Vocabulary practice could be more consistent, and more regular review will help strengthen retention of new words.",
-      "vn": "Tháng này, Phương thể hiện sự tiến bộ ổn định và thái độ tích cực trong lớp. Tỷ lệ tham dự tốt ở mức 85%, cho phép tham gia học tập hợp lý với nội dung bài học. Kỹ năng nghe là điểm mạnh, thể hiện khả năng hiểu tốt các hướng dẫn và hoạt động trong lớp. Kỹ năng đọc và viết đang phát triển tốt, các ý tưởng trở nên rõ ràng hơn. Sự tham gia nói chuyện trong lớp là nhất quán, mặc dù việc luyện tập thêm sẽ giúp xây dựng sự trôi chảy và tự tin. Bài tập về nhà được hoàn thành đều đặn và ở mức độ đạt yêu cầu. Việc luyện tập từ vựng có thể được cải thiện thêm, và việc ôn tập thường xuyên hơn sẽ giúp củng cố khả năng ghi nhớ các từ mới."
+      "en": "This month, Tuan Kiet found some aspects of class challenging but showed willingness to try when present. Attendance was below expectations at 72%, and missed classes made it difficult to keep up with lesson content. Reading and listening are at an early stage of development, and more consistent exposure to English will help build understanding over time. Writing and speaking are areas that need focused support, and regular practice at home will be essential for progress. Homework completion was low this month, and establishing a regular study routine will help Tuan Kiet consolidate what is covered in class. Vocabulary practice also needs more consistency to build confidence with new words.",
+      "vn": "Tháng này, Tuấn Kiệt gặp một số khó khăn trong một số phần của lớp học nhưng đã thể hiện sự sẵn sàng cố gắng khi đến lớp. Tỷ lệ tham dự thấp hơn kỳ vọng ở mức 72%, và các buổi học bị bỏ lỡ khiến việc theo kịp nội dung bài học trở nên khó khăn hơn. Kỹ năng đọc và nghe đang ở giai đoạn phát triển ban đầu, và việc tiếp xúc với tiếng Anh thường xuyên hơn sẽ giúp xây dựng sự hiểu biết theo thời gian. Kỹ năng viết và nói là những lĩnh vực cần được hỗ trợ tập trung, và việc luyện tập thường xuyên ở nhà sẽ rất cần thiết cho sự tiến bộ. Mức độ hoàn thành bài tập về nhà còn thấp trong tháng này, và việc xây dựng thói quen học tập đều đặn sẽ giúp Tuấn Kiệt củng cố những gì đã học trong lớp. Việc luyện tập từ vựng cũng cần thêm sự nhất quán để xây dựng sự tự tin với các từ mới."
    },
    "recommendations": [
       {
          "en": "Complete or retry these homework activities:",
          "vn": "Hoàn thành hoặc làm lại các bài tập về nhà sau:",
          "subPoints": [
-            "Hello! – Welcome Lesson (2 Mar 2026): Homework (75%)",
-            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Homework (78%)",
-            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Homework (72%)",
-            "Bubbles the Fish Goes to School – Reading and Writing (16 Mar 2026): Homework (76%)",
-            "Colors and Numbers – Vocabulary and Grammar (23 Mar 2026): Homework (74%)",
-            "What Color Is It? – Listening and Speaking (26 Mar 2026): Homework (71%)",
-            "Colorful Classroom – Reading and Writing (30 Mar 2026): Homework (76%)"
+            "Hello! – Welcome Lesson (2 Mar 2026): Homework (60%)",
+            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Homework (65%)",
+            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Homework (45%)",
+            "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (55%)",
+            "What Color Is It? – Listening and Speaking (26 Mar 2026): Homework (62%)",
+            "Colorful Classroom – Reading and Writing (30 Mar 2026): Homework (58%)"
          ]
       },
       {
          "en": "Complete or retry these vocabulary exercises:",
          "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
          "subPoints": [
-            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Vocabulary (72%)",
-            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (68%)",
-            "Bubbles the Fish Goes to School – Reading and Writing (16 Mar 2026): Vocabulary (75%)",
-            "Colors and Numbers – Vocabulary and Grammar (23 Mar 2026): Vocabulary (70%)",
-            "What Color Is It? – Listening and Speaking (26 Mar 2026): Vocabulary (68%)",
-            "Colorful Classroom – Reading and Writing (30 Mar 2026): Vocabulary (74%)"
+            "Hello! – Welcome Lesson (2 Mar 2026): Vocabulary (55%)",
+            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Vocabulary (70%)",
+            "Let's Review! – Review and Unit Assessment (19 Mar 2026): Vocabulary (60%)",
+            "What Color Is It? – Listening and Speaking (26 Mar 2026): Vocabulary (70%)",
+            "Colorful Classroom – Reading and Writing (30 Mar 2026): Vocabulary (65%)"
          ]
       },
       {
@@ -113,15 +111,15 @@
             "date": "2026-03-02",
             "homework": {
                "hasHomework": true,
-               "score": 75
+               "score": 60
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 80
+               "score": 55
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong followed instructions and participated in class activities with some support. She showed good effort and was willing to try new language.",
+            "behavior": 2,
+            "feedback": "Tuan Kiet needed significant encouragement to participate and struggled to follow classroom instructions consistently. He required frequent support to complete activities.",
             "isAvailable": true
          },
          "info": {
@@ -144,10 +142,10 @@
                   "en": "ask and answer questions about feelings and names.",
                   "vn": "hỏi và phản hồi các câu hỏi về cảm xúc và tên gọi."
                },
-               "result": 3,
+               "result": 1,
                "result_description": {
-                  "en": "could ask and answer questions about feelings and names but needed some support.",
-                  "vn": "có thể hỏi và trả lời các câu hỏi về cảm xúc và tên nhưng cần được hỗ trợ."
+                  "en": "could not ask and answer questions about feelings and names.",
+                  "vn": "không thể hỏi và trả lời các câu hỏi về cảm xúc và tên."
                }
             },
             {
@@ -158,10 +156,10 @@
                   "en": "identify beginning sounds for Aa, Bb, Cc, Dd.",
                   "vn": "xác định các âm đầu của Aa, Bb, Cc, Dd."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "could identify beginning sounds for a, b, c, d but needed some support.",
-                  "vn": "có thể xác định âm đầu của a, b, c, d nhưng cần một số hỗ trợ."
+                  "en": "could identify beginning sounds for a, b, c, d but needed considerable support.",
+                  "vn": "có thể xác định âm đầu của a, b, c, d nhưng cần có sự hỗ trợ đáng kể."
                }
             }
          ]
@@ -176,15 +174,15 @@
             "date": "2026-03-09",
             "homework": {
                "hasHomework": true,
-               "score": 78
+               "score": 65
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 72
+               "score": 70
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong could identify most classroom words with some prompting. She participated in pair activities and showed adequate understanding of the target grammar.",
+            "behavior": 2,
+            "feedback": "Tuan Kiet found the vocabulary challenging this lesson. He needed repeated prompts and considerable support throughout activities.",
             "isAvailable": true
          },
          "info": {
@@ -207,10 +205,10 @@
                   "en": "identify and say words for things in a classroom.",
                   "vn": "xác định và nói tên các đồ vật trong lớp học."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "could identify and say words for things in a classroom with some support.",
-                  "vn": "có thể xác định và nói tên các đồ vật trong lớp học nếu được hỗ trợ."
+                  "en": "made an effort to identify and say words for things in a classroom but needed significant support.",
+                  "vn": "đã nỗ lực xác định và nói các từ chỉ đồ vật trong lớp học nhưng cần sự hỗ trợ đáng kể."
                }
             },
             {
@@ -221,10 +219,10 @@
                   "en": "ask and answer the question: What is it?",
                   "vn": "hỏi và trả lời câu hỏi: Nó là gì?"
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "were able to ask and answer the question with support.",
-                  "vn": "có thể hỏi và trả lời câu hỏi nhưng cần sự hỗ trợ."
+                  "en": "were able to ask and answer the question with significant support.",
+                  "vn": "có thể hỏi và trả lời câu hỏi với sự hỗ trợ đáng kể."
                }
             }
          ]
@@ -239,15 +237,15 @@
             "date": "2026-03-12",
             "homework": {
                "hasHomework": true,
-               "score": 72
+               "score": 45
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 68
+               "score": null
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong listened carefully and could identify most shapes with support. She needed some prompting during speaking activities but participated consistently.",
+            "behavior": 2,
+            "feedback": "Tuan Kiet had difficulty identifying shapes and required constant support. Listening tasks were challenging and he found it hard to stay focused.",
             "isAvailable": true
          },
          "info": {
@@ -270,10 +268,10 @@
                   "en": "listen for school objects and shapes.",
                   "vn": "lắng nghe các đồ vật và hình dạng trong trường học."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "were able to listen for school objects and shapes with support.",
-                  "vn": "có thể lắng nghe các đồ vật và hình dạng trong trường học khi được hỗ trợ."
+                  "en": "were able to listen for school objects and shapes with significant support.",
+                  "vn": "có thể lắng nghe các đồ vật và hình dạng trong trường học với sự hỗ trợ đáng kể."
                }
             },
             {
@@ -284,10 +282,10 @@
                   "en": "ask and answer 'what is it?' questions.",
                   "vn": "hỏi và trả lời câu hỏi 'nó là gì?'"
                },
-               "result": 3,
+               "result": 1,
                "result_description": {
-                  "en": "could ask and answer 'what is it?' questions with support.",
-                  "vn": "có thể hỏi và trả lời câu hỏi 'nó là gì?' với sự hỗ trợ."
+                  "en": "were unable to ask and answer 'what is it?' questions even with considerable support.",
+                  "vn": "không thể hỏi và trả lời câu hỏi nó là gì? ngay cả khi có sự hỗ trợ đáng kể."
                }
             }
          ]
@@ -302,15 +300,15 @@
             "date": "2026-03-16",
             "homework": {
                "hasHomework": true,
-               "score": 76
+               "score": null
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 75
+               "score": null
             },
-            "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong engaged with the reading text and could identify key details with some guidance. Her writing was satisfactory with some errors in sentence structure.",
+            "isAttended": false,
+            "behavior": null,
+            "feedback": "Tuan Kiet was absent for this lesson.",
             "isAvailable": true
          },
          "info": {
@@ -333,11 +331,8 @@
                   "en": "read and identify key details in a comic-strip text.",
                   "vn": "đọc và xác định các chi tiết chính trong văn bản truyện tranh."
                },
-               "result": 3,
-               "result_description": {
-                  "en": "could identify key details in the text with some support.",
-                  "vn": "có thể xác định các chi tiết chính trong bài với một vài hỗ trợ."
-               }
+               "result": null,
+               "result_description": null
             },
             {
                "id": "PR_008",
@@ -347,11 +342,8 @@
                   "en": "write about classroom objects and shapes using: It's a + noun.",
                   "vn": "viết về các đồ vật và hình dạng trong lớp học bằng cách sử dụng: It's a + danh từ."
                },
-               "result": 2,
-               "result_description": {
-                  "en": "were able to write about classroom objects and shapes with significant support.",
-                  "vn": "có thể viết về các đồ vật và hình dạng trong lớp học với sự hỗ trợ đáng kể."
-               }
+               "result": null,
+               "result_description": null
             }
          ]
       },
@@ -365,15 +357,15 @@
             "date": "2026-03-19",
             "homework": {
                "hasHomework": true,
-               "score": 80
+               "score": 55
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 82
+               "score": 60
             },
             "isAttended": true,
-            "behavior": 4,
-            "feedback": "Phuong demonstrated reasonable recall of unit language during the review. She completed the assessment with some support and showed solid effort throughout.",
+            "behavior": 2,
+            "feedback": "Tuan Kiet found the review lesson difficult and needed substantial assistance throughout the assessment. He showed some recognition of familiar words with support.",
             "isAvailable": true
          },
          "info": {
@@ -396,10 +388,10 @@
                   "en": "recognize and use language taught throughout the unit.",
                   "vn": "nhận biết và sử dụng ngôn ngữ được dạy trong suốt khóa học."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "could recognize and use most language from the unit with support from the teacher.",
-                  "vn": "có thể nhận biết và sử dụng hầu hết ngôn ngữ trong khóa học với sự hỗ trợ của giáo viên."
+                  "en": "could recognize some or most language from the unit but struggled to use it.",
+                  "vn": "có thể nhận ra một số hoặc hầu hết ngôn ngữ trong khóa học nhưng gặp khó khăn khi sử dụng."
                }
             },
             {
@@ -410,10 +402,10 @@
                   "en": "complete a test on the target language and skills of the unit.",
                   "vn": "hoàn thành bài kiểm tra về ngôn ngữ và kĩ năng trọng tâm của chương học."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "could complete most of the test with some support.",
-                  "vn": "có thể hoàn thành hầu hết bài kiểm tra với một vài hỗ trợ."
+                  "en": "were able to complete the test with lots of assistance.",
+                  "vn": "có thể hoàn thành bài kiểm tra với rất nhiều sự hỗ trợ."
                }
             }
          ]
@@ -428,15 +420,15 @@
             "date": "2026-03-23",
             "homework": {
                "hasHomework": true,
-               "score": 74
+               "score": null
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 70
+               "score": null
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong identified most colors and numbers with some assistance. She participated in grammar activities with consistent effort.",
+            "behavior": 2,
+            "feedback": "Tuan Kiet struggled with the colors and numbers vocabulary. He needed a lot of support to identify and say the words and did not complete homework or vocabulary tasks.",
             "isAvailable": true
          },
          "info": {
@@ -459,10 +451,10 @@
                   "en": "identify and say words for colors as well as numbers 1-5.",
                   "vn": "nhận biết và nói các từ chỉ màu sắc cũng như số từ 1-5."
                },
-               "result": 3,
+               "result": 1,
                "result_description": {
-                  "en": "could identify and say the colors and numbers with some assistance.",
-                  "vn": "có thể nhận biết và nói được màu sắc và số lượng với sự trợ giúp."
+                  "en": "were unable to identify and say the colors and numbers.",
+                  "vn": "không thể xác định và nói được màu sắc và số."
                }
             },
             {
@@ -473,10 +465,10 @@
                   "en": "ask and answer questions about what colors people like.",
                   "vn": "hỏi và trả lời những câu hỏi về màu sắc mà mọi người thích."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "required some assistance to ask and answer questions about what colors people like.",
-                  "vn": "cần một số trợ giúp để hỏi và trả lời các câu hỏi về màu sắc mà mọi người thích."
+                  "en": "required a lot of support to ask and answer questions about what colors people like.",
+                  "vn": "cần rất nhiều trợ giúp để có thể hỏi và phản hồi các câu hỏi liên quan đến màu sắc yêu thích của bản thân."
                }
             }
          ]
@@ -491,15 +483,15 @@
             "date": "2026-03-26",
             "homework": {
                "hasHomework": true,
-               "score": 71
+               "score": 62
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 68
+               "score": 70
             },
             "isAttended": true,
             "behavior": 3,
-            "feedback": "Phuong listened attentively and could identify colors with some support. She needed prompting during speaking activities but showed consistent effort.",
+            "feedback": "Tuan Kiet needed considerable support during listening tasks. He showed some effort during speaking activities but found it difficult to produce the target language independently.",
             "isAvailable": true
          },
          "info": {
@@ -522,10 +514,10 @@
                   "en": "listen for colors and numbers.",
                   "vn": "lắng nghe màu sắc và con số."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "were able to listen for colors and numbers with some assistance.",
-                  "vn": "có thể lắng nghe màu sắc và con số với sự trợ giúp."
+                  "en": "were able to listen for colors and numbers with a lot of support.",
+                  "vn": "có thể lắng nghe màu sắc và con số với sự hỗ trợ rất nhiều."
                }
             },
             {
@@ -536,10 +528,10 @@
                   "en": "ask and answer questions about colors.",
                   "vn": "hỏi và trả lời các câu hỏi về màu sắc."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "needed some assistance to ask and answer questions about colors.",
-                  "vn": "cần sự trợ giúp để hỏi và trả lời các câu hỏi về màu sắc."
+                  "en": "required a lot of support to ask and answer questions about colors.",
+                  "vn": "cần rất nhiều sự hỗ trợ để hỏi và trả lời các câu hỏi về màu sắc."
                }
             }
          ]
@@ -554,15 +546,15 @@
             "date": "2026-03-30",
             "homework": {
                "hasHomework": true,
-               "score": 76
+               "score": 58
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 74
+               "score": 65
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong read the text with support and colored the picture correctly. Her writing showed reasonable accuracy with some errors in the target structure.",
+            "behavior": 2,
+            "feedback": "Tuan Kiet found reading the classroom description difficult and needed frequent support. Writing activities were challenging and his sentences required significant correction.",
             "isAvailable": true
          },
          "info": {
@@ -585,10 +577,10 @@
                   "en": "read and identify colors.",
                   "vn": "đọc và nhận biết màu sắc."
                },
-               "result": 3,
+               "result": 2,
                "result_description": {
-                  "en": "were able to read and identify colors with some support.",
-                  "vn": "có thể đọc và nhận biết màu sắc với sự hỗ trợ nhất định."
+                  "en": "were able to read and identify colors with a lot of support.",
+                  "vn": "có thể đọc và nhận dạng màu sắc với sự hỗ trợ đắc lực."
                }
             },
             {
@@ -599,10 +591,10 @@
                   "en": "write about the colors of objects.",
                   "vn": "viết về màu sắc của các đồ vật."
                },
-               "result": 3,
+               "result": 1,
                "result_description": {
-                  "en": "were able to write about colors with some support.",
-                  "vn": "có thể viết về màu sắc nếu được hỗ trợ."
+                  "en": "were unable to write about colors.",
+                  "vn": "không thể viết về màu sắc."
                }
             }
          ]

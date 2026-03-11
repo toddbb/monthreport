@@ -22,6 +22,24 @@
          "default": "This area needs more regular practice at home."
       }
    },
+   "shareText": {
+      "lines": [
+         "📊 {name} just received their Monthly Learning Report from {school}!",
+         "",
+         "",
+         "Program: {program}",
+         "Period: {period}",
+         "",
+         "",
+         "See {name}'s progress in English, including attendance, language skills, homework, and vocabulary.",
+         "",
+         "",
+         "At {school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.",
+         "",
+         "",         
+         "Tap the link to view the full report 👇"
+      ]
+   },
    "recommendations": {
       "vocabulary": {
          "scoreThreshold": 60,
