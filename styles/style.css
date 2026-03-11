@@ -893,7 +893,64 @@ summary::-webkit-details-marker {
    letter-spacing: 0.05em;
 }
 
+/* ── USER SELECT ─────────────────────────────── */
+/* Disable accidental text selection on UI chrome */
+.header,
+.module-head,
+.staff-section,
+.card > :not(.feedback-body):not(.recommendations-list):not(.faq-content),
+.att-msg,
+.period-badge,
+.footer,
+.lang-toggle,
+.share-btn,
+.ai-badge,
+.staff-label,
+.staff-name,
+.donut-wrap,
+.skill-row,
+.pbl-row,
+.mini-card,
+.note-card,
+.meta-item,
+.header-meta {
+   user-select: none;
+}
+
+/* Keep copyable content selectable */
+.feedback-block p,
+.recommendations-list,
+.faq-content {
+   user-select: text;
+}
+
 /* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 519px) {
+   /* Header top: brand on row 1, controls on row 2 */
+   .header-top {
+      flex-wrap: wrap;
+      gap: 10px 12px;
+   }
+   .brand {
+      flex: 1 0 100%;
+   }
+   .header-top-right {
+      margin-left: auto;
+   }
+
+   /* Header student: info on row 1, period badge on row 2 */
+   .header-student {
+      flex-wrap: wrap;
+   }
+   .period-badge {
+      flex-basis: 100%;
+      text-align: left;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 10px;
+      margin-top: 2px;
+   }
+}
+
 @media (min-width: 420px) {
    .header-meta {
       grid-template-columns: repeat(4, 1fr);

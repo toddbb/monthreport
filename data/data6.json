@@ -1,11 +1,11 @@
 {
    "reportType": "eoc",
    "student": {
-      "name": "Le Thi Phuong",
-      "courseCode": "H99YJ-1A-2603",
-      "centreId": "TC-HCMC99",
-      "program": "Super Juniors",
-      "level": "1A"
+      "name": "Minh Thi Hung",
+      "courseCode": "H97YK-K8-2688",
+      "centreId": "TC-HCMC97",
+      "program": "Step Up",
+      "level": "K7"
    },
    "period": {
       "start": "2026-01-02",
@@ -22,79 +22,40 @@
          "Trinh Trieu Thanh"
       ]
    },
-   "attendance": 85,
+   "attendance": 87,
    "languageSkills": {
-      "reading": 3,
-      "writing": 2.8,
-      "speaking": 2.7,
-      "listening": 3.2
-   },
-   "homework": {
-      "averageScore": 74,
-      "completionRate": 87
+      "reading": null,
+      "writing": null,
+      "speaking": 3.5,
+      "listening": 4.6
    },
    "vocabulary": {
-      "averageScore": 79,
-      "completionRate": 62
-   },
-   "centurySkills": {
-      "dates": [
-         "2026-03-25",
-         "2026-03-26"
-      ],
-      "scores": {
-         "creativity": 3,
-         "collaboration": 3,
-         "criticalThinking": 3,
-         "communication": 3,
-         "selfReflection": 3,
-         "digitalLiteracy": 2
-      }
-   },
-   "cambridgeTest": {
-      "type": "Cambridge Starters",
-      "scores": {
-         "readingWriting": 72,
-         "speaking": 75,
-         "listening": 68
-      }
+      "averageScore": 94,
+      "completionRate": 67
    },
    "progressTest": {
-      "testType": "Progress Test 1",
+      "testType": "Assessment",
       "scores": {
-         "readingWritingGrammarVocabulary": 74,
-         "speaking": 78,
-         "listening": 70
+         "Assessment 1": 79,
+         "Assessment 2": 86,
+         "Assessment 3": 92
       }
    },
-   "finalScore": 76,
    "AiFeedback": {
-      "en": "This month, Phuong showed steady progress and a positive attitude in class. Attendance was good at 85%, allowing reasonable engagement with lesson content. Listening skills were a strength, showing solid comprehension of classroom instructions and activities. Reading and writing are developing at a good pace, with ideas becoming clearer. Speaking participation was consistent, though additional practice will help build fluency and confidence. Homework was completed regularly and at a satisfactory level. Vocabulary practice could be more consistent, and more regular review will help strengthen retention of new words.",
-      "vn": "Tháng này, Phương thể hiện sự tiến bộ ổn định và thái độ tích cực trong lớp. Tỷ lệ tham dự tốt ở mức 85%, cho phép tham gia học tập hợp lý với nội dung bài học. Kỹ năng nghe là điểm mạnh, thể hiện khả năng hiểu tốt các hướng dẫn và hoạt động trong lớp. Kỹ năng đọc và viết đang phát triển tốt, các ý tưởng trở nên rõ ràng hơn. Sự tham gia nói chuyện trong lớp là nhất quán, mặc dù việc luyện tập thêm sẽ giúp xây dựng sự trôi chảy và tự tin. Bài tập về nhà được hoàn thành đều đặn và ở mức độ đạt yêu cầu. Việc luyện tập từ vựng có thể được cải thiện thêm, và việc ôn tập thường xuyên hơn sẽ giúp củng cố khả năng ghi nhớ các từ mới."
+      "en": "This month, Minh Thi Hung showed strong participation in class and maintained excellent attendance (97%), allowing full engagement in classroom activities. Performance in reading and listening was very strong, demonstrating good understanding of lesson content. Writing skills are developing steadily, and ideas are becoming clearer. Speaking skills continue to improve, and additional speaking practice will help build confidence. Homework engagement was positive, with 92% of tasks completed and an average score of 84%, showing good effort and understanding. Vocabulary accuracy was strong, and project work demonstrated excellent creativity and communication, with particularly strong speaking results in assessments.",
+      "vn": "Tháng này, Minh Thi Hung đã thể hiện sự tham gia tích cực trong lớp và duy trì sự có mặt xuất sắc (97%), cho phép tham gia đầy đủ vào các hoạt động trong lớp. Hiệu suất trong đọc và nghe rất mạnh, cho thấy sự hiểu biết tốt về nội dung bài học. Kỹ năng viết đang phát triển đều đặn, và ý tưởng trở nên rõ ràng hơn. Kỹ năng nói tiếp tục cải thiện, và việc luyện tập nói thêm sẽ giúp xây dựng sự tự tin. Sự tham gia vào bài tập về nhà là tích cực, với 92% nhiệm vụ hoàn thành và điểm trung bình là 84%, cho thấy nỗ lực và hiểu biết tốt. Độ chính xác của từ vựng rất mạnh, và công việc dự án thể hiện sự sáng tạo và giao tiếp xuất sắc, với kết quả nói đặc biệt mạnh trong các bài đánh giá."
    },
    "recommendations": [
-      {
-         "en": "Set a regular homework time each day and sit nearby while your child works — your presence and encouragement matter even if you cannot help with the English.",
-         "vn": "Sắp xếp thời gian cố định để làm bài tập mỗi ngày và ngồi gần con khi con học — sự hiện diện và động viên của bạn rất quan trọng, dù bạn không thể hỗ trợ trực tiếp bằng tiếng Anh.",
-         "subPoints": [
-            "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (0%)"
-         ]
-      },
       {
          "en": "Complete or retry these vocabulary exercises:",
          "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
          "subPoints": [
-            "Bubbles the Fish Goes to School – Reading and Writing (16 Mar 2026): Vocabulary (0%)"
+            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (0%)"
          ]
       },
       {
-         "en": "Ask your child to copy their vocabulary words or class sentences into a notebook for 5 minutes each day — regular handwriting practice builds accuracy.",
-         "vn": "Nhờ con chép lại các từ vựng hoặc câu học trên lớp vào vở 5 phút mỗi ngày — luyện viết tay thường xuyên giúp con viết chính xác hơn.",
-         "subPoints": []
-      },
-      {
-         "en": "Ask your child to show you what they practiced in class — let them perform or explain it to you, even in Vietnamese. This builds speaking confidence.",
-         "vn": "Nhờ con kể lại hoặc thể hiện những gì đã luyện tập trên lớp — con có thể giải thích bằng tiếng Việt trước. Điều này giúp xây dựng sự tự tin khi nói.",
+         "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
+         "vn": "Khuyến khích con sử dụng ứng dụng luyện nói như ELSA Speak hoặc Oxford Learner's Bookshelf 5–10 phút vài lần mỗi tuần.",
          "subPoints": []
       },
       {
@@ -114,15 +75,15 @@
             "date": "2026-03-02",
             "homework": {
                "hasHomework": true,
-               "score": 50
+               "score": 85
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 80
+               "score": 90
             },
             "isAttended": true,
             "behavior": 3,
-            "feedback": "Phuong followed instructions and participated in class activities with some support. She showed good effort and was willing to try new language.",
+            "feedback": "Minh Thi Hung was attentive and participated well in class activities. She followed instructions and engaged with the lesson content effectively.",
             "isAvailable": true
          },
          "info": {
@@ -156,13 +117,13 @@
                "skill": "speaking",
                "system": "pronunciation",
                "info": {
-                  "en": "identify beginning sounds for Aa, Bb, Cc, Dd.",
+                  "en": "identify beginning sounds for Aa, Bb, Cc, Dd. ",
                   "vn": "xác định các âm đầu của Aa, Bb, Cc, Dd."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "could identify beginning sounds for a, b, c, d but needed some support.",
-                  "vn": "có thể xác định âm đầu của a, b, c, d nhưng cần một số hỗ trợ."
+                  "en": "could identify beginning sounds for a, b, c, d with very little support.",
+                  "vn": "có thể xác định âm đầu của a, b, c, d với rất ít sự hỗ trợ."
                }
             }
          ]
@@ -177,15 +138,15 @@
             "date": "2026-03-09",
             "homework": {
                "hasHomework": true,
-               "score": 78
+               "score": 88
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 72
+               "score": 92
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong could identify most classroom words with some prompting. She participated in pair activities and showed adequate understanding of the target grammar.",
+            "behavior": 4,
+            "feedback": "Minh Thi Hung demonstrated good vocabulary recognition and was enthusiastic during pair activities. She answered questions confidently and showed strong recall of classroom words.",
             "isAvailable": true
          },
          "info": {
@@ -208,10 +169,10 @@
                   "en": "identify and say words for things in a classroom.",
                   "vn": "xác định và nói tên các đồ vật trong lớp học."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "could identify and say words for things in a classroom with some support.",
-                  "vn": "có thể xác định và nói tên các đồ vật trong lớp học nếu được hỗ trợ."
+                  "en": "could identify and say words for things in a classroom with very little support.",
+                  "vn": "có thể xác định và nói các từ chỉ đồ vật trong lớp học với rất ít sự hỗ trợ."
                }
             },
             {
@@ -222,10 +183,10 @@
                   "en": "ask and answer the question: What is it?",
                   "vn": "hỏi và trả lời câu hỏi: Nó là gì?"
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "were able to ask and answer the question with support.",
-                  "vn": "có thể hỏi và trả lời câu hỏi nhưng cần sự hỗ trợ."
+                  "en": "were able to ask and answer the question with some support.",
+                  "vn": "có thể hỏi và trả lời câu hỏi với ít sự hỗ trợ."
                }
             }
          ]
@@ -240,15 +201,15 @@
             "date": "2026-03-12",
             "homework": {
                "hasHomework": true,
-               "score": 72
+               "score": 87
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 68
+               "score": 0
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong listened carefully and could identify most shapes with support. She needed some prompting during speaking activities but participated consistently.",
+            "behavior": 4,
+            "feedback": "My Hang listened carefully and identified shapes confidently. She participated actively in pair work and recalled classroom vocabulary well.",
             "isAvailable": true
          },
          "info": {
@@ -271,10 +232,10 @@
                   "en": "listen for school objects and shapes.",
                   "vn": "lắng nghe các đồ vật và hình dạng trong trường học."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "were able to listen for school objects and shapes with support.",
-                  "vn": "có thể lắng nghe các đồ vật và hình dạng trong trường học khi được hỗ trợ."
+                  "en": "were able to listen for school objects and shapes with some support.",
+                  "vn": "có thể lắng nghe các đồ vật và hình dạng trong trường học với sự hỗ trợ."
                }
             },
             {
@@ -285,9 +246,9 @@
                   "en": "ask and answer 'what is it?' questions.",
                   "vn": "hỏi và trả lời câu hỏi 'nó là gì?'"
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "could ask and answer 'what is it?' questions with support.",
+                  "en": "could ask and answer 'what is it?' questions with some support.",
                   "vn": "có thể hỏi và trả lời câu hỏi 'nó là gì?' với sự hỗ trợ."
                }
             }
@@ -303,15 +264,15 @@
             "date": "2026-03-16",
             "homework": {
                "hasHomework": true,
-               "score": 76
+               "score": 90
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 0
+               "score": 85
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong engaged with the reading text and could identify key details with some guidance. Her writing was satisfactory with some errors in sentence structure.",
+            "behavior": 4,
+            "feedback": "My Hang engaged well with the reading text and showed good understanding of the story. Her written sentences were mostly accurate with minor errors.",
             "isAvailable": true
          },
          "info": {
@@ -334,10 +295,10 @@
                   "en": "read and identify key details in a comic-strip text.",
                   "vn": "đọc và xác định các chi tiết chính trong văn bản truyện tranh."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "could identify key details in the text with some support.",
-                  "vn": "có thể xác định các chi tiết chính trong bài với một vài hỗ trợ."
+                  "en": "could identify key details in the text with very little support.",
+                  "vn": "có thể xác định các chi tiết chính trong bài với ít sự hỗ trợ."
                }
             },
             {
@@ -348,10 +309,10 @@
                   "en": "write about classroom objects and shapes using: It's a + noun.",
                   "vn": "viết về các đồ vật và hình dạng trong lớp học bằng cách sử dụng: It's a + danh từ."
                },
-               "result": 2,
+               "result": 4,
                "result_description": {
-                  "en": "were able to write about classroom objects and shapes with significant support.",
-                  "vn": "có thể viết về các đồ vật và hình dạng trong lớp học với sự hỗ trợ đáng kể."
+                  "en": "were able to write about classroom objects and shapes with some support.",
+                  "vn": "có thể viết về các đồ vật và hình dạng trong lớp học với sự hỗ trợ nhất định."
                }
             }
          ]
@@ -366,15 +327,15 @@
             "date": "2026-03-19",
             "homework": {
                "hasHomework": true,
-               "score": 0
+               "score": 92
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 82
+               "score": 94
             },
             "isAttended": true,
-            "behavior": 4,
-            "feedback": "Phuong demonstrated reasonable recall of unit language during the review. She completed the assessment with some support and showed solid effort throughout.",
+            "behavior": 5,
+            "feedback": "My Hang performed very well in the review lesson and showed strong recall across all unit content. She completed the assessment confidently and with very few errors.",
             "isAvailable": true
          },
          "info": {
@@ -397,10 +358,10 @@
                   "en": "recognize and use language taught throughout the unit.",
                   "vn": "nhận biết và sử dụng ngôn ngữ được dạy trong suốt khóa học."
                },
-               "result": 3,
+               "result": 5,
                "result_description": {
-                  "en": "could recognize and use most language from the unit with support from the teacher.",
-                  "vn": "có thể nhận biết và sử dụng hầu hết ngôn ngữ trong khóa học với sự hỗ trợ của giáo viên."
+                  "en": "could recognize and use all language from the unit independently.",
+                  "vn": "có thể nhận biết và sử dụng độc lập tất cả ngôn ngữ trong khóa học."
                }
             },
             {
@@ -411,10 +372,10 @@
                   "en": "complete a test on the target language and skills of the unit.",
                   "vn": "hoàn thành bài kiểm tra về ngôn ngữ và kĩ năng trọng tâm của chương học."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "could complete most of the test with some support.",
-                  "vn": "có thể hoàn thành hầu hết bài kiểm tra với một vài hỗ trợ."
+                  "en": "were able to complete all of the test with minimal support and few errors.",
+                  "vn": "có thể hoàn thành tất cả bài kiểm tra với rất ít hỗ trợ và vài lỗi sai."
                }
             }
          ]
@@ -429,15 +390,15 @@
             "date": "2026-03-23",
             "homework": {
                "hasHomework": true,
-               "score": 74
+               "score": 86
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 70
+               "score": 90
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong identified most colors and numbers with some assistance. She participated in grammar activities with consistent effort.",
+            "behavior": 4,
+            "feedback": "My Hang engaged enthusiastically with the colors and numbers topic. She identified and named colors accurately and showed good effort in speaking activities.",
             "isAvailable": true
          },
          "info": {
@@ -460,10 +421,10 @@
                   "en": "identify and say words for colors as well as numbers 1-5.",
                   "vn": "nhận biết và nói các từ chỉ màu sắc cũng như số từ 1-5."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "could identify and say the colors and numbers with some assistance.",
-                  "vn": "có thể nhận biết và nói được màu sắc và số lượng với sự trợ giúp."
+                  "en": "identified and said the colors and numbers with minimal support.",
+                  "vn": "xác định và nói màu sắc và số với rất ít sự hỗ trợ."
                }
             },
             {
@@ -474,10 +435,10 @@
                   "en": "ask and answer questions about what colors people like.",
                   "vn": "hỏi và trả lời những câu hỏi về màu sắc mà mọi người thích."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "required some assistance to ask and answer questions about what colors people like.",
-                  "vn": "cần một số trợ giúp để hỏi và trả lời các câu hỏi về màu sắc mà mọi người thích."
+                  "en": "needed minimal help to ask and answer questions about what colors people like.",
+                  "vn": "cần sự trợ giúp tối thiểu để hỏi và trả lời các câu hỏi về màu sắc mà mọi người thích."
                }
             }
          ]
@@ -492,15 +453,15 @@
             "date": "2026-03-26",
             "homework": {
                "hasHomework": true,
-               "score": 71
+               "score": 89
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 68
+               "score": 93
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong listened attentively and could identify colors with some support. She needed prompting during speaking activities but showed consistent effort.",
+            "behavior": 4,
+            "feedback": "My Hang listened attentively throughout the lesson and identified colors and numbers with strong accuracy. She showed good confidence when speaking in front of the class.",
             "isAvailable": true
          },
          "info": {
@@ -523,10 +484,10 @@
                   "en": "listen for colors and numbers.",
                   "vn": "lắng nghe màu sắc và con số."
                },
-               "result": 3,
+               "result": 5,
                "result_description": {
-                  "en": "were able to listen for colors and numbers with some assistance.",
-                  "vn": "có thể lắng nghe màu sắc và con số với sự trợ giúp."
+                  "en": "were able to listen for colors and numbers independently.",
+                  "vn": "có thể lắng nghe màu sắc và con số một cách độc lập."
                }
             },
             {
@@ -537,10 +498,10 @@
                   "en": "ask and answer questions about colors.",
                   "vn": "hỏi và trả lời các câu hỏi về màu sắc."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "needed some assistance to ask and answer questions about colors.",
-                  "vn": "cần sự trợ giúp để hỏi và trả lời các câu hỏi về màu sắc."
+                  "en": "required minimal guidance to ask and answer questions about colors.",
+                  "vn": "yêu cầu hướng dẫn tối thiểu để hỏi và trả lời các câu hỏi về màu sắc."
                }
             }
          ]
@@ -555,15 +516,15 @@
             "date": "2026-03-30",
             "homework": {
                "hasHomework": true,
-               "score": 76
+               "score": 91
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 74
+               "score": 88
             },
             "isAttended": true,
-            "behavior": 3,
-            "feedback": "Phuong read the text with support and colored the picture correctly. Her writing showed reasonable accuracy with some errors in the target structure.",
+            "behavior": 4,
+            "feedback": "My Hang read the classroom description carefully and colored the picture accurately. Her written sentences showed good control of the target structure with minimal errors.",
             "isAvailable": true
          },
          "info": {
@@ -586,10 +547,10 @@
                   "en": "read and identify colors.",
                   "vn": "đọc và nhận biết màu sắc."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "were able to read and identify colors with some support.",
-                  "vn": "có thể đọc và nhận biết màu sắc với sự hỗ trợ nhất định."
+                  "en": "were able to read and identify colors with minimal assistance.",
+                  "vn": "có thể đọc và nhận biết màu sắc với sự hỗ trợ tối thiểu."
                }
             },
             {
@@ -600,10 +561,10 @@
                   "en": "write about the colors of objects.",
                   "vn": "viết về màu sắc của các đồ vật."
                },
-               "result": 3,
+               "result": 4,
                "result_description": {
-                  "en": "were able to write about colors with some support.",
-                  "vn": "có thể viết về màu sắc nếu được hỗ trợ."
+                  "en": "were able to write about colors with minimal assistance.",
+                  "vn": "có thể viết về màu sắc với sự hỗ trợ tối thiểu."
                }
             }
          ]

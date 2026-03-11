@@ -123,7 +123,8 @@ function shareReport() {
    const school = document.querySelector(".brand-name")?.textContent || "XYX School";
    const period = document.getElementById("hdr-period")?.textContent || "";
    const program = document.getElementById("hdr-program")?.textContent || "";
-   const titleTpl = s.shareTitle;
+   const isEocShare = appData?.reportType === "eoc";
+   const titleTpl = isEocShare ? s.shareTitleEoc : s.shareTitle;
    const title = titleTpl.replace("{name}", name).replace("{school}", school);
    const vars = { name, school, program, period };
    const defaultLines = [
@@ -190,13 +191,19 @@ function render(d, cfg) {
    const lang = getLang();
    const s = S();
 
+   const isEoc = d.reportType === "eoc";
+
    /* Header */
    $("hdr-name").textContent = d.student.name || "";
    const courseProgramLevel = [d.student.courseCode, d.student.program, d.student.level].filter((x) => !blank(x)).join(" - ");
    $("hdr-course").textContent = courseProgramLevel || "";
+   const badgeEl = document.querySelector("[data-i18n='periodBadge']");
+   if (badgeEl && isEoc) badgeEl.textContent = s.periodBadgeEoc;
    if (d.period) {
       $("hdr-period").textContent = `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)}`;
-      document.title = `${monthName(d.period)} Report – ${d.student.name}`;
+      document.title = isEoc
+         ? `${monthName(d.period)} End of Course Progress Report – ${d.student.name}`
+         : `${monthName(d.period)} Progress Report – ${d.student.name}`;
    }
 
    /* Staff */
@@ -222,9 +229,6 @@ function render(d, cfg) {
       const feedbackText = d.AiFeedback[lang] ?? d.AiFeedback.en;
       if (feedbackText) $("feedback-summary").textContent = feedbackText;
    }
-
-   /* Language skills average (used for Final Score) */
-   const outcomesAvgRaw = d.languageSkills && !blank(d.languageSkills) ? average(Object.values(d.languageSkills)) : null;
 
    /* Attendance */
    if (!blank(d.attendance)) {
@@ -370,15 +374,10 @@ function render(d, cfg) {
    /* Progress Test */
    const prog = d.progressTest?.scores;
    if (prog && !blank(prog)) {
-      const labels = [
-         ["readingWritingGrammarVocabulary", s.progressLabels.readingWritingGrammarVocabulary],
-         ["speaking", s.progressLabels.speaking],
-         ["listening", s.progressLabels.listening],
-      ];
       let html = "";
-      for (const [key, lbl] of labels) {
-         const v = prog[key];
+      for (const [key, v] of Object.entries(prog)) {
          if (v === null || v === undefined || v === "") continue;
+         const lbl = s.progressLabels[key] ?? key;
          const score = num(v);
          const c = col(score, cfg);
          html += `
@@ -394,16 +393,7 @@ function render(d, cfg) {
    }
 
    /* Final Score */
-   const outcomesAvgPct = outcomesAvgRaw !== null ? (outcomesAvgRaw / 5) * 100 : null;
-   const finalCandidates = [
-      hwOk ? num(hw.averageScore) : null,
-      vOk ? num(vcb.averageScore) : null,
-      camb && !blank(camb) ? average(Object.values(camb)) : null,
-      prog && !blank(prog) ? average(Object.values(prog)) : null,
-      outcomesAvgPct,
-   ].filter((v) => v !== null);
-
-   const finalScore = finalCandidates.length ? average(finalCandidates) : null;
+   const finalScore = num(d.finalScore);
    if (finalScore !== null) {
       $("final-donut-wrap").innerHTML = buildDonut(finalScore, "final", cfg);
       $("final-note").textContent = s.finalCalcNote.replace("{score}", Math.round(finalScore));
@@ -452,8 +442,8 @@ function render(d, cfg) {
    /* Footer */
    $("ftr-course").textContent = `© Copyright ${new Date().getFullYear()} ILA Vietnam`;
    $("ftr-date").textContent = d.period
-      ? s.footerReport.replace("{month}", monthName(d.period))
-      : s.footerMonthlyReport;
+      ? (isEoc ? s.footerReportEoc : s.footerReport).replace("{month}", monthName(d.period))
+      : (isEoc ? s.footerFallbackEoc : s.footerMonthlyReport);
 }
 
 let appConfig;

@@ -1,4 +1,5 @@
 {
+   "reportType": "monthly",
    "student": {
       "name": "Le Thi Phuong",
       "courseCode": "H99YJ-1A-2603",
@@ -36,44 +37,14 @@
       "averageScore": 79,
       "completionRate": 62
    },
-   "centurySkills": {
-      "dates": [
-         "2026-03-25",
-         "2026-03-26"
-      ],
-      "scores": {
-         "creativity": 3,
-         "collaboration": 3,
-         "criticalThinking": 3,
-         "communication": 3,
-         "selfReflection": 3,
-         "digitalLiteracy": 2
-      }
-   },
-   "cambridgeTest": {
-      "type": "Cambridge Starters",
-      "scores": {
-         "readingWriting": 72,
-         "speaking": 75,
-         "listening": 68
-      }
-   },
-   "progressTest": {
-      "testType": "Progress Test 1",
-      "scores": {
-         "readingWritingGrammarVocabulary": 74,
-         "speaking": 78,
-         "listening": 70
-      }
-   },
    "AiFeedback": {
       "en": "This month, Phuong showed steady progress and a positive attitude in class. Attendance was good at 85%, allowing reasonable engagement with lesson content. Listening skills were a strength, showing solid comprehension of classroom instructions and activities. Reading and writing are developing at a good pace, with ideas becoming clearer. Speaking participation was consistent, though additional practice will help build fluency and confidence. Homework was completed regularly and at a satisfactory level. Vocabulary practice could be more consistent, and more regular review will help strengthen retention of new words.",
       "vn": "Tháng này, Phương thể hiện sự tiến bộ ổn định và thái độ tích cực trong lớp. Tỷ lệ tham dự tốt ở mức 85%, cho phép tham gia học tập hợp lý với nội dung bài học. Kỹ năng nghe là điểm mạnh, thể hiện khả năng hiểu tốt các hướng dẫn và hoạt động trong lớp. Kỹ năng đọc và viết đang phát triển tốt, các ý tưởng trở nên rõ ràng hơn. Sự tham gia nói chuyện trong lớp là nhất quán, mặc dù việc luyện tập thêm sẽ giúp xây dựng sự trôi chảy và tự tin. Bài tập về nhà được hoàn thành đều đặn và ở mức độ đạt yêu cầu. Việc luyện tập từ vựng có thể được cải thiện thêm, và việc ôn tập thường xuyên hơn sẽ giúp củng cố khả năng ghi nhớ các từ mới."
    },
    "recommendations": [
       {
-         "en": "Complete or retry these homework activities:",
-         "vn": "Hoàn thành hoặc làm lại các bài tập về nhà sau:",
+         "en": "Set a regular homework time each day and sit nearby while your child works — your presence and encouragement matter even if you cannot help with the English.",
+         "vn": "Sắp xếp thời gian cố định để làm bài tập mỗi ngày và ngồi gần con khi con học — sự hiện diện và động viên của bạn rất quan trọng, dù bạn không thể hỗ trợ trực tiếp bằng tiếng Anh.",
          "subPoints": [
             "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (0%)"
          ]
@@ -86,8 +57,18 @@
          ]
       },
       {
-         "en": "Ask your child to answer simple English questions aloud at home.",
-         "vn": "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà.",
+         "en": "Ask your child to complete grammar exercises in their workbook and review any mistakes together — even if you cannot read English, checking that answers are filled in helps build the habit.",
+         "vn": "Nhờ con hoàn thành các bài tập ngữ pháp trong sách bài tập và cùng xem lại các lỗi sai — dù bạn không đọc được tiếng Anh, việc kiểm tra xem con đã điền đầy đủ sẽ giúp hình thành thói quen tốt.",
+         "subPoints": []
+      },
+      {
+         "en": "Ask your child to copy their vocabulary words or class sentences into a notebook for 5 minutes each day — regular handwriting practice builds accuracy.",
+         "vn": "Nhờ con chép lại các từ vựng hoặc câu học trên lớp vào vở 5 phút mỗi ngày — luyện viết tay thường xuyên giúp con viết chính xác hơn.",
+         "subPoints": []
+      },
+      {
+         "en": "Ask your child to show you what they practiced in class — let them perform or explain it to you, even in Vietnamese. This builds speaking confidence.",
+         "vn": "Nhờ con kể lại hoặc thể hiện những gì đã luyện tập trên lớp — con có thể giải thích bằng tiếng Việt trước. Điều này giúp xây dựng sự tự tin khi nói.",
          "subPoints": []
       }
    ],

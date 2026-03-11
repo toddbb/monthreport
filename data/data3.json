@@ -1,4 +1,5 @@
 {
+   "reportType": "eoc",
    "student": {
       "name": "Nguyen Tuan Kiet",
       "courseCode": "H99YJ-1A-2602",
@@ -7,8 +8,8 @@
       "level": "1A"
    },
    "period": {
-      "start": "2026-03-01",
-      "end": "2026-03-31"
+      "start": "2026-01-02",
+      "end": "2026-03-17"
    },
    "staff": {
       "teachers": [
@@ -66,14 +67,15 @@
          "listening": 50
       }
    },
+   "finalScore": 63,
    "AiFeedback": {
       "en": "This month, Tuan Kiet found some aspects of class challenging but showed willingness to try when present. Attendance was below expectations at 72%, and missed classes made it difficult to keep up with lesson content. Reading and listening are at an early stage of development, and more consistent exposure to English will help build understanding over time. Writing and speaking are areas that need focused support, and regular practice at home will be essential for progress. Homework completion was low this month, and establishing a regular study routine will help Tuan Kiet consolidate what is covered in class. Vocabulary practice also needs more consistency to build confidence with new words.",
       "vn": "Tháng này, Tuấn Kiệt gặp một số khó khăn trong một số phần của lớp học nhưng đã thể hiện sự sẵn sàng cố gắng khi đến lớp. Tỷ lệ tham dự thấp hơn kỳ vọng ở mức 72%, và các buổi học bị bỏ lỡ khiến việc theo kịp nội dung bài học trở nên khó khăn hơn. Kỹ năng đọc và nghe đang ở giai đoạn phát triển ban đầu, và việc tiếp xúc với tiếng Anh thường xuyên hơn sẽ giúp xây dựng sự hiểu biết theo thời gian. Kỹ năng viết và nói là những lĩnh vực cần được hỗ trợ tập trung, và việc luyện tập thường xuyên ở nhà sẽ rất cần thiết cho sự tiến bộ. Mức độ hoàn thành bài tập về nhà còn thấp trong tháng này, và việc xây dựng thói quen học tập đều đặn sẽ giúp Tuấn Kiệt củng cố những gì đã học trong lớp. Việc luyện tập từ vựng cũng cần thêm sự nhất quán để xây dựng sự tự tin với các từ mới."
    },
    "recommendations": [
       {
-         "en": "Complete or retry these homework activities:",
-         "vn": "Hoàn thành hoặc làm lại các bài tập về nhà sau:",
+         "en": "Set a regular homework time each day and sit nearby while your child works — your presence and encouragement matter even if you cannot help with the English.",
+         "vn": "Sắp xếp thời gian cố định để làm bài tập mỗi ngày và ngồi gần con khi con học — sự hiện diện và động viên của bạn rất quan trọng, dù bạn không thể hỗ trợ trực tiếp bằng tiếng Anh.",
          "subPoints": [
             "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Homework (45%)"
          ]
@@ -86,8 +88,18 @@
          ]
       },
       {
-         "en": "Ask your child to answer simple English questions aloud at home.",
-         "vn": "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà.",
+         "en": "Play phonics songs or videos on YouTube daily — channels like Alphablocks, Super Simple Songs, or Jolly Phonics are excellent for pronunciation at this level.",
+         "vn": "Mở các bài hát hoặc video phonics trên YouTube hàng ngày — các kênh như Alphablocks, Super Simple Songs, hoặc Jolly Phonics rất phù hợp để luyện phát âm ở trình độ này.",
+         "subPoints": []
+      },
+      {
+         "en": "Ask your child to copy their vocabulary words or class sentences into a notebook for 5 minutes each day — regular handwriting practice builds accuracy.",
+         "vn": "Nhờ con chép lại các từ vựng hoặc câu học trên lớp vào vở 5 phút mỗi ngày — luyện viết tay thường xuyên giúp con viết chính xác hơn.",
+         "subPoints": []
+      },
+      {
+         "en": "Ask your child to show you what they practiced in class — let them perform or explain it to you, even in Vietnamese. This builds speaking confidence.",
+         "vn": "Nhờ con kể lại hoặc thể hiện những gì đã luyện tập trên lớp — con có thể giải thích bằng tiếng Việt trước. Điều này giúp xây dựng sự tự tin khi nói.",
          "subPoints": []
       }
    ],

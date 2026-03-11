@@ -5,7 +5,7 @@
 const STRINGS = {
    en: {
       // Header
-      periodBadge: "Monthly Report",
+      periodBadge: "Monthly Progress Report",
       shareBtn: "Share",
       langToggle: "Tiếng Việt",
 
@@ -78,8 +78,7 @@ const STRINGS = {
       finalTitle: "Final Score",
       finalSubNote: "A combined score based on all available report data.",
       finalCalcLabel: "How this is calculated",
-      finalCalcNote:
-         "This score averages available assessment data for this month. It currently shows {score} out of 100. You can replace this with your official scoring formula.",
+      finalCalcNote: "This score is calculated based on assessments, scores, and other relevant data collected throughout the course.",
 
       // Recommendations
       sectionRecommendations: "Recommendations",
@@ -114,29 +113,28 @@ const STRINGS = {
             q: "Who should I contact if I have questions?",
             a: "Please reach out to your child's Teaching Assistant or your Admissions Officer at your center.",
          },
-         {
-            q: "Can I view this report in Vietnamese?",
-            a: "Yes. Click the language button at the top of the report to switch to Vietnamese.",
-         },
       ],
 
       // Dates
       monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      monthsFull: [
-         "January", "February", "March", "April", "May", "June",
-         "July", "August", "September", "October", "November", "December",
-      ],
+      monthsFull: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 
       // Footer / misc
       footerReport: "{month} Report",
-      footerMonthlyReport: "Monthly Report",
-      shareTitle: "{name}'s Monthly Report — {school}",
+      footerMonthlyReport: "Monthly Progress Report",
+      shareTitle: "{name}'s Monthly Progress Report — {school}",
       copiedAlert: "Link copied to clipboard.",
+
+      // EOC variants
+      periodBadgeEoc: "End of Course Progress Report",
+      footerReportEoc: "{month} End of Course Progress Report",
+      footerFallbackEoc: "End of Course Progress Report",
+      shareTitleEoc: "{name}'s End of Course Progress Report — {school}",
    },
 
    vn: {
       // Header
-      periodBadge: "Báo Cáo Hàng Tháng",
+      periodBadge: "Báo Cáo Tiến Độ Hàng Tháng",
       shareBtn: "Chia sẻ",
       langToggle: "English",
 
@@ -209,8 +207,7 @@ const STRINGS = {
       finalTitle: "Điểm Tổng Kết",
       finalSubNote: "Điểm tổng hợp từ tất cả dữ liệu báo cáo hiện có.",
       finalCalcLabel: "Cách tính điểm này",
-      finalCalcNote:
-         "Điểm này là trung bình của các dữ liệu đánh giá trong tháng. Hiện tại là {score} trên 100.",
+      finalCalcNote: "Điểm này là trung bình của các dữ liệu đánh giá trong tháng. Hiện tại là {score} trên 100.",
 
       // Recommendations
       sectionRecommendations: "Khuyến Nghị",
@@ -245,23 +242,35 @@ const STRINGS = {
             q: "Tôi nên liên hệ với ai nếu có câu hỏi?",
             a: "Vui lòng liên hệ với Trợ giảng của con hoặc Nhân viên Tuyển sinh tại trung tâm của bạn.",
          },
-         {
-            q: "Tôi có thể xem báo cáo này bằng tiếng Anh được không?",
-            a: "Có. Nhấn vào nút ngôn ngữ ở đầu báo cáo để chuyển sang tiếng Anh.",
-         },
       ],
 
       // Dates
       monthsShort: ["Th1", "Th2", "Th3", "Th4", "Th5", "Th6", "Th7", "Th8", "Th9", "Th10", "Th11", "Th12"],
       monthsFull: [
-         "Tháng Một", "Tháng Hai", "Tháng Ba", "Tháng Tư", "Tháng Năm", "Tháng Sáu",
-         "Tháng Bảy", "Tháng Tám", "Tháng Chín", "Tháng Mười", "Tháng Mười Một", "Tháng Mười Hai",
+         "Tháng Một",
+         "Tháng Hai",
+         "Tháng Ba",
+         "Tháng Tư",
+         "Tháng Năm",
+         "Tháng Sáu",
+         "Tháng Bảy",
+         "Tháng Tám",
+         "Tháng Chín",
+         "Tháng Mười",
+         "Tháng Mười Một",
+         "Tháng Mười Hai",
       ],
 
       // Footer / misc
       footerReport: "Báo Cáo {month}",
-      footerMonthlyReport: "Báo Cáo Hàng Tháng",
-      shareTitle: "Báo Cáo Tháng Này của {name} — {school}",
+      footerMonthlyReport: "Báo Cáo Tiến Độ Hàng Tháng",
+      shareTitle: "Báo Cáo Tiến Độ Tháng Này của {name} — {school}",
       copiedAlert: "Đã sao chép liên kết.",
+
+      // EOC variants
+      periodBadgeEoc: "Báo Cáo Tiến Độ Cuối Khóa",
+      footerReportEoc: "Báo Cáo Tiến Độ Cuối Khóa {month}",
+      footerFallbackEoc: "Báo Cáo Tiến Độ Cuối Khóa",
+      shareTitleEoc: "Báo Cáo Tiến Độ Cuối Khóa của {name} — {school}",
    },
 };

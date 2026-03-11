@@ -1,4 +1,5 @@
 {
+   "reportType": "eoc",
    "student": {
       "name": "Bui My Hang",
       "courseCode": "H99YJ-1A-2601",
@@ -7,8 +8,8 @@
       "level": "1A"
    },
    "period": {
-      "start": "2026-03-01",
-      "end": "2026-03-31"
+      "start": "2026-01-02",
+      "end": "2026-03-17"
    },
    "staff": {
       "teachers": [
@@ -66,14 +67,27 @@
          "listening": 72
       }
    },
+   "finalScore": 88,
    "AiFeedback": {
       "en": "This month, My Hang showed strong participation in class and maintained excellent attendance (97%), allowing full engagement in classroom activities. Performance in reading and listening was very strong, demonstrating good understanding of lesson content. Writing skills are developing steadily, and ideas are becoming clearer. Speaking skills continue to improve, and additional speaking practice will help build confidence. Homework engagement was positive, with 92% of tasks completed and an average score of 84%, showing good effort and understanding. Vocabulary accuracy was strong, and project work demonstrated excellent creativity and communication, with particularly strong speaking results in assessments.",
       "vn": "Tháng này, My Hang đã thể hiện sự tham gia tích cực trong lớp và duy trì sự có mặt xuất sắc (97%), cho phép tham gia đầy đủ vào các hoạt động trong lớp. Hiệu suất trong đọc và nghe rất mạnh, cho thấy sự hiểu biết tốt về nội dung bài học. Kỹ năng viết đang phát triển đều đặn, và ý tưởng trở nên rõ ràng hơn. Kỹ năng nói tiếp tục cải thiện, và việc luyện tập nói thêm sẽ giúp xây dựng sự tự tin. Sự tham gia vào bài tập về nhà là tích cực, với 92% nhiệm vụ hoàn thành và điểm trung bình là 84%, cho thấy nỗ lực và hiểu biết tốt. Độ chính xác của từ vựng rất mạnh, và công việc dự án thể hiện sự sáng tạo và giao tiếp xuất sắc, với kết quả nói đặc biệt mạnh trong các bài đánh giá."
    },
    "recommendations": [
       {
-         "en": "Ask your child to answer simple English questions aloud at home.",
-         "vn": "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà.",
+         "en": "Complete or retry these vocabulary exercises:",
+         "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
+         "subPoints": [
+            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (0%)"
+         ]
+      },
+      {
+         "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
+         "vn": "Khuyến khích con sử dụng ứng dụng luyện nói như ELSA Speak hoặc Oxford Learner's Bookshelf 5–10 phút vài lần mỗi tuần.",
+         "subPoints": []
+      },
+      {
+         "en": "Ask your child to teach you the sounds or rhymes they learned in class — teaching someone else is one of the best ways to remember.",
+         "vn": "Nhờ con dạy lại cho bạn các âm hoặc bài vần đã học trên lớp — dạy lại cho người khác là một trong những cách ghi nhớ tốt nhất.",
          "subPoints": []
       }
    ],
