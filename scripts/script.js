@@ -12,35 +12,90 @@ function num(v) {
    return isNaN(n) ? null : n;
 }
 
-function fmtDate(s) {
-   const [y, m, d] = s.split("-");
-   return `${parseInt(d)} ${["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+m - 1]} ${y}`;
-}
-
-function monthName(period) {
-   if (!period) return "";
-   const [y, m] = period.start.split("-");
-   return `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][+m - 1]} ${y}`;
-}
-
 function average(values) {
    const nums = values.map(num).filter((v) => v !== null);
    if (!nums.length) return null;
    return nums.reduce((a, b) => a + b, 0) / nums.length;
 }
 
+/* ── Language ────────────────────────────────── */
+function getLang() {
+   return localStorage.getItem("lang") || "vn";
+}
+
+function S() {
+   return STRINGS[getLang()] || STRINGS.en;
+}
+
+/* Resolve a config message that may be { en, vn } or a plain string */
+function tMsg(msgObj) {
+   if (!msgObj) return null;
+   const lang = getLang();
+   if (typeof msgObj === "object" && !Array.isArray(msgObj)) return msgObj[lang] ?? msgObj.en ?? null;
+   return msgObj;
+}
+
+/* Apply all data-i18n text to the DOM */
+function applyStrings() {
+   const s = S();
+   document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      if (s[key] !== undefined) el.textContent = s[key];
+   });
+}
+
+/* Render FAQ <details> items from strings */
+function renderFaq() {
+   const s = S();
+   const container = $("faq-list");
+   if (!container) return;
+   container.innerHTML = s.faq
+      .map((item) => {
+         const idAttr = item.id ? ` id="${item.id}"` : "";
+         return `<details${idAttr}><summary>${item.q}</summary><div class="faq-content">${item.a}</div></details>`;
+      })
+      .join("");
+}
+
+function setLang(lang) {
+   localStorage.setItem("lang", lang);
+   document.documentElement.lang = lang;
+   applyStrings();
+   renderFaq();
+   if (appData && appConfig) render(appData, appConfig);
+}
+
+function toggleLang() {
+   setLang(getLang() === "en" ? "vn" : "en");
+}
+
+/* ── Date helpers (language-aware) ──────────── */
+function fmtDate(s) {
+   const [y, m, d] = s.split("-");
+   const months = S().monthsShort;
+   return `${parseInt(d)} ${months[+m - 1]} ${y}`;
+}
+
+function monthName(period) {
+   if (!period) return "";
+   const [y, m] = period.start.split("-");
+   return `${S().monthsFull[+m - 1]} ${y}`;
+}
+
+/* ── Performance note ────────────────────────── */
 function performanceNote(avg, completion, cfg) {
    const a = num(avg) ?? 0;
    const c = num(completion) ?? 0;
+   const s = S();
    const pn = cfg?.performanceNote ?? {};
    const strongScore = pn.strongScoreMin ?? 85;
    const goodScore = pn.goodScoreMin ?? 80;
    const strongComp = pn.strongCompletionMin ?? 80;
    const msgs = pn.messages ?? {};
-   if (a >= strongScore && c >= strongComp) return msgs.strong ?? "Strong performance and steady practice.";
-   if (a >= goodScore) return msgs.goodScore ?? "Good accuracy. More regular completion will strengthen progress.";
-   if (c >= strongComp) return msgs.goodCompletion ?? "Practice is happening. Focus on accuracy during review.";
-   return msgs.default ?? "This area needs more regular practice at home.";
+   if (a >= strongScore && c >= strongComp) return tMsg(msgs.strong) ?? s.perfStrong;
+   if (a >= goodScore) return tMsg(msgs.goodScore) ?? s.perfGoodScore;
+   if (c >= strongComp) return tMsg(msgs.goodCompletion) ?? s.perfGoodComp;
+   return tMsg(msgs.default) ?? s.perfDefault;
 }
 
 /* ── Colour logic (0–100 scale) ──────────────── */
@@ -61,12 +116,15 @@ function skillCol(score) {
 
 /* ── Share ───────────────────────────────────── */
 function shareReport() {
+   const lang = getLang();
+   const s = S();
    const url = window.location.href;
    const name = document.getElementById("hdr-name")?.textContent || "Student";
    const school = document.querySelector(".brand-name")?.textContent || "XYX School";
    const period = document.getElementById("hdr-period")?.textContent || "";
    const program = document.getElementById("hdr-program")?.textContent || "";
-   const title = `${name}'s Monthly Report — ${school}`;
+   const titleTpl = s.shareTitle;
+   const title = titleTpl.replace("{name}", name).replace("{school}", school);
    const vars = { name, school, program, period };
    const defaultLines = [
       "📊 {name} just received their monthly learning report from {school}!",
@@ -75,14 +133,14 @@ function shareReport() {
       "At {school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.",
       "Tap the link to view the full report 👇",
    ];
-   const text = (appConfig?.shareText?.en ?? defaultLines)
+   const text = (appConfig?.shareText?.[lang] ?? appConfig?.shareText?.en ?? defaultLines)
       .map((line) => line.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? ""))
       .filter((line) => line !== "" && !line.endsWith(": "))
       .join("\n");
    if (navigator.share) {
       navigator.share({ title, text, url });
    } else {
-      navigator.clipboard?.writeText(`${title}\n\n${text}\n\n${url}`).then(() => alert("Link copied to clipboard."));
+      navigator.clipboard?.writeText(`${title}\n\n${text}\n\n${url}`).then(() => alert(s.copiedAlert));
    }
 }
 
@@ -96,9 +154,9 @@ function openFaq(id) {
 
 /* ── PBL star colour (1–5 scale) ─────────────── */
 function starFill(score) {
-   if (score >= 4) return "var(--green)"; /* 4–5/5 — excellent */
-   if (score >= 3) return "var(--yellow)"; /* 3/5 — good        */
-   return "var(--red)"; /* 1–2/5 — needs work */
+   if (score >= 4) return "var(--green)";
+   if (score >= 3) return "var(--yellow)";
+   return "var(--red)";
 }
 
 /* ── Donut chart (r=45, circ≈283) ───────────── */
@@ -129,6 +187,9 @@ function animateDonut(idSuffix, pct) {
    RENDER
 ════════════════════════════════════════════ */
 function render(d, cfg) {
+   const lang = getLang();
+   const s = S();
+
    /* Header */
    $("hdr-name").textContent = d.student.name || "";
    const courseProgramLevel = [d.student.courseCode, d.student.program, d.student.level].filter((x) => !blank(x)).join(" - ");
@@ -156,9 +217,10 @@ function render(d, cfg) {
       $("sec-staff").classList.add("hidden");
    }
 
-   /* Feedback */
-   if (d.AiFeedback?.en) {
-      $("feedback-summary").textContent = d.AiFeedback.en;
+   /* Feedback — use lang, fall back to en */
+   if (d.AiFeedback) {
+      const feedbackText = d.AiFeedback[lang] ?? d.AiFeedback.en;
+      if (feedbackText) $("feedback-summary").textContent = feedbackText;
    }
 
    /* Language skills average (used for Final Score) */
@@ -175,20 +237,16 @@ function render(d, cfg) {
       $("att-track").style.background = c.trk;
       $("att-msg").className = "att-msg " + c.cls;
       const attCfg = cfg?.attendance ?? {};
-      const attThresholds = attCfg.thresholds ?? [
-         { min: 95, message: "Outstanding attendance this month!" },
-         { min: 85, message: "Great attendance — well done!" },
-         { min: 75, message: "Good, but let's aim a little higher!" },
-      ];
-      const attMsg = (attThresholds.find((t) => pct >= t.min) ?? {}).message ?? attCfg.defaultMessage ?? "Attendance needs attention. Please contact us.";
-      $("att-msg").textContent = attMsg;
+      const attThresholds = attCfg.thresholds ?? [];
+      const found = attThresholds.find((t) => pct >= t.min) ?? {};
+      $("att-msg").textContent = tMsg(found.message) ?? tMsg(attCfg.defaultMessage) ?? s.attFallback;
    } else {
       $("sec-att").classList.add("hidden");
    }
 
    /* Language Skills */
    if (d.languageSkills && !blank(d.languageSkills)) {
-      const labels = { reading: "Reading", writing: "Writing", speaking: "Speaking", listening: "Listening" };
+      const labels = s.skillLabels;
       let html = "";
       for (const [key, lbl] of Object.entries(labels)) {
          const v = d.languageSkills[key];
@@ -253,14 +311,7 @@ function render(d, cfg) {
    /* 21st Century Skills */
    const pblScores = d.pbl?.scores;
    if (pblScores && !blank(pblScores)) {
-      const labels = {
-         creativity: "Creativity",
-         collaboration: "Collaboration",
-         criticalThinking: "Critical Thinking",
-         communication: "Communication",
-         selfReflection: "Self-Reflection",
-         digitalLiteracy: "Digital Literacy",
-      };
+      const labels = s.pblLabels;
       const PATH = `<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>`;
       let html = "";
       for (const [key, lbl] of Object.entries(labels)) {
@@ -282,7 +333,7 @@ function render(d, cfg) {
       $("pbl-rows").innerHTML = html;
       if (!html) $("sec-pbl").classList.add("hidden");
       const pblDates = Array.isArray(d.pbl.dates) && d.pbl.dates.length ? d.pbl.dates.map(fmtDate).join(" · ") : "";
-      $("pbl-dates-note").textContent = pblDates ? `Lessons: ${pblDates}` : "Project-based learning skills, rated out of 5.";
+      $("pbl-dates-note").textContent = pblDates ? `${s.pblDatesPrefix}${pblDates}` : s.pblDefaultNote;
    } else {
       $("sec-pbl").classList.add("hidden");
    }
@@ -291,9 +342,9 @@ function render(d, cfg) {
    const camb = d.cambridgeTest?.scores;
    if (camb && !blank(camb)) {
       const labels = [
-         ["readingWriting", "Reading & Writing"],
-         ["speaking", "Speaking"],
-         ["listening", "Listening"],
+         ["readingWriting", s.cambridgeLabels.readingWriting],
+         ["speaking", s.cambridgeLabels.speaking],
+         ["listening", s.cambridgeLabels.listening],
       ];
       let html = "";
       for (const [key, lbl] of labels) {
@@ -309,7 +360,9 @@ function render(d, cfg) {
       }
       $("cambridge-grid").innerHTML = html;
       if (!html) $("sec-cambridge").classList.add("hidden");
-      $("cambridge-note").textContent = d.cambridgeTest.type ? `Results for ${d.cambridgeTest.type} practice test.` : "Results from the Cambridge practice test.";
+      $("cambridge-note").textContent = d.cambridgeTest.type
+         ? s.cambridgeNoteType.replace("{type}", d.cambridgeTest.type)
+         : s.cambridgeNoteDefault;
    } else {
       $("sec-cambridge").classList.add("hidden");
    }
@@ -318,9 +371,9 @@ function render(d, cfg) {
    const prog = d.progressTest?.scores;
    if (prog && !blank(prog)) {
       const labels = [
-         ["readingWritingGrammarVocabulary", "Reading, Writing & Grammar"],
-         ["speaking", "Speaking"],
-         ["listening", "Listening"],
+         ["readingWritingGrammarVocabulary", s.progressLabels.readingWritingGrammarVocabulary],
+         ["speaking", s.progressLabels.speaking],
+         ["listening", s.progressLabels.listening],
       ];
       let html = "";
       for (const [key, lbl] of labels) {
@@ -353,8 +406,7 @@ function render(d, cfg) {
    const finalScore = finalCandidates.length ? average(finalCandidates) : null;
    if (finalScore !== null) {
       $("final-donut-wrap").innerHTML = buildDonut(finalScore, "final", cfg);
-      $("final-note").textContent =
-         `This score averages available assessment data for this month. It currently shows ${Math.round(finalScore)} out of 100. You can replace this with your official scoring formula.`;
+      $("final-note").textContent = s.finalCalcNote.replace("{score}", Math.round(finalScore));
       requestAnimationFrame(() => setTimeout(() => animateDonut("final", finalScore), 150));
    } else {
       $("sec-final").classList.add("hidden");
@@ -362,51 +414,58 @@ function render(d, cfg) {
 
    /* Recommendations */
    const recCfg = cfg?.recommendations ?? {};
-   const lessonRetryCfg = cfg?.lessonRetry ?? {};
-   const THRESHOLDS = {
-      homework: lessonRetryCfg.homeworkThreshold ?? 80,
-      vocabulary: lessonRetryCfg.vocabularyThreshold ?? 80,
-   };
-
    const recList = [];
 
-   /* Use pre-built recommendations from JSON if available */
    if (Array.isArray(d.recommendations) && d.recommendations.length) {
+      /* Use pre-built recommendations from data JSON — use lang, fall back to en */
       d.recommendations.forEach((rec) => {
+         const text = rec[lang] ?? rec.en;
          const subHtml =
-            Array.isArray(rec.subPoints) && rec.subPoints.length ? `<ul>${rec.subPoints.map((sp) => `<li>${typeof sp === "object" ? sp.en : sp}</li>`).join("")}</ul>` : "";
-         recList.push(`${rec.en}${subHtml}`);
+            Array.isArray(rec.subPoints) && rec.subPoints.length
+               ? `<ul>${rec.subPoints.map((sp) => `<li>${typeof sp === "object" ? (sp[lang] ?? sp.en) : sp}</li>`).join("")}</ul>`
+               : "";
+         recList.push(`${text}${subHtml}`);
       });
    } else {
-      /* Fallback: generate from thresholds */
+      /* Fallback: generate from config thresholds */
       const vocabComp = vOk ? num(vcb.completionRate) : null;
       const hwComp = hwOk ? num(hw.completionRate) : null;
       const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
       if (vocabComp !== null && vocabComp < (recCfg.vocabulary?.completionThreshold ?? 80))
-         recList.push(recCfg.vocabulary?.message ?? "Review vocabulary for 5–10 minutes, three times each week.");
+         recList.push(tMsg(recCfg.vocabulary?.message) ?? s.recVocab);
       if (hwComp !== null && hwComp < (recCfg.homework?.completionThreshold ?? 85))
-         recList.push(recCfg.homework?.message ?? "Set a regular homework time at home to improve completion.");
+         recList.push(tMsg(recCfg.homework?.message) ?? s.recHomework);
       if (speaking !== null && speaking < (recCfg.speaking?.threshold ?? 4))
-         recList.push(recCfg.speaking?.message ?? "Ask your child to answer simple English questions aloud at home.");
+         recList.push(tMsg(recCfg.speaking?.message) ?? s.recSpeaking);
       if (!recList.length) {
-         const defaults = recCfg.defaults ?? [
-            "Keep a short and regular English routine at home.",
-            "Encourage your child to speak in complete English sentences.",
-            "Celebrate small wins to keep motivation high.",
-         ];
-         defaults.forEach((s) => recList.push(s));
+         const defaults = recCfg.defaults;
+         const defaultList =
+            defaults && !Array.isArray(defaults)
+               ? (defaults[lang] ?? defaults.en ?? s.recDefaults)
+               : (defaults ?? s.recDefaults);
+         defaultList.forEach((r) => recList.push(r));
       }
    }
 
-   $("recommendations-list").innerHTML = recList.map((s) => `<li>${s}</li>`).join("");
+   $("recommendations-list").innerHTML = recList.map((r) => `<li>${r}</li>`).join("");
 
    /* Footer */
-   //$("ftr-course").textContent = d.student.courseCode ? `Course ${d.student.courseCode}` : "";
    $("ftr-course").textContent = `© Copyright ${new Date().getFullYear()} ILA Vietnam`;
-   $("ftr-date").textContent = d.period ? `${monthName(d.period)} Report` : "Monthly Report";
+   $("ftr-date").textContent = d.period
+      ? s.footerReport.replace("{month}", monthName(d.period))
+      : s.footerMonthlyReport;
 }
 
 let appConfig;
+let appData;
+
+/* ── Early lang init — runs synchronously before fetch ──────────
+   Applies strings and FAQ immediately so static text is correct
+   on first paint, before async data arrives.
+   Function declarations above are hoisted so this is safe.       */
+document.documentElement.lang = getLang();
+applyStrings();
+renderFaq();
 
 /* ── Load data and render ────────────────────── */
 const studentParam = new URLSearchParams(window.location.search).get("student") || "1";
@@ -415,7 +474,6 @@ const dataFile = `data${studentParam}.json`;
 /* ── Student photo (with SVG fallback) ──────── */
 (function () {
    const wrap = document.getElementById("avatar-wrap");
-   const fallbackSVG = wrap.innerHTML;
    const img = new Image();
    img.src = `assets/images/student${studentParam}.png`;
    img.alt = "Student photo";
@@ -424,6 +482,7 @@ const dataFile = `data${studentParam}.json`;
       wrap.appendChild(img);
    };
 })();
+
 Promise.all([
    fetch(dataFile).then((r) => {
       if (!r.ok) throw new Error(`Failed to load ${dataFile} (${r.status})`);
@@ -436,6 +495,14 @@ Promise.all([
 ])
    .then(([data, config]) => {
       appConfig = config;
+      appData = data;
       render(data, config);
+      document.body.classList.add("loaded");
    })
-   .catch((err) => console.error("Report load error:", err));
+   .catch((err) => {
+      console.error("Report load error:", err);
+      document.body.classList.add("loaded"); /* show page even on error */
+   });
+
+/* Safety: reveal page after 2s in case of slow load */
+setTimeout(() => document.body.classList.add("loaded"), 2000);

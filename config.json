@@ -1,11 +1,11 @@
 {
    "attendance": {
       "thresholds": [
-         { "min": 95, "message": "Outstanding attendance this month!" },
-         { "min": 85, "message": "Great attendance — well done!" },
-         { "min": 75, "message": "Good, but let's aim a little higher!" }
+         { "min": 95, "message": { "en": "Outstanding attendance this month!", "vn": "Điểm danh xuất sắc tháng này!" } },
+         { "min": 85, "message": { "en": "Great attendance — well done!", "vn": "Điểm danh tốt — thật xuất sắc!" } },
+         { "min": 75, "message": { "en": "Good, but let's aim a little higher!", "vn": "Tốt, nhưng hãy cố gắng hơn nữa!" } }
       ],
-      "defaultMessage": "Attendance needs attention."
+      "defaultMessage": { "en": "Attendance needs attention.", "vn": "Cần chú ý đến việc đi học đều đặn." }
    },
    "colors": {
       "greenMin": 85,
@@ -16,10 +16,10 @@
       "goodScoreMin": 80,
       "strongCompletionMin": 80,
       "messages": {
-         "strong": "Strong performance and steady practice.",
-         "goodScore": "Good accuracy. More regular completion will strengthen progress.",
-         "goodCompletion": "Practice is happening. Focus on accuracy during review.",
-         "default": "This area needs more regular practice at home."
+         "strong": { "en": "Strong performance and steady practice.", "vn": "Kết quả tốt và luyện tập đều đặn." },
+         "goodScore": { "en": "Good accuracy. More regular completion will strengthen progress.", "vn": "Độ chính xác tốt. Hoàn thành đều đặn hơn sẽ giúp tiến bộ." },
+         "goodCompletion": { "en": "Practice is happening. Focus on accuracy during review.", "vn": "Đang luyện tập tốt. Hãy tập trung vào độ chính xác khi ôn bài." },
+         "default": { "en": "This area needs more regular practice at home.", "vn": "Lĩnh vực này cần luyện tập đều đặn hơn ở nhà." }
       }
    },
    "shareText": {
@@ -59,20 +59,27 @@
    "recommendations": {
       "vocabulary": {
          "scoreThreshold": 60,
-         "message": "Review vocabulary for 5–10 minutes, three times each week."
+         "message": { "en": "Review vocabulary for 5–10 minutes, three times each week.", "vn": "Ôn tập từ vựng 5–10 phút, ba lần mỗi tuần." }
       },
       "homework": {
          "scoreThreshold": 50,
-         "message": "Set a regular homework time at home to improve completion."
+         "message": { "en": "Set a regular homework time at home to improve completion.", "vn": "Đặt thời gian cố định cho bài tập về nhà để cải thiện tỷ lệ hoàn thành." }
       },
       "speaking": {
          "threshold": 4,
-         "message": "Ask your child to answer simple English questions aloud at home."
+         "message": { "en": "Ask your child to answer simple English questions aloud at home.", "vn": "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà." }
       },
-      "defaults": [
-         "Keep a short and regular English routine at home.",
-         "Encourage your child to speak in complete English sentences.",
-         "Celebrate small wins to keep motivation high."
-      ]
+      "defaults": {
+         "en": [
+            "Keep a short and regular English routine at home.",
+            "Encourage your child to speak in complete English sentences.",
+            "Celebrate small wins to keep motivation high."
+         ],
+         "vn": [
+            "Duy trì thói quen luyện tập tiếng Anh ngắn và đều đặn ở nhà.",
+            "Khuyến khích con nói tiếng Anh thành câu hoàn chỉnh.",
+            "Khen ngợi những tiến bộ nhỏ để duy trì động lực."
+         ]
+      }
    }
 }

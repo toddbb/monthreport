@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html>
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Monthly Report</title>
+      <!-- Set lang before CSS renders to avoid toggle flash -->
+      <script>document.documentElement.lang = localStorage.getItem('lang') || 'vn';</script>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,7 +23,10 @@
                   </div>
                </div>
                <div class="header-top-right">
-                  <div class="period-badge">Monthly Report<br /><span id="hdr-period"></span></div>
+                  <button class="lang-toggle" type="button" onclick="toggleLang()" aria-label="Switch language">
+                     <span class="lang-opt" data-lang="vn">VN</span>
+                     <span class="lang-opt" data-lang="en">EN</span>
+                  </button>
                   <button class="share-btn" type="button" onclick="shareReport()" title="Share this report">
                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="18" cy="5" r="3" />
@@ -30,7 +35,7 @@
                         <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
                         <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
                      </svg>
-                     Share
+                     <span data-i18n="shareBtn">Share</span>
                   </button>
                </div>
             </div>
@@ -42,7 +47,7 @@
                      <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" fill="white" opacity=".65" />
                   </svg>
                </div>
-               <div>
+               <div class="student-info">
                   <div class="student-name" id="hdr-name"></div>
                   <div class="hdr-course-container">
                      <span class="student-course" id="hdr-course"></span>
@@ -50,6 +55,7 @@
                      <span class="student-level" id="hdr-level"></span>
                   </div>
                </div>
+               <div class="period-badge"><span data-i18n="periodBadge">Monthly Report</span><br /><span id="hdr-period"></span></div>
             </div>
          </div>
       </header>
@@ -58,14 +64,14 @@
          <!-- ═══════════════ STAFF ═══════════════ -->
          <div class="staff-section" id="sec-staff">
             <div class="staff-heading">
-               <h2 class="sec-head-title">Instructors</h2>
+               <h2 class="sec-head-title" data-i18n="sectionInstructors">Instructors</h2>
             </div>
             <div class="staff-group" id="staff-teachers-group">
-               <span class="staff-label">Teachers</span>
+               <span class="staff-label" data-i18n="labelTeachers">Teachers</span>
                <div class="staff-names" id="staff-teachers"></div>
             </div>
             <div class="staff-group" id="staff-tas-group">
-               <span class="staff-label">Teaching Assistants</span>
+               <span class="staff-label" data-i18n="labelTAs">Teaching Assistants</span>
                <div class="staff-names" id="staff-tas"></div>
             </div>
          </div>
@@ -74,8 +80,8 @@
          <section class="feedback-section">
             <div class="feedback-card">
                <div class="feedback-header">
-                  <span class="feedback-title">Monthly Learning Summary</span>
-                  <span class="ai-badge">Summary</span>
+                  <span class="feedback-title" data-i18n="feedbackTitle">Monthly Learning Summary</span>
+                  <span class="ai-badge" data-i18n="feedbackBadge">Summary</span>
                </div>
                <div class="feedback-body">
                   <div class="feedback-block">
@@ -92,8 +98,8 @@
                <div class="module-head">
                   <div class="mod-icon">A</div>
                   <div>
-                     <h3>Attendance</h3>
-                     <p class="small-note">Regular attendance supports stronger progress.</p>
+                     <h3 data-i18n="attTitle">Attendance</h3>
+                     <p class="small-note" data-i18n="attNote">Regular attendance supports stronger progress.</p>
                   </div>
                </div>
                <div class="att-body">
@@ -113,10 +119,10 @@
                   <div class="mod-icon">L</div>
                   <div>
                      <div class="module-title-row">
-                        <h3>Language Skills</h3>
+                        <h3 data-i18n="langSkillsTitle">Language Skills</h3>
                         <button class="help-icon" type="button" onclick="openFaq('faq-lang-skills')" title="How are Language Skills assessed?">?</button>
                      </div>
-                     <p class="small-note">Based on Teacher Assessment in every lesson.</p>
+                     <p class="small-note" data-i18n="langSkillsNote">Based on Teacher Assessment in every lesson.</p>
                   </div>
                </div>
                <div class="skills-list" id="skills-list"></div>
@@ -127,15 +133,15 @@
                <div class="module-head">
                   <div class="mod-icon">HW</div>
                   <div>
-                     <h3>Homework</h3>
-                     <p class="small-note">Practice completed outside class.</p>
+                     <h3 data-i18n="hwTitle">Homework</h3>
+                     <p class="small-note" data-i18n="hwNote">Practice completed outside class.</p>
                   </div>
                </div>
                <div class="split two-col">
                   <div id="hw-donut-wrap"></div>
                   <div class="metric-stack">
-                     <div class="metric-item">Average score<strong id="hw-avg">—</strong></div>
-                     <div class="metric-item">Completion rate<strong id="hw-completion">—</strong></div>
+                     <div class="metric-item"><span data-i18n="hwAvgLabel">Average score</span><strong id="hw-avg">—</strong></div>
+                     <div class="metric-item"><span data-i18n="hwCompLabel">Completion rate</span><strong id="hw-completion">—</strong></div>
                      <p class="metric-note" id="hw-note"></p>
                   </div>
                </div>
@@ -146,15 +152,15 @@
                <div class="module-head">
                   <div class="mod-icon">V</div>
                   <div>
-                     <h3>Vocabulary</h3>
-                     <p class="small-note">Word practice outside of class.</p>
+                     <h3 data-i18n="vocabTitle">Vocabulary</h3>
+                     <p class="small-note" data-i18n="vocabNote">Word practice outside of class.</p>
                   </div>
                </div>
                <div class="split two-col">
                   <div id="vocab-donut-wrap"></div>
                   <div class="metric-stack">
-                     <div class="metric-item">Average score<strong id="vocab-avg">—</strong></div>
-                     <div class="metric-item">Completion rate<strong id="vocab-completion">—</strong></div>
+                     <div class="metric-item"><span data-i18n="vocabAvgLabel">Average score</span><strong id="vocab-avg">—</strong></div>
+                     <div class="metric-item"><span data-i18n="vocabCompLabel">Completion rate</span><strong id="vocab-completion">—</strong></div>
                      <p class="metric-note" id="vocab-note"></p>
                   </div>
                </div>
@@ -165,7 +171,7 @@
                <div class="module-head">
                   <div class="mod-icon">★</div>
                   <div>
-                     <h3>21st Century Skills</h3>
+                     <h3 data-i18n="pblTitle">21st Century Skills</h3>
                      <p class="small-note" id="pbl-dates-note"></p>
                   </div>
                </div>
@@ -177,7 +183,7 @@
                <div class="module-head">
                   <div class="mod-icon">C</div>
                   <div>
-                     <h3>Cambridge Practice Test</h3>
+                     <h3 data-i18n="cambridgeTitle">Cambridge Practice Test</h3>
                      <p class="small-note" id="cambridge-note"></p>
                   </div>
                </div>
@@ -189,8 +195,8 @@
                <div class="module-head">
                   <div class="mod-icon">PT</div>
                   <div>
-                     <h3>Progress Test</h3>
-                     <p class="small-note">Checkpoint results from in-class tests.</p>
+                     <h3 data-i18n="progressTitle">Progress Test</h3>
+                     <p class="small-note" data-i18n="progressNote">Checkpoint results from in-class tests.</p>
                   </div>
                </div>
                <div class="mini-grid" id="progress-grid"></div>
@@ -201,18 +207,15 @@
                <div class="module-head">
                   <div class="mod-icon">FS</div>
                   <div>
-                     <h3>Final Score</h3>
-                     <p class="small-note">A combined score based on all available report data.</p>
+                     <h3 data-i18n="finalTitle">Final Score</h3>
+                     <p class="small-note" data-i18n="finalSubNote">A combined score based on all available report data.</p>
                   </div>
                </div>
                <div class="split two-col">
                   <div id="final-donut-wrap"></div>
                   <div class="note-card">
-                     <strong>How this is calculated</strong>
-                     <span id="final-note"
-                        >This shows the overall English proficieny at the end of the course for this level. It includes results of Teacher assessment, homework, projects, and
-                        progress tests.</span
-                     >
+                     <strong data-i18n="finalCalcLabel">How this is calculated</strong>
+                     <span id="final-note"></span>
                   </div>
                </div>
             </article>
@@ -223,8 +226,8 @@
          <div class="section rise recommendations">
             <div class="card">
                <div class="sec-head">
-                  <h2 class="sec-head-title">Recommendations</h2>
-                  <div class="badge">At home support</div>
+                  <h2 class="sec-head-title" data-i18n="sectionRecommendations">Recommendations</h2>
+                  <div class="badge" data-i18n="recommendationsBadge">At home support</div>
                </div>
                <ul id="recommendations-list"></ul>
             </div>
@@ -234,38 +237,10 @@
          <div class="section rise">
             <div class="card">
                <div class="sec-head">
-                  <h2 class="sec-head-title">Notes &amp; FAQ</h2>
-                  <div class="badge">Help</div>
+                  <h2 class="sec-head-title" data-i18n="sectionFaq">Notes &amp; FAQ</h2>
+                  <div class="badge" data-i18n="faqBadge">Help</div>
                </div>
-               <details>
-                  <summary>What do these scores mean?</summary>
-                  <div class="faq-content">
-                     This report is designed to be easy to understand. Higher numbers and fuller charts indicate stronger performance or more completed practice. Sections that are
-                     missing simply have no data available for this month.
-                  </div>
-               </details>
-               <details id="faq-lang-skills">
-                  <summary>How are Language Skills assessed?</summary>
-                  <div class="faq-content">
-                     Language Skills are based on the Teacher's assessment in every lesson. They reflect the student's current performance in class and are a key factor in
-                     determining their overall course progress. A score of 3 or above indicates the student is meeting expectations for their level, while scores of 1–2 suggest
-                     areas where additional focus and practice may be needed.
-                  </div>
-               </details>
-               <details>
-                  <summary>How can I help at home?</summary>
-                  <div class="faq-content">
-                     Encourage short and regular English practice. Even 5–10 minutes a few times each week can help build confidence and improve long-term progress.
-                  </div>
-               </details>
-               <details>
-                  <summary>Who should I contact if I have questions?</summary>
-                  <div class="faq-content">Please reach out to your child's Teaching Assistant or your Admissions Officer at your center.</div>
-               </details>
-               <details>
-                  <summary>Can I view this report in English / Tôi có thể xem báo cáo này bằng tiếng Việt được không?</summary>
-                  <div class="faq-content">Yes. Change your Profile settings to whichever language you prefer.</div>
-               </details>
+               <div id="faq-list"></div>
             </div>
          </div>
 
@@ -277,6 +252,7 @@
       </div>
       <!-- /page -->
 
+      <script src="scripts/strings.js"></script>
       <script src="scripts/script.js"></script>
    </body>
 </html>

@@ -56,6 +56,11 @@ body {
    color: var(--ink);
    line-height: 1.6;
    padding-bottom: 60px;
+   opacity: 0;
+   transition: opacity 0.3s ease;
+}
+body.loaded {
+   opacity: 1;
 }
 
 /* ── ANIMATIONS ─────────────────────────────── */
@@ -228,6 +233,47 @@ body {
    height: 14px;
    flex-shrink: 0;
 }
+
+/* Language toggle — segmented pill */
+.lang-toggle {
+   display: flex;
+   align-items: center;
+   height: 30px;
+   padding: 3px;
+   gap: 2px;
+   border-radius: 99px;
+   border: 1.5px solid rgba(255, 255, 255, 0.35);
+   background: rgba(255, 255, 255, 0.12);
+   cursor: pointer;
+   flex-shrink: 0;
+   font-family: var(--font);
+}
+.lang-toggle:hover {
+   border-color: rgba(255, 255, 255, 0.55);
+}
+.lang-opt {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 8px;
+   height: 100%;
+   border-radius: 99px;
+   font-size: 0.68rem;
+   font-weight: 700;
+   letter-spacing: 0.06em;
+   color: rgba(255, 255, 255, 0.5);
+   transition:
+      background 0.2s,
+      color 0.2s;
+   user-select: none;
+}
+/* Active side driven by html[lang] — no JS needed */
+html[lang="en"] .lang-toggle [data-lang="en"],
+html[lang="vn"] .lang-toggle [data-lang="vn"] {
+   background: #fff;
+   color: var(--header-a);
+}
+
 .period-badge {
    font-size: 0.65rem;
    font-weight: 600;
@@ -236,6 +282,7 @@ body {
    opacity: 0.6;
    text-align: right;
    line-height: 1.8;
+   flex-shrink: 0;
 }
 
 .header-student {
@@ -244,6 +291,10 @@ body {
    gap: 14px;
    padding-top: 18px;
    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.student-info {
+   flex: 1;
+   min-width: 0;
 }
 .avatar {
    width: 60px;
