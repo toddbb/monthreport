@@ -2,25 +2,18 @@
    "reportType": "eoc",
    "student": {
       "name": "Bui My Hang",
-      "courseCode": "H99YJ-1A-2601",
+      "courseCode": "H99YJ-2A-2601",
       "centreId": "TC-HCMC99",
       "program": "Super Juniors",
-      "level": "1A"
+      "level": "2A"
    },
    "period": {
       "start": "2026-01-02",
       "end": "2026-03-17"
    },
    "staff": {
-      "teachers": [
-         "David Franklin",
-         "Nguyen Mai Thi"
-      ],
-      "teachingAssistants": [
-         "Pham Trinh Tu",
-         "Dao Khoi Anh",
-         "Trinh Trieu Thanh"
-      ]
+      "teachers": ["David Franklin", "Nguyen Mai Thi"],
+      "teachingAssistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
    },
    "attendance": 97,
    "languageSkills": {
@@ -38,10 +31,7 @@
       "completionRate": 67
    },
    "pbl": {
-      "dates": [
-         "2026-03-25",
-         "2026-03-26"
-      ],
+      "dates": ["2026-03-25", "2026-03-26"],
       "scores": {
          "creativity": 5,
          "collaboration": 4,
@@ -76,9 +66,7 @@
       {
          "en": "Complete or retry these vocabulary exercises:",
          "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
-         "subPoints": [
-            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (0%)"
-         ]
+         "subPoints": ["Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (0%)"]
       },
       {
          "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
@@ -183,9 +171,7 @@
                "vn": "Người học xác định các đồ vật trong lớp học."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
-            ]
+            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
          },
          "outcomes": [
             {
@@ -246,9 +232,7 @@
                "vn": "Học sinh lắng nghe những đồ vật ở trường và cho biết đồ vật có hình dạng như thế nào."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
-            ]
+            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
          },
          "outcomes": [
             {
@@ -309,9 +293,7 @@
                "vn": "Người học đọc một đoạn truyện tranh sau đó luyện viết các câu ngắn."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
-            ]
+            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
          },
          "outcomes": [
             {
@@ -372,9 +354,7 @@
                "vn": "Người học xem lại nội dung lớp học sau đó hoàn thành một bài kiểm tra hình thành ngắn."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
-            ]
+            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
          },
          "outcomes": [
             {
@@ -435,9 +415,7 @@
                "vn": "Người học thực hành màu sắc, số 1-5 và chữ cái Hh-Kk."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Wh- questions: What color is it? It's… Do you like…? Yes, I do. No, I don't."
-            ]
+            "grammar": ["Wh- questions: What color is it? It's… Do you like…? Yes, I do. No, I don't."]
          },
          "outcomes": [
             {
@@ -498,9 +476,7 @@
                "vn": "Học sinh lắng nghe và cho biết đồ vật có màu gì."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Wh- questions: What color is it? It's… Do you like? Yes, I do. No, I don't."
-            ]
+            "grammar": ["Wh- questions: What color is it? It's… Do you like? Yes, I do. No, I don't."]
          },
          "outcomes": [
             {
@@ -561,9 +537,7 @@
                "vn": "Học sinh đọc và mô tả một lớp học đầy màu sắc."
             },
             "cefr": "Pre-A1",
-            "grammar": [
-               "Wh- questions: What color is it? It's… What is it? It's a …"
-            ]
+            "grammar": ["Wh- questions: What color is it? It's… What is it? It's a …"]
          },
          "outcomes": [
             {

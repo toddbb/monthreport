@@ -12,6 +12,13 @@ function num(v) {
    return isNaN(n) ? null : n;
 }
 
+function percentToShields(percent) {
+   const p = Number(percent);
+   if (!Number.isFinite(p)) return null;
+   const clamped = Math.min(100, Math.max(0, p));
+   return Math.min(5, Math.floor(clamped / 20) + 1);
+}
+
 function average(values) {
    const nums = values.map(num).filter((v) => v !== null);
    if (!nums.length) return null;
@@ -356,10 +363,16 @@ function render(d, cfg) {
          if (v === null || v === undefined || v === "") continue;
          const score = num(v);
          const c = col(score, cfg);
+         const shields = percentToShields(score);
+         const shieldsHtml = Array.from({length: 5}, (_, i) =>
+            i < shields
+               ? `<svg class="shield-icon shield-on" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="currentColor"/></svg>`
+               : `<svg class="shield-icon shield-off" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>`
+         ).join("");
          html += `
 <div class="mini-card">
   <div class="mini-label">${lbl}</div>
-  <div class="mini-value ${c.cls}">${Math.round(score)}%</div>
+  <div class="mini-shields">${shieldsHtml}</div>
 </div>`;
       }
       $("cambridge-grid").innerHTML = html;
