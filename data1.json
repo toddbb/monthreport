@@ -2,17 +2,24 @@
    "student": {
       "name": "Bui My Hang",
       "courseCode": "H99YJ-1A-2601",
-      "centre_id": "TC-HCMC99",
+      "centreId": "TC-HCMC99",
       "program": "Super Juniors",
       "level": "1A"
    },
    "period": {
-      "start": "01/03/2026",
-      "end": "31/03/2026"
+      "start": "2026-03-01",
+      "end": "2026-03-31"
    },
    "staff": {
-      "teachers": ["David Franklin", "Nguyen Mai Thi"],
-      "assistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
+      "teachers": [
+         "David Franklin",
+         "Nguyen Mai Thi"
+      ],
+      "teachingAssistants": [
+         "Pham Trinh Tu",
+         "Dao Khoi Anh",
+         "Trinh Trieu Thanh"
+      ]
    },
    "attendance": 97,
    "languageSkills": {
@@ -29,8 +36,11 @@
       "averageScore": 94,
       "completionRate": 67
    },
-   "centurySkills": {
-      "dates": ["25/03/2026", "26/03/2026"],
+   "pbl": {
+      "dates": [
+         "2026-03-25",
+         "2026-03-26"
+      ],
       "scores": {
          "creativity": 5,
          "collaboration": 4,
@@ -49,19 +59,33 @@
       }
    },
    "progressTest": {
-      "readingWritingGrammarVocabulary": 89,
-      "speaking": 92,
-      "listening": 72
+      "testType": "Progress Test 1",
+      "scores": {
+         "readingWritingGrammarVocabulary": 89,
+         "speaking": 92,
+         "listening": 72
+      }
    },
-   "feedback": {
-      "summary": "This month, My Hang showed strong participation in class and maintained excellent attendance (97%), allowing full engagement in classroom activities. Performance in reading and listening was very strong, demonstrating good understanding of lesson content. Writing skills are developing steadily, and ideas are becoming clearer. Speaking skills continue to improve, and additional speaking practice will help build confidence. Homework engagement was positive, with 92% of tasks completed and an average score of 84%, showing good effort and understanding. Vocabulary accuracy was strong, and project work demonstrated excellent creativity and communication, with particularly strong speaking results in assessments.",
-      "recommendations": "To continue progressing, My Hang is encouraged to complete all homework and vocabulary exercises regularly, as these activities reinforce the language learned in each lesson. Revisiting homework tasks to improve scores and practicing vocabulary more consistently will help strengthen understanding and retention. Continued practice with listening activities and speaking in English during class and at home will also help build confidence and fluency."
+   "AiFeedback": {
+      "en": "This month, My Hang showed strong participation in class and maintained excellent attendance (97%), allowing full engagement in classroom activities. Performance in reading and listening was very strong, demonstrating good understanding of lesson content. Writing skills are developing steadily, and ideas are becoming clearer. Speaking skills continue to improve, and additional speaking practice will help build confidence. Homework engagement was positive, with 92% of tasks completed and an average score of 84%, showing good effort and understanding. Vocabulary accuracy was strong, and project work demonstrated excellent creativity and communication, with particularly strong speaking results in assessments.",
+      "vn": "Tháng này, My Hang đã thể hiện sự tham gia tích cực trong lớp và duy trì sự có mặt xuất sắc (97%), cho phép tham gia đầy đủ vào các hoạt động trong lớp. Hiệu suất trong đọc và nghe rất mạnh, cho thấy sự hiểu biết tốt về nội dung bài học. Kỹ năng viết đang phát triển đều đặn, và ý tưởng trở nên rõ ràng hơn. Kỹ năng nói tiếp tục cải thiện, và việc luyện tập nói thêm sẽ giúp xây dựng sự tự tin. Sự tham gia vào bài tập về nhà là tích cực, với 92% nhiệm vụ hoàn thành và điểm trung bình là 84%, cho thấy nỗ lực và hiểu biết tốt. Độ chính xác của từ vựng rất mạnh, và công việc dự án thể hiện sự sáng tạo và giao tiếp xuất sắc, với kết quả nói đặc biệt mạnh trong các bài đánh giá."
    },
+   "recommendations": [
+      {
+         "en": "Ask your child to answer simple English questions aloud at home.",
+         "vn": "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà.",
+         "subPoints": []
+      }
+   ],
    "lessons": [
       {
          "id": "SJ_PR_001V2",
+         "title": {
+            "en": "Hello!",
+            "vn": "Xin chào!"
+         },
          "classes_seats": {
-            "date": "02/03/2026",
+            "date": "2026-03-02",
             "homework": {
                "hasHomework": true,
                "score": 85
@@ -73,7 +97,7 @@
             "isAttended": true,
             "behavior": 3,
             "feedback": "My Hang was attentive and participated well in class activities. She followed instructions and engaged with the lesson content effectively.",
-            "available": 1
+            "isAvailable": true
          },
          "info": {
             "focus": "Welcome Lesson",
@@ -86,13 +110,15 @@
                "Wh- questions: What's your name? How are you?; Verb be: am, is, are; Pronouns: I, he, she; Imperative commands: Look. Listen. Be quiet. Sit down. Stand up. Be nice."
             ]
          },
-
          "outcomes": [
             {
                "id": "PR_001v2",
                "skill": "speaking",
                "system": "vocabulary",
-               "info": { "en": "ask and answer questions about feelings and names.", "vn": "hỏi và phản hồi các câu hỏi về cảm xúc và tên gọi." },
+               "info": {
+                  "en": "ask and answer questions about feelings and names.",
+                  "vn": "hỏi và phản hồi các câu hỏi về cảm xúc và tên gọi."
+               },
                "result": 3,
                "result_description": {
                   "en": "could ask and answer questions about feelings and names but needed some support.",
@@ -103,11 +129,455 @@
                "id": "PR_002v2",
                "skill": "speaking",
                "system": "pronunciation",
-               "info": { "en": "identify beginning sounds for Aa, Bb, Cc, Dd. ", "vn": "xác định các âm đầu của Aa, Bb, Cc, Dd." },
+               "info": {
+                  "en": "identify beginning sounds for Aa, Bb, Cc, Dd. ",
+                  "vn": "xác định các âm đầu của Aa, Bb, Cc, Dd."
+               },
                "result": 4,
                "result_description": {
                   "en": "could identify beginning sounds for a, b, c, d with very little support.",
                   "vn": "có thể xác định âm đầu của a, b, c, d với rất ít sự hỗ trợ."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_002V2",
+         "title": {
+            "en": "A New Classroom",
+            "vn": "Lớp Học Mới"
+         },
+         "classes_seats": {
+            "date": "2026-03-09",
+            "homework": {
+               "hasHomework": true,
+               "score": 88
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 92
+            },
+            "isAttended": true,
+            "behavior": 4,
+            "feedback": "My Hang demonstrated good vocabulary recognition and was enthusiastic during pair activities. She answered questions confidently and showed strong recall of classroom words.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Vocabulary and Grammar",
+            "desc_teacher": {
+               "en": "Learners identify things in the classroom.",
+               "vn": "Người học xác định các đồ vật trong lớp học."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_003v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "identify and say words for things in a classroom.",
+                  "vn": "xác định và nói tên các đồ vật trong lớp học."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "could identify and say words for things in a classroom with very little support.",
+                  "vn": "có thể xác định và nói các từ chỉ đồ vật trong lớp học với rất ít sự hỗ trợ."
+               }
+            },
+            {
+               "id": "PR_004v2",
+               "skill": "speaking",
+               "system": "grammar",
+               "info": {
+                  "en": "ask and answer the question: What is it?",
+                  "vn": "hỏi và trả lời câu hỏi: Nó là gì?"
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "were able to ask and answer the question with some support.",
+                  "vn": "có thể hỏi và trả lời câu hỏi với ít sự hỗ trợ."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_003V2",
+         "title": {
+            "en": "Shapes in Our Classroom",
+            "vn": "Các Hình Học Trong Lớp"
+         },
+         "classes_seats": {
+            "date": "2026-03-12",
+            "homework": {
+               "hasHomework": true,
+               "score": 87
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 88
+            },
+            "isAttended": true,
+            "behavior": 4,
+            "feedback": "My Hang listened carefully and identified shapes confidently. She participated actively in pair work and recalled classroom vocabulary well.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Listening and Speaking",
+            "desc_teacher": {
+               "en": "Learners listen for school things and say what shape the things are.",
+               "vn": "Học sinh lắng nghe những đồ vật ở trường và cho biết đồ vật có hình dạng như thế nào."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_005v2",
+               "skill": "listening",
+               "system": "vocabulary",
+               "info": {
+                  "en": "listen for school objects and shapes.",
+                  "vn": "lắng nghe các đồ vật và hình dạng trong trường học."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "were able to listen for school objects and shapes with some support.",
+                  "vn": "có thể lắng nghe các đồ vật và hình dạng trong trường học với sự hỗ trợ."
+               }
+            },
+            {
+               "id": "PR_006v2",
+               "skill": "speaking",
+               "system": "pronunciation",
+               "info": {
+                  "en": "ask and answer 'what is it?' questions.",
+                  "vn": "hỏi và trả lời câu hỏi 'nó là gì?'"
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "could ask and answer 'what is it?' questions with some support.",
+                  "vn": "có thể hỏi và trả lời câu hỏi 'nó là gì?' với sự hỗ trợ."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_004V2",
+         "title": {
+            "en": "Bubbles the Fish Goes to School",
+            "vn": "Chú cá Bubbles Đi Học"
+         },
+         "classes_seats": {
+            "date": "2026-03-16",
+            "homework": {
+               "hasHomework": true,
+               "score": 90
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 85
+            },
+            "isAttended": true,
+            "behavior": 4,
+            "feedback": "My Hang engaged well with the reading text and showed good understanding of the story. Her written sentences were mostly accurate with minor errors.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Reading and Writing",
+            "desc_teacher": {
+               "en": "Learners read a comic strip then practice writing short sentences.",
+               "vn": "Người học đọc một đoạn truyện tranh sau đó luyện viết các câu ngắn."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_007",
+               "skill": "reading",
+               "system": "vocabulary",
+               "info": {
+                  "en": "read and identify key details in a comic-strip text.",
+                  "vn": "đọc và xác định các chi tiết chính trong văn bản truyện tranh."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "could identify key details in the text with very little support.",
+                  "vn": "có thể xác định các chi tiết chính trong bài với ít sự hỗ trợ."
+               }
+            },
+            {
+               "id": "PR_008",
+               "skill": "writing",
+               "system": "grammar",
+               "info": {
+                  "en": "write about classroom objects and shapes using: It's a + noun.",
+                  "vn": "viết về các đồ vật và hình dạng trong lớp học bằng cách sử dụng: It's a + danh từ."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "were able to write about classroom objects and shapes with some support.",
+                  "vn": "có thể viết về các đồ vật và hình dạng trong lớp học với sự hỗ trợ nhất định."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_005V2",
+         "title": {
+            "en": "Let's Review!",
+            "vn": "Hãy cùng ôn tập nào!"
+         },
+         "classes_seats": {
+            "date": "2026-03-19",
+            "homework": {
+               "hasHomework": true,
+               "score": 92
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 94
+            },
+            "isAttended": true,
+            "behavior": 5,
+            "feedback": "My Hang performed very well in the review lesson and showed strong recall across all unit content. She completed the assessment confidently and with very few errors.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Review and Unit Assessment",
+            "desc_teacher": {
+               "en": "Learners review classroom things then complete a short formative test.",
+               "vn": "Người học xem lại nội dung lớp học sau đó hoàn thành một bài kiểm tra hình thành ngắn."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_009v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "recognize and use language taught throughout the unit.",
+                  "vn": "nhận biết và sử dụng ngôn ngữ được dạy trong suốt khóa học."
+               },
+               "result": 5,
+               "result_description": {
+                  "en": "could recognize and use all language from the unit independently.",
+                  "vn": "có thể nhận biết và sử dụng độc lập tất cả ngôn ngữ trong khóa học."
+               }
+            },
+            {
+               "id": "PR_010",
+               "skill": "writing",
+               "system": "grammar",
+               "info": {
+                  "en": "complete a test on the target language and skills of the unit.",
+                  "vn": "hoàn thành bài kiểm tra về ngôn ngữ và kĩ năng trọng tâm của chương học."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "were able to complete all of the test with minimal support and few errors.",
+                  "vn": "có thể hoàn thành tất cả bài kiểm tra với rất ít hỗ trợ và vài lỗi sai."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_006V2",
+         "title": {
+            "en": "Colors and Numbers",
+            "vn": "Màu Sắc và Con Số"
+         },
+         "classes_seats": {
+            "date": "2026-03-23",
+            "homework": {
+               "hasHomework": true,
+               "score": 86
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 90
+            },
+            "isAttended": true,
+            "behavior": 4,
+            "feedback": "My Hang engaged enthusiastically with the colors and numbers topic. She identified and named colors accurately and showed good effort in speaking activities.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Vocabulary and Grammar",
+            "desc_teacher": {
+               "en": "Learners practice colors, numbers 1-5, and letters Hh-Kk.",
+               "vn": "Người học thực hành màu sắc, số 1-5 và chữ cái Hh-Kk."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What color is it? It's… Do you like…? Yes, I do. No, I don't."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_011v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "identify and say words for colors as well as numbers 1-5.",
+                  "vn": "nhận biết và nói các từ chỉ màu sắc cũng như số từ 1-5."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "identified and said the colors and numbers with minimal support.",
+                  "vn": "xác định và nói màu sắc và số với rất ít sự hỗ trợ."
+               }
+            },
+            {
+               "id": "PR_012",
+               "skill": "speaking",
+               "system": "grammar",
+               "info": {
+                  "en": "ask and answer questions about what colors people like.",
+                  "vn": "hỏi và trả lời những câu hỏi về màu sắc mà mọi người thích."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "needed minimal help to ask and answer questions about what colors people like.",
+                  "vn": "cần sự trợ giúp tối thiểu để hỏi và trả lời các câu hỏi về màu sắc mà mọi người thích."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_007V2",
+         "title": {
+            "en": "What Color Is It?",
+            "vn": "Màu Này Là Màu Gì?"
+         },
+         "classes_seats": {
+            "date": "2026-03-26",
+            "homework": {
+               "hasHomework": true,
+               "score": 89
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 93
+            },
+            "isAttended": true,
+            "behavior": 4,
+            "feedback": "My Hang listened attentively throughout the lesson and identified colors and numbers with strong accuracy. She showed good confidence when speaking in front of the class.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Listening and Speaking",
+            "desc_teacher": {
+               "en": "Learners listen for and say what color things are.",
+               "vn": "Học sinh lắng nghe và cho biết đồ vật có màu gì."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What color is it? It's… Do you like? Yes, I do. No, I don't."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_013",
+               "skill": "listening",
+               "system": "vocabulary",
+               "info": {
+                  "en": "listen for colors and numbers.",
+                  "vn": "lắng nghe màu sắc và con số."
+               },
+               "result": 5,
+               "result_description": {
+                  "en": "were able to listen for colors and numbers independently.",
+                  "vn": "có thể lắng nghe màu sắc và con số một cách độc lập."
+               }
+            },
+            {
+               "id": "PR_014",
+               "skill": "speaking",
+               "system": "grammar",
+               "info": {
+                  "en": "ask and answer questions about colors.",
+                  "vn": "hỏi và trả lời các câu hỏi về màu sắc."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "required minimal guidance to ask and answer questions about colors.",
+                  "vn": "yêu cầu hướng dẫn tối thiểu để hỏi và trả lời các câu hỏi về màu sắc."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_008V2",
+         "title": {
+            "en": "Colorful Classroom",
+            "vn": "Lớp Học Nhiều Màu Sắc"
+         },
+         "classes_seats": {
+            "date": "2026-03-30",
+            "homework": {
+               "hasHomework": true,
+               "score": 91
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 88
+            },
+            "isAttended": true,
+            "behavior": 4,
+            "feedback": "My Hang read the classroom description carefully and colored the picture accurately. Her written sentences showed good control of the target structure with minimal errors.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Reading and Writing",
+            "desc_teacher": {
+               "en": "Learners read about and describe a colorful classroom.",
+               "vn": "Học sinh đọc và mô tả một lớp học đầy màu sắc."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What color is it? It's… What is it? It's a …"
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_015",
+               "skill": "reading",
+               "system": "vocabulary",
+               "info": {
+                  "en": "read and identify colors.",
+                  "vn": "đọc và nhận biết màu sắc."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "were able to read and identify colors with minimal assistance.",
+                  "vn": "có thể đọc và nhận biết màu sắc với sự hỗ trợ tối thiểu."
+               }
+            },
+            {
+               "id": "PR_016",
+               "skill": "writing",
+               "system": "vocabulary",
+               "info": {
+                  "en": "write about the colors of objects.",
+                  "vn": "viết về màu sắc của các đồ vật."
+               },
+               "result": 4,
+               "result_description": {
+                  "en": "were able to write about colors with minimal assistance.",
+                  "vn": "có thể viết về màu sắc với sự hỗ trợ tối thiểu."
                }
             }
          ]

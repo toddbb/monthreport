@@ -1105,13 +1105,13 @@
          }
 
          function fmtDate(s) {
-            const [d, m, y] = s.split("/");
+            const [y, m, d] = s.split("-");
             return `${parseInt(d)} ${["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+m - 1]} ${y}`;
          }
 
          function monthName(period) {
             if (!period) return "";
-            const [, m, y] = period.start.split("/");
+            const [y, m] = period.start.split("-");
             return `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][+m - 1]} ${y}`;
          }
 
@@ -1230,8 +1230,8 @@
             }
 
             /* Feedback */
-            if (d.feedback?.summary) {
-               $("feedback-summary").textContent = d.feedback.summary;
+            if (d.AiFeedback?.en) {
+               $("feedback-summary").textContent = d.AiFeedback.en;
             }
 
             /* Language skills average (used for Final Score) */
@@ -1326,7 +1326,7 @@
             }
 
             /* 21st Century Skills */
-            const pblScores = d.centurySkills?.scores;
+            const pblScores = d.pbl?.scores;
             if (pblScores && !blank(pblScores)) {
                const labels = {
                   creativity: "Creativity",
@@ -1356,7 +1356,7 @@
                }
                $("pbl-rows").innerHTML = html;
                if (!html) $("sec-pbl").classList.add("hidden");
-               const pblDates = Array.isArray(d.centurySkills.dates) && d.centurySkills.dates.length ? d.centurySkills.dates.map(fmtDate).join(" · ") : "";
+               const pblDates = Array.isArray(d.pbl.dates) && d.pbl.dates.length ? d.pbl.dates.map(fmtDate).join(" · ") : "";
                $("pbl-dates-note").textContent = pblDates ? `Lessons: ${pblDates}` : "Project-based learning skills, rated out of 5.";
             } else {
                $("sec-pbl").classList.add("hidden");
@@ -1390,7 +1390,7 @@
             }
 
             /* Progress Test */
-            const prog = d.progressTest;
+            const prog = d.progressTest?.scores;
             if (prog && !blank(prog)) {
                const labels = [
                   ["readingWritingGrammarVocabulary", "Reading, Writing & Grammar"],
@@ -1443,53 +1443,38 @@
                vocabulary: lessonRetryCfg.vocabularyThreshold ?? 80
             };
 
-            const recommendations = [];
-            const vocabComp = vOk ? num(vcb.completionRate) : null;
-            const hwComp = hwOk ? num(hw.completionRate) : null;
-            const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
-            if (vocabComp !== null && vocabComp < (recCfg.vocabulary?.completionThreshold ?? 80))
-               recommendations.push(recCfg.vocabulary?.message ?? "Review vocabulary for 5–10 minutes, three times each week.");
-            if (hwComp !== null && hwComp < (recCfg.homework?.completionThreshold ?? 85))
-               recommendations.push(recCfg.homework?.message ?? "Set a regular homework time at home to improve completion.");
-            if (speaking !== null && speaking < (recCfg.speaking?.threshold ?? 4))
-               recommendations.push(recCfg.speaking?.message ?? "Ask your child to answer simple English questions aloud at home.");
-            if (!recommendations.length) {
-               const defaults = recCfg.defaults ?? [
-                  "Keep a short and regular English routine at home.",
-                  "Encourage your child to speak in complete English sentences.",
-                  "Celebrate small wins to keep motivation high."
-               ];
-               defaults.forEach((s) => recommendations.push(s));
-            }
+            const recList = [];
 
-            /* Lesson retry recommendations */
-            const retryLessons = (d.lessons || [])
-               .filter((lesson) => {
-                  const hw = lesson.homework;
-                  const voc = lesson.vocabulary;
-                  const hwLow = hw === undefined || hw === null || hw < THRESHOLDS.homework;
-                  const vocLow = voc === undefined || voc === null || voc < THRESHOLDS.vocabulary;
-                  return hwLow || vocLow;
-               })
-               .map((lesson) => {
-                  const hw = lesson.homework;
-                  const voc = lesson.vocabulary;
-                  const hwLow = hw === undefined || hw === null || hw < THRESHOLDS.homework;
-                  const vocLow = voc === undefined || voc === null || voc < THRESHOLDS.vocabulary;
-                  const flags = [];
-                  if (hwLow) flags.push(hw === undefined || hw === null ? "homework not submitted" : `Homework: ${hw}%`);
-                  if (vocLow) flags.push(voc === undefined || voc === null ? "vocabulary not completed" : `Vocabulary: ${voc}%`);
-                  const label = lesson.title ? `${lesson.title}` : lesson.id;
-                  const date = lesson.date ? ` (${lesson.date})` : "";
-                  return `${label}${date} — ${flags.join(", ")}`;
+            /* Use pre-built recommendations from JSON if available */
+            if (Array.isArray(d.recommendations) && d.recommendations.length) {
+               d.recommendations.forEach((rec) => {
+                  const subHtml = Array.isArray(rec.subPoints) && rec.subPoints.length
+                     ? `<ul>${rec.subPoints.map((sp) => `<li>${typeof sp === "object" ? sp.en : sp}</li>`).join("")}</ul>`
+                     : "";
+                  recList.push(`${rec.en}${subHtml}`);
                });
-
-            if (retryLessons.length) {
-               const subItems = retryLessons.map((l) => `<li>${l}</li>`).join("");
-               recommendations.push(`Based on the results, it's recommended your child retry the following:<ul>${subItems}</ul>`);
+            } else {
+               /* Fallback: generate from thresholds */
+               const vocabComp = vOk ? num(vcb.completionRate) : null;
+               const hwComp = hwOk ? num(hw.completionRate) : null;
+               const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
+               if (vocabComp !== null && vocabComp < (recCfg.vocabulary?.completionThreshold ?? 80))
+                  recList.push(recCfg.vocabulary?.message ?? "Review vocabulary for 5–10 minutes, three times each week.");
+               if (hwComp !== null && hwComp < (recCfg.homework?.completionThreshold ?? 85))
+                  recList.push(recCfg.homework?.message ?? "Set a regular homework time at home to improve completion.");
+               if (speaking !== null && speaking < (recCfg.speaking?.threshold ?? 4))
+                  recList.push(recCfg.speaking?.message ?? "Ask your child to answer simple English questions aloud at home.");
+               if (!recList.length) {
+                  const defaults = recCfg.defaults ?? [
+                     "Keep a short and regular English routine at home.",
+                     "Encourage your child to speak in complete English sentences.",
+                     "Celebrate small wins to keep motivation high."
+                  ];
+                  defaults.forEach((s) => recList.push(s));
+               }
             }
 
-            $("recommendations-list").innerHTML = recommendations.map((s) => `<li>${s}</li>`).join("");
+            $("recommendations-list").innerHTML = recList.map((s) => `<li>${s}</li>`).join("");
 
             /* Footer */
             $("ftr-course").textContent = d.student.courseCode ? `Course ${d.student.courseCode}` : "";

@@ -1,59 +1,603 @@
 {
    "student": {
-      "name": "Tran Van Minh",
-      "courseCode": "H99YJ-1A-2601",
+      "name": "Nguyen Tuan Kiet",
+      "courseCode": "H99YJ-1A-2602",
+      "centreId": "TC-HCMC99",
       "program": "Super Juniors",
       "level": "1A"
    },
    "period": {
-      "start": "01/03/2026",
-      "end": "31/03/2026"
+      "start": "2026-03-01",
+      "end": "2026-03-31"
    },
    "staff": {
-      "teachers": ["David Franklin", "Nguyen Mai Thi"],
-      "assistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
+      "teachers": [
+         "David Franklin",
+         "Nguyen Mai Thi"
+      ],
+      "teachingAssistants": [
+         "Pham Trinh Tu",
+         "Dao Khoi Anh",
+         "Trinh Trieu Thanh"
+      ]
    },
-   "attendance": 68,
+   "attendance": 72,
    "languageSkills": {
-      "reading": 2.1,
-      "writing": 1.8,
-      "speaking": 1.5,
-      "listening": 2.4
+      "reading": 1.8,
+      "writing": 1.5,
+      "speaking": 1.6,
+      "listening": 2.1
    },
    "homework": {
-      "averageScore": 54,
-      "completionRate": 45
+      "averageScore": 57,
+      "completionRate": 42
    },
    "vocabulary": {
-      "averageScore": 61,
-      "completionRate": 38
+      "averageScore": 64,
+      "completionRate": 28
    },
    "centurySkills": {
-      "dates": ["25/03/2026", "26/03/2026"],
+      "dates": [
+         "2026-03-25",
+         "2026-03-26"
+      ],
       "scores": {
          "creativity": 2,
-         "collaboration": 3,
-         "criticalThinking": 2,
+         "collaboration": 2,
+         "criticalThinking": 1,
          "communication": 2,
-         "selfReflection": 1,
-         "digitalLiteracy": 2
+         "selfReflection": 2,
+         "digitalLiteracy": 1
       }
    },
    "cambridgeTest": {
       "type": "Cambridge Starters",
       "scores": {
-         "readingWriting": 52,
-         "speaking": 61,
+         "readingWriting": 54,
+         "speaking": 62,
          "listening": 48
       }
    },
    "progressTest": {
-      "readingWritingGrammarVocabulary": 55,
-      "speaking": 58,
-      "listening": 47
+      "testType": "Progress Test 1",
+      "scores": {
+         "readingWritingGrammarVocabulary": 52,
+         "speaking": 58,
+         "listening": 50
+      }
    },
-   "feedback": {
-      "summary": "This month, Van Minh had difficulty maintaining regular attendance (68%), which affected his ability to keep up with classroom activities and lessons. Performance across reading, writing, speaking, and listening was below the expected level for this stage of the course, and additional support will be needed in all four skill areas. Homework completion was low at 45%, and the average score of 54% suggests that tasks attempted were also challenging. Vocabulary practice outside of class was limited, and more consistent effort here will help reinforce what is covered in lessons. Project work showed some engagement, particularly in collaboration, but confidence and communication skills need further development.",
-      "recommendations": "To help Van Minh improve, it is important to prioritise regular attendance so that he does not miss key lessons and practice opportunities. Establishing a consistent homework routine at home — even 10 to 15 minutes per day — will help build familiarity with the language and improve both completion and scores over time. Encouraging Van Minh to review vocabulary regularly using the app or flashcards will strengthen retention. Speaking practice at home, such as simple conversations or describing pictures in English, will help build confidence. If there are ongoing challenges, please reach out to the Teaching Assistant so we can provide additional support."
-   }
+   "AiFeedback": {
+      "en": "This month, Tuan Kiet found some aspects of class challenging but showed willingness to try when present. Attendance was below expectations at 72%, and missed classes made it difficult to keep up with lesson content. Reading and listening are at an early stage of development, and more consistent exposure to English will help build understanding over time. Writing and speaking are areas that need focused support, and regular practice at home will be essential for progress. Homework completion was low this month, and establishing a regular study routine will help Tuan Kiet consolidate what is covered in class. Vocabulary practice also needs more consistency to build confidence with new words.",
+      "vn": "Tháng này, Tuấn Kiệt gặp một số khó khăn trong một số phần của lớp học nhưng đã thể hiện sự sẵn sàng cố gắng khi đến lớp. Tỷ lệ tham dự thấp hơn kỳ vọng ở mức 72%, và các buổi học bị bỏ lỡ khiến việc theo kịp nội dung bài học trở nên khó khăn hơn. Kỹ năng đọc và nghe đang ở giai đoạn phát triển ban đầu, và việc tiếp xúc với tiếng Anh thường xuyên hơn sẽ giúp xây dựng sự hiểu biết theo thời gian. Kỹ năng viết và nói là những lĩnh vực cần được hỗ trợ tập trung, và việc luyện tập thường xuyên ở nhà sẽ rất cần thiết cho sự tiến bộ. Mức độ hoàn thành bài tập về nhà còn thấp trong tháng này, và việc xây dựng thói quen học tập đều đặn sẽ giúp Tuấn Kiệt củng cố những gì đã học trong lớp. Việc luyện tập từ vựng cũng cần thêm sự nhất quán để xây dựng sự tự tin với các từ mới."
+   },
+   "recommendations": [
+      {
+         "en": "Complete or retry these homework activities:",
+         "vn": "Hoàn thành hoặc làm lại các bài tập về nhà sau:",
+         "subPoints": [
+            "Hello! – Welcome Lesson (2 Mar 2026): Homework (60%)",
+            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Homework (65%)",
+            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Homework (45%)",
+            "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (55%)",
+            "What Color Is It? – Listening and Speaking (26 Mar 2026): Homework (62%)",
+            "Colorful Classroom – Reading and Writing (30 Mar 2026): Homework (58%)"
+         ]
+      },
+      {
+         "en": "Complete or retry these vocabulary exercises:",
+         "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
+         "subPoints": [
+            "Hello! – Welcome Lesson (2 Mar 2026): Vocabulary (55%)",
+            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Vocabulary (70%)",
+            "Let's Review! – Review and Unit Assessment (19 Mar 2026): Vocabulary (60%)",
+            "What Color Is It? – Listening and Speaking (26 Mar 2026): Vocabulary (70%)",
+            "Colorful Classroom – Reading and Writing (30 Mar 2026): Vocabulary (65%)"
+         ]
+      },
+      {
+         "en": "Ask your child to answer simple English questions aloud at home.",
+         "vn": "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà.",
+         "subPoints": []
+      }
+   ],
+   "lessons": [
+      {
+         "id": "SJ_PR_001V2",
+         "title": {
+            "en": "Hello!",
+            "vn": "Xin chào!"
+         },
+         "classes_seats": {
+            "date": "2026-03-02",
+            "homework": {
+               "hasHomework": true,
+               "score": 60
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 55
+            },
+            "isAttended": true,
+            "behavior": 2,
+            "feedback": "Tuan Kiet needed significant encouragement to participate and struggled to follow classroom instructions consistently. He required frequent support to complete activities.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Welcome Lesson",
+            "desc_teacher": {
+               "en": "Learners get to know each other, learn the rules, and practice letters Aa-Dd.",
+               "vn": "Người học làm quen, tìm hiểu luật chơi và luyện chữ Aa-Dd."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What's your name? How are you?; Verb be: am, is, are; Pronouns: I, he, she; Imperative commands: Look. Listen. Be quiet. Sit down. Stand up. Be nice."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_001v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "ask and answer questions about feelings and names.",
+                  "vn": "hỏi và phản hồi các câu hỏi về cảm xúc và tên gọi."
+               },
+               "result": 1,
+               "result_description": {
+                  "en": "could not ask and answer questions about feelings and names.",
+                  "vn": "không thể hỏi và trả lời các câu hỏi về cảm xúc và tên."
+               }
+            },
+            {
+               "id": "PR_002v2",
+               "skill": "speaking",
+               "system": "pronunciation",
+               "info": {
+                  "en": "identify beginning sounds for Aa, Bb, Cc, Dd.",
+                  "vn": "xác định các âm đầu của Aa, Bb, Cc, Dd."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "could identify beginning sounds for a, b, c, d but needed considerable support.",
+                  "vn": "có thể xác định âm đầu của a, b, c, d nhưng cần có sự hỗ trợ đáng kể."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_002V2",
+         "title": {
+            "en": "A New Classroom",
+            "vn": "Lớp Học Mới"
+         },
+         "classes_seats": {
+            "date": "2026-03-09",
+            "homework": {
+               "hasHomework": true,
+               "score": 65
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 70
+            },
+            "isAttended": true,
+            "behavior": 2,
+            "feedback": "Tuan Kiet found the vocabulary challenging this lesson. He needed repeated prompts and considerable support throughout activities.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Vocabulary and Grammar",
+            "desc_teacher": {
+               "en": "Learners identify things in the classroom.",
+               "vn": "Người học xác định các đồ vật trong lớp học."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_003v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "identify and say words for things in a classroom.",
+                  "vn": "xác định và nói tên các đồ vật trong lớp học."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "made an effort to identify and say words for things in a classroom but needed significant support.",
+                  "vn": "đã nỗ lực xác định và nói các từ chỉ đồ vật trong lớp học nhưng cần sự hỗ trợ đáng kể."
+               }
+            },
+            {
+               "id": "PR_004v2",
+               "skill": "speaking",
+               "system": "grammar",
+               "info": {
+                  "en": "ask and answer the question: What is it?",
+                  "vn": "hỏi và trả lời câu hỏi: Nó là gì?"
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "were able to ask and answer the question with significant support.",
+                  "vn": "có thể hỏi và trả lời câu hỏi với sự hỗ trợ đáng kể."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_003V2",
+         "title": {
+            "en": "Shapes in Our Classroom",
+            "vn": "Các Hình Học Trong Lớp"
+         },
+         "classes_seats": {
+            "date": "2026-03-12",
+            "homework": {
+               "hasHomework": true,
+               "score": 45
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": null
+            },
+            "isAttended": true,
+            "behavior": 2,
+            "feedback": "Tuan Kiet had difficulty identifying shapes and required constant support. Listening tasks were challenging and he found it hard to stay focused.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Listening and Speaking",
+            "desc_teacher": {
+               "en": "Learners listen for school things and say what shape the things are.",
+               "vn": "Học sinh lắng nghe những đồ vật ở trường và cho biết đồ vật có hình dạng như thế nào."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_005v2",
+               "skill": "listening",
+               "system": "vocabulary",
+               "info": {
+                  "en": "listen for school objects and shapes.",
+                  "vn": "lắng nghe các đồ vật và hình dạng trong trường học."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "were able to listen for school objects and shapes with significant support.",
+                  "vn": "có thể lắng nghe các đồ vật và hình dạng trong trường học với sự hỗ trợ đáng kể."
+               }
+            },
+            {
+               "id": "PR_006v2",
+               "skill": "speaking",
+               "system": "pronunciation",
+               "info": {
+                  "en": "ask and answer 'what is it?' questions.",
+                  "vn": "hỏi và trả lời câu hỏi 'nó là gì?'"
+               },
+               "result": 1,
+               "result_description": {
+                  "en": "were unable to ask and answer 'what is it?' questions even with considerable support.",
+                  "vn": "không thể hỏi và trả lời câu hỏi nó là gì? ngay cả khi có sự hỗ trợ đáng kể."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_004V2",
+         "title": {
+            "en": "Bubbles the Fish Goes to School",
+            "vn": "Chú cá Bubbles Đi Học"
+         },
+         "classes_seats": {
+            "date": "2026-03-16",
+            "homework": {
+               "hasHomework": true,
+               "score": null
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": null
+            },
+            "isAttended": false,
+            "behavior": null,
+            "feedback": "Tuan Kiet was absent for this lesson.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Reading and Writing",
+            "desc_teacher": {
+               "en": "Learners read a comic strip then practice writing short sentences.",
+               "vn": "Người học đọc một đoạn truyện tranh sau đó luyện viết các câu ngắn."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_007",
+               "skill": "reading",
+               "system": "vocabulary",
+               "info": {
+                  "en": "read and identify key details in a comic-strip text.",
+                  "vn": "đọc và xác định các chi tiết chính trong văn bản truyện tranh."
+               },
+               "result": null,
+               "result_description": null
+            },
+            {
+               "id": "PR_008",
+               "skill": "writing",
+               "system": "grammar",
+               "info": {
+                  "en": "write about classroom objects and shapes using: It's a + noun.",
+                  "vn": "viết về các đồ vật và hình dạng trong lớp học bằng cách sử dụng: It's a + danh từ."
+               },
+               "result": null,
+               "result_description": null
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_005V2",
+         "title": {
+            "en": "Let's Review!",
+            "vn": "Hãy cùng ôn tập nào!"
+         },
+         "classes_seats": {
+            "date": "2026-03-19",
+            "homework": {
+               "hasHomework": true,
+               "score": 55
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 60
+            },
+            "isAttended": true,
+            "behavior": 2,
+            "feedback": "Tuan Kiet found the review lesson difficult and needed substantial assistance throughout the assessment. He showed some recognition of familiar words with support.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Review and Unit Assessment",
+            "desc_teacher": {
+               "en": "Learners review classroom things then complete a short formative test.",
+               "vn": "Người học xem lại nội dung lớp học sau đó hoàn thành một bài kiểm tra hình thành ngắn."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_009v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "recognize and use language taught throughout the unit.",
+                  "vn": "nhận biết và sử dụng ngôn ngữ được dạy trong suốt khóa học."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "could recognize some or most language from the unit but struggled to use it.",
+                  "vn": "có thể nhận ra một số hoặc hầu hết ngôn ngữ trong khóa học nhưng gặp khó khăn khi sử dụng."
+               }
+            },
+            {
+               "id": "PR_010",
+               "skill": "writing",
+               "system": "grammar",
+               "info": {
+                  "en": "complete a test on the target language and skills of the unit.",
+                  "vn": "hoàn thành bài kiểm tra về ngôn ngữ và kĩ năng trọng tâm của chương học."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "were able to complete the test with lots of assistance.",
+                  "vn": "có thể hoàn thành bài kiểm tra với rất nhiều sự hỗ trợ."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_006V2",
+         "title": {
+            "en": "Colors and Numbers",
+            "vn": "Màu Sắc và Con Số"
+         },
+         "classes_seats": {
+            "date": "2026-03-23",
+            "homework": {
+               "hasHomework": true,
+               "score": null
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": null
+            },
+            "isAttended": true,
+            "behavior": 2,
+            "feedback": "Tuan Kiet struggled with the colors and numbers vocabulary. He needed a lot of support to identify and say the words and did not complete homework or vocabulary tasks.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Vocabulary and Grammar",
+            "desc_teacher": {
+               "en": "Learners practice colors, numbers 1-5, and letters Hh-Kk.",
+               "vn": "Người học thực hành màu sắc, số 1-5 và chữ cái Hh-Kk."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What color is it? It's… Do you like…? Yes, I do. No, I don't."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_011v2",
+               "skill": "speaking",
+               "system": "vocabulary",
+               "info": {
+                  "en": "identify and say words for colors as well as numbers 1-5.",
+                  "vn": "nhận biết và nói các từ chỉ màu sắc cũng như số từ 1-5."
+               },
+               "result": 1,
+               "result_description": {
+                  "en": "were unable to identify and say the colors and numbers.",
+                  "vn": "không thể xác định và nói được màu sắc và số."
+               }
+            },
+            {
+               "id": "PR_012",
+               "skill": "speaking",
+               "system": "grammar",
+               "info": {
+                  "en": "ask and answer questions about what colors people like.",
+                  "vn": "hỏi và trả lời những câu hỏi về màu sắc mà mọi người thích."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "required a lot of support to ask and answer questions about what colors people like.",
+                  "vn": "cần rất nhiều trợ giúp để có thể hỏi và phản hồi các câu hỏi liên quan đến màu sắc yêu thích của bản thân."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_007V2",
+         "title": {
+            "en": "What Color Is It?",
+            "vn": "Màu Này Là Màu Gì?"
+         },
+         "classes_seats": {
+            "date": "2026-03-26",
+            "homework": {
+               "hasHomework": true,
+               "score": 62
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 70
+            },
+            "isAttended": true,
+            "behavior": 3,
+            "feedback": "Tuan Kiet needed considerable support during listening tasks. He showed some effort during speaking activities but found it difficult to produce the target language independently.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Listening and Speaking",
+            "desc_teacher": {
+               "en": "Learners listen for and say what color things are.",
+               "vn": "Học sinh lắng nghe và cho biết đồ vật có màu gì."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What color is it? It's… Do you like? Yes, I do. No, I don't."
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_013",
+               "skill": "listening",
+               "system": "vocabulary",
+               "info": {
+                  "en": "listen for colors and numbers.",
+                  "vn": "lắng nghe màu sắc và con số."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "were able to listen for colors and numbers with a lot of support.",
+                  "vn": "có thể lắng nghe màu sắc và con số với sự hỗ trợ rất nhiều."
+               }
+            },
+            {
+               "id": "PR_014",
+               "skill": "speaking",
+               "system": "grammar",
+               "info": {
+                  "en": "ask and answer questions about colors.",
+                  "vn": "hỏi và trả lời các câu hỏi về màu sắc."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "required a lot of support to ask and answer questions about colors.",
+                  "vn": "cần rất nhiều sự hỗ trợ để hỏi và trả lời các câu hỏi về màu sắc."
+               }
+            }
+         ]
+      },
+      {
+         "id": "SJ_PR_008V2",
+         "title": {
+            "en": "Colorful Classroom",
+            "vn": "Lớp Học Nhiều Màu Sắc"
+         },
+         "classes_seats": {
+            "date": "2026-03-30",
+            "homework": {
+               "hasHomework": true,
+               "score": 58
+            },
+            "vocabulary": {
+               "hasVocabulary": true,
+               "score": 65
+            },
+            "isAttended": true,
+            "behavior": 2,
+            "feedback": "Tuan Kiet found reading the classroom description difficult and needed frequent support. Writing activities were challenging and his sentences required significant correction.",
+            "isAvailable": true
+         },
+         "info": {
+            "focus": "Reading and Writing",
+            "desc_teacher": {
+               "en": "Learners read about and describe a colorful classroom.",
+               "vn": "Học sinh đọc và mô tả một lớp học đầy màu sắc."
+            },
+            "cefr": "Pre-A1",
+            "grammar": [
+               "Wh- questions: What color is it? It's… What is it? It's a …"
+            ]
+         },
+         "outcomes": [
+            {
+               "id": "PR_015",
+               "skill": "reading",
+               "system": "vocabulary",
+               "info": {
+                  "en": "read and identify colors.",
+                  "vn": "đọc và nhận biết màu sắc."
+               },
+               "result": 2,
+               "result_description": {
+                  "en": "were able to read and identify colors with a lot of support.",
+                  "vn": "có thể đọc và nhận dạng màu sắc với sự hỗ trợ đắc lực."
+               }
+            },
+            {
+               "id": "PR_016",
+               "skill": "writing",
+               "system": "vocabulary",
+               "info": {
+                  "en": "write about the colors of objects.",
+                  "vn": "viết về màu sắc của các đồ vật."
+               },
+               "result": 1,
+               "result_description": {
+                  "en": "were unable to write about colors.",
+                  "vn": "không thể viết về màu sắc."
+               }
+            }
+         ]
+      }
+   ]
 }
