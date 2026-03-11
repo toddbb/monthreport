@@ -233,6 +233,20 @@ body.loaded {
    height: 14px;
    flex-shrink: 0;
 }
+/* Ghost-text trick: ::after holds the longest translation invisibly,
+   so the button width never changes when the language toggles.
+   "Chia sẻ" is longer than "Share", so that's the reserved width. */
+.share-btn span {
+   display: inline-grid;
+}
+.share-btn span::after {
+   content: "Chia sẻ";
+   height: 0;
+   visibility: hidden;
+   overflow: hidden;
+   user-select: none;
+   pointer-events: none;
+}
 
 /* Language toggle — segmented pill */
 .lang-toggle {
