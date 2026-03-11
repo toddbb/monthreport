@@ -469,7 +469,7 @@ renderFaq();
 
 /* ── Load data and render ────────────────────── */
 const studentParam = new URLSearchParams(window.location.search).get("student") || "1";
-const dataFile = `data${studentParam}.json`;
+const dataFile = `data/data${studentParam}.json`;
 
 /* ── Student photo (with SVG fallback) ──────── */
 (function () {
