@@ -87,8 +87,7 @@ body {
 }
 
 .rise {
-   opacity: 0;
-   animation: rise 0.5s ease forwards;
+   animation: rise 0.5s ease both;
 }
 .rise:nth-child(1) {
    animation-delay: 0.06s;
@@ -282,6 +281,53 @@ body {
    text-transform: uppercase;
    opacity: 0.45;
    font-weight: 500;
+}
+
+/* ── STAFF ──────────────────────────────────── */
+.staff-section {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 12px 16px;
+   background: var(--surface);
+   border: 1px solid var(--border);
+   border-radius: var(--r);
+   padding: 18px 20px;
+   margin-top: 16px;
+   margin-bottom: 16px;
+}
+@media (max-width: 479px) {
+   .staff-section {
+      grid-template-columns: 1fr;
+   }
+}
+.staff-heading {
+   grid-column: 1 / -1;
+}
+.staff-group {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.staff-label {
+   font-size: 0.62rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   color: var(--ink-3);
+}
+.staff-names {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+}
+.staff-name {
+   font-size: 0.84rem;
+   font-weight: 600;
+   color: var(--ink);
+   background: var(--bg);
+   border: 1px solid var(--border);
+   border-radius: var(--r-sm);
+   padding: 5px 12px;
 }
 
 /* ── SECTION ────────────────────────────────── */

@@ -138,6 +138,24 @@ function render(d, cfg) {
       document.title = `${monthName(d.period)} Report – ${d.student.name}`;
    }
 
+   /* Staff */
+   const staff = d.staff;
+   if (staff && (!blank(staff.teachers) || !blank(staff.teachingAssistants))) {
+      const renderNames = (names) =>
+         (Array.isArray(names) ? names : [])
+            .filter(Boolean)
+            .map((n) => `<span class="staff-name">${n}</span>`)
+            .join("");
+      const teachersHtml = renderNames(staff.teachers);
+      const tasHtml = renderNames(staff.teachingAssistants);
+      $("staff-teachers").innerHTML = teachersHtml;
+      $("staff-tas").innerHTML = tasHtml;
+      if (!teachersHtml) $("staff-teachers-group").classList.add("hidden");
+      if (!tasHtml) $("staff-tas-group").classList.add("hidden");
+   } else {
+      $("sec-staff").classList.add("hidden");
+   }
+
    /* Feedback */
    if (d.AiFeedback?.en) {
       $("feedback-summary").textContent = d.AiFeedback.en;
@@ -383,7 +401,8 @@ function render(d, cfg) {
    $("recommendations-list").innerHTML = recList.map((s) => `<li>${s}</li>`).join("");
 
    /* Footer */
-   $("ftr-course").textContent = d.student.courseCode ? `Course ${d.student.courseCode}` : "";
+   //$("ftr-course").textContent = d.student.courseCode ? `Course ${d.student.courseCode}` : "";
+   $("ftr-course").textContent = `© Copyright ${new Date().getFullYear()} ILA Vietnam`;
    $("ftr-date").textContent = d.period ? `${monthName(d.period)} Report` : "Monthly Report";
 }
 
