@@ -75,25 +75,14 @@
          "en": "Complete or retry these homework activities:",
          "vn": "Hoàn thành hoặc làm lại các bài tập về nhà sau:",
          "subPoints": [
-            "Hello! – Welcome Lesson (2 Mar 2026): Homework (75%)",
-            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Homework (78%)",
-            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Homework (72%)",
-            "Bubbles the Fish Goes to School – Reading and Writing (16 Mar 2026): Homework (76%)",
-            "Colors and Numbers – Vocabulary and Grammar (23 Mar 2026): Homework (74%)",
-            "What Color Is It? – Listening and Speaking (26 Mar 2026): Homework (71%)",
-            "Colorful Classroom – Reading and Writing (30 Mar 2026): Homework (76%)"
+            "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (0%)"
          ]
       },
       {
          "en": "Complete or retry these vocabulary exercises:",
          "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
          "subPoints": [
-            "A New Classroom – Vocabulary and Grammar (9 Mar 2026): Vocabulary (72%)",
-            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (68%)",
-            "Bubbles the Fish Goes to School – Reading and Writing (16 Mar 2026): Vocabulary (75%)",
-            "Colors and Numbers – Vocabulary and Grammar (23 Mar 2026): Vocabulary (70%)",
-            "What Color Is It? – Listening and Speaking (26 Mar 2026): Vocabulary (68%)",
-            "Colorful Classroom – Reading and Writing (30 Mar 2026): Vocabulary (74%)"
+            "Bubbles the Fish Goes to School – Reading and Writing (16 Mar 2026): Vocabulary (0%)"
          ]
       },
       {
@@ -113,7 +102,7 @@
             "date": "2026-03-02",
             "homework": {
                "hasHomework": true,
-               "score": 75
+               "score": 50
             },
             "vocabulary": {
                "hasVocabulary": true,
@@ -306,7 +295,7 @@
             },
             "vocabulary": {
                "hasVocabulary": true,
-               "score": 75
+               "score": 0
             },
             "isAttended": true,
             "behavior": 3,
@@ -365,7 +354,7 @@
             "date": "2026-03-19",
             "homework": {
                "hasHomework": true,
-               "score": 80
+               "score": 0
             },
             "vocabulary": {
                "hasVocabulary": true,

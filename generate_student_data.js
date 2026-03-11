@@ -21,8 +21,8 @@ function writeJson(file, data) {
 // ── Main ─────────────────────────────────────────────────────────────────────
 
 const config = readJson("config.json");
-const hwThreshold  = config.lessonRetry?.homeworkThreshold   ?? 80;
-const vocThreshold = config.lessonRetry?.vocabularyThreshold ?? 80;
+const hwThreshold  = config.recommendations?.homework?.scoreThreshold   ?? 80;
+const vocThreshold = config.recommendations?.vocabulary?.scoreThreshold ?? 80;
 const speakThreshold = config.recommendations?.speaking?.threshold ?? 4;
 
 const DATA_FILES = ["data1.json", "data2.json", "data3.json"];
