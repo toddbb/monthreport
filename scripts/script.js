@@ -75,7 +75,7 @@ function shareReport() {
       "At {school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.",
       "Tap the link to view the full report 👇",
    ];
-   const text = (appConfig?.shareText?.lines ?? defaultLines)
+   const text = (appConfig?.shareText?.en ?? defaultLines)
       .map((line) => line.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? ""))
       .filter((line) => line !== "" && !line.endsWith(": "))
       .join("\n");
@@ -415,5 +415,8 @@ Promise.all([
       return r.json();
    }),
 ])
-   .then(([data, config]) => { appConfig = config; render(data, config); })
+   .then(([data, config]) => {
+      appConfig = config;
+      render(data, config);
+   })
    .catch((err) => console.error("Report load error:", err));
