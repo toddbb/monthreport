@@ -65,6 +65,7 @@ const STRINGS = {
       cambridgeNoteType: "Results for {type} practice test.",
       cambridgeNoteDefault: "Results from the Cambridge practice test.",
       cambridgeLabels: { readingWriting: "Reading & Writing", reading: "Reading", writing: "Writing", speaking: "Speaking", listening: "Listening" },
+      cambridgeOverallLabel: "Overall Score",
       cambridgeInfo: "Cambridge English qualifications are internationally recognized exams developed by the University of Cambridge. {link}",
       cambridgeInfoLink: "Learn more about {type}",
 
@@ -205,6 +206,7 @@ const STRINGS = {
       cambridgeNoteType: "Kết quả bài kiểm tra {type}.",
       cambridgeNoteDefault: "Kết quả từ bài kiểm tra Cambridge.",
       cambridgeLabels: { readingWriting: "Đọc & Viết", reading: "Đọc", writing: "Viết", speaking: "Nói", listening: "Nghe" },
+      cambridgeOverallLabel: "Điểm Tổng",
       cambridgeInfo: "Các chứng chỉ Cambridge English là các kỳ thi tiếng Anh được công nhận quốc tế, được phát triển bởi Đại học Cambridge. {link}",
       cambridgeInfoLink: "Tìm hiểu thêm về {type}",
 

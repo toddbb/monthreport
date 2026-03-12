@@ -50,23 +50,26 @@
    },
 
    "cambridgeCefrTable": [
-      { "min": 160, "max": 170, "cefr": "B2" },
+      { "min": 160, "max": 180, "cefr": "B2" },
       { "min": 140, "max": 159, "cefr": "B1" },
       { "min": 120, "max": 139, "cefr": "A2" },
       { "min": 100, "max": 119, "cefr": "A1" }
    ],
 
+   "cambridgeScoreCalculations": {
+      "key": {
+         "slope": 0.48,
+         "baseScore": 96
+      },
+      "preliminary": {
+         "slope": 0.48,
+         "baseScore": 96
+      }
+   },
+
    "programmes": {
       "vyl": ["Step Up", "Jumpstart"]
    },
-
-
-
-
-
-
-
-   
 
    "scoring": {
       "weights": {

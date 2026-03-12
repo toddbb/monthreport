@@ -354,7 +354,10 @@ function renderCambridge(d, cfg, s, lang) {
       const isKey = cambType.includes("Key");
       const isPrelim = cambType.includes("Preliminary");
       const useScaleScore = isKey || isPrelim;
-      const baseScore = isPrelim ? 120 : 100;
+      const typeSlug = isKey ? "key" : isPrelim ? "preliminary" : null;
+      const scoreCalc = (typeSlug && cfg.cambridgeScoreCalculations?.[typeSlug]) || {};
+      const slope = scoreCalc.slope ?? 0.5;
+      const baseScore = scoreCalc.baseScore ?? (isPrelim ? 120 : 100);
       const labels = isPrelim
          ? [
               ["reading", s.cambridgeLabels.reading],
@@ -368,11 +371,13 @@ function renderCambridge(d, cfg, s, lang) {
               ["listening", s.cambridgeLabels.listening],
            ];
       let html = "";
+      const ceScores = [];
       for (const [key, lbl] of labels) {
          const v = camb[key];
          if (blank(v)) continue;
          if (useScaleScore) {
-            const ceScore = Math.round(baseScore + 0.5 * num(v));
+            const ceScore = Math.round(baseScore + slope * num(v));
+            ceScores.push(ceScore);
             const cefr = getCefrLevel(ceScore, cfg.cambridgeCefrTable);
             html += `
 <div class="mini-card">
@@ -395,6 +400,25 @@ function renderCambridge(d, cfg, s, lang) {
       }
 
       setHtml("cambridge-grid", html);
+
+      const existingOverall = $("cambridge-overall");
+      if (existingOverall) existingOverall.remove();
+      if (useScaleScore && ceScores.length > 0) {
+         const avgCe = Math.round(ceScores.reduce((a, b) => a + b, 0) / ceScores.length);
+         const overallCefr = getCefrLevel(avgCe, cfg.cambridgeCefrTable);
+         const overallLabel = s.cambridgeOverallLabel ?? "Overall Score";
+         const overallEl = document.createElement("div");
+         overallEl.id = "cambridge-overall";
+         overallEl.className = "cambridge-overall";
+         overallEl.innerHTML = `
+<div class="cambridge-overall-label">${overallLabel}</div>
+<div class="cambridge-overall-body">
+  <span class="cambridge-overall-score">${avgCe}</span>
+  <span class="cambridge-overall-cefr">${overallCefr}</span>
+</div>`;
+         $("cambridge-grid")?.insertAdjacentElement("afterend", overallEl);
+      }
+
       if (!html) $("sec-cambridge")?.classList.add("hidden");
       setText("cambridge-note", d.cambridgeTest.type ? s.cambridgeNoteType.replace("{type}", d.cambridgeTest.type) : s.cambridgeNoteDefault);
 
