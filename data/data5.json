@@ -52,16 +52,20 @@
          ]
       },
       {
-         "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
-         "vn": "Khuyến khích con sử dụng ứng dụng luyện nói như ELSA Speak hoặc Oxford Learner's Bookshelf 5–10 phút vài lần mỗi tuần.",
+         "en": "Encourage your child to repeat simple English words or sentences from class for a few minutes several times a week.",
+         "vn": "Khuyến khích con lặp lại các từ hoặc câu tiếng Anh đơn giản đã học trên lớp trong vài phút, vài lần mỗi tuần.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to teach you the sounds or rhymes they learned in class — teaching someone else is one of the best ways to remember.",
-         "vn": "Nhờ con dạy lại cho bạn các âm hoặc bài vần đã học trên lớp — dạy lại cho người khác là một trong những cách ghi nhớ tốt nhất.",
+         "en": "Ask your child to repeat the sounds, rhymes, or words they learned in class to help improve pronunciation.",
+         "vn": "Hãy nhờ con lặp lại các âm, vần, hoặc từ đã học trên lớp để cải thiện phát âm.",
          "subPoints": []
       }
    ],
+   "AiRecommendations": {
+      "en": "Minh Thi Hung has shown strong listening skills and good class engagement this month. To build on this, encourage consistent completion of all vocabulary exercises, as the 67% completion rate means some important practice is being missed. Regular speaking practice at home, such as repeating words and phrases from class, will reinforce what is learned and help develop fluency. Reviewing lesson content between classes, particularly for upcoming assessments, will support stronger results going forward.",
+      "vn": "Minh Thi Hùng đã thể hiện kỹ năng nghe tốt và sự tham gia tích cực trong lớp tháng này. Để phát huy thêm, hãy khuyến khích hoàn thành đầy đủ tất cả các bài tập từ vựng, vì tỷ lệ hoàn thành 67% cho thấy một số bài luyện tập quan trọng đang bị bỏ lỡ. Luyện tập nói thường xuyên ở nhà, chẳng hạn như lặp lại các từ và cụm từ đã học, sẽ củng cố kiến thức và giúp phát triển khả năng nói trôi chảy. Ôn lại nội dung bài học giữa các buổi học, đặc biệt trước các bài kiểm tra sắp tới, sẽ hỗ trợ kết quả tốt hơn trong thời gian tới."
+   },
    "lessons": [
       {
          "id": "SJ_PR_001V2",

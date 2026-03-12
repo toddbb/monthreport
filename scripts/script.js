@@ -30,6 +30,16 @@ function average(values) {
    return nums.reduce((a, b) => a + b, 0) / nums.length;
 }
 
+function setText(id, text) {
+   const el = $(id);
+   if (el) el.textContent = text;
+}
+
+function setHtml(id, html) {
+   const el = $(id);
+   if (el) el.innerHTML = html;
+}
+
 /* ── Language ────────────────────────────────── */
 function getLang() {
    return localStorage.getItem("lang") || "vn";
@@ -95,11 +105,11 @@ function monthName(period) {
 }
 
 /* ── Performance note ────────────────────────── */
-function performanceNote(avg, completion, cfg) {
+function activitiesNote(avg, completion, cfg) {
    const a = num(avg) ?? 0;
    const c = num(completion) ?? 0;
    const s = S();
-   const pn = cfg?.performanceNote ?? {};
+   const pn = cfg?.activitiesNote ?? {};
    const strongScore = pn.strongScoreMin ?? 85;
    const goodScore = pn.goodScoreMin ?? 80;
    const strongComp = pn.strongCompletionMin ?? 80;
@@ -139,14 +149,7 @@ function shareReport() {
    const titleTpl = isEocShare ? s.shareTitleEoc : s.shareTitle;
    const title = titleTpl.replace("{name}", name).replace("{school}", school);
    const vars = { name, school, program, period };
-   const defaultLines = [
-      "📊 {name} just received their monthly learning report from {school}!",
-      "Program: {program}",
-      "Period: {period}",
-      "At {school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.",
-      "Tap the link to view the full report 👇",
-   ];
-   const text = (appConfig?.shareText?.[lang] ?? appConfig?.shareText?.en ?? defaultLines)
+   const text = (appConfig?.shareText?.[lang] ?? appConfig?.shareText?.en ?? s.shareDefaultLines)
       .map((line) => line.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? ""))
       .filter((line) => line !== "" && !line.endsWith(": "))
       .join("\n\n");
@@ -174,6 +177,7 @@ function starFill(score) {
 
 /* ── Donut chart (r=45, circ≈283) ───────────── */
 const CIRC = 282.74;
+const STAR_PATH = `<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>`;
 
 function buildDonut(score, idSuffix, cfg) {
    const pct = Math.min(100, Math.max(0, num(score) ?? 0));
@@ -196,27 +200,33 @@ function animateDonut(idSuffix, pct) {
    if (el) el.style.strokeDashoffset = CIRC - (pct / 100) * CIRC;
 }
 
+function scheduleDonutAnim(idSuffix, pct) {
+   requestAnimationFrame(() => setTimeout(() => animateDonut(idSuffix, pct), 150));
+}
+
+function buildShield(active) {
+   return active
+      ? `<svg class="shield-icon shield-on" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="currentColor"/></svg>`
+      : `<svg class="shield-icon shield-off" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
+}
+
 /* ════════════════════════════════════════════
-   RENDER
+   RENDER SUB-FUNCTIONS
 ════════════════════════════════════════════ */
-function render(d, cfg) {
-   const lang = getLang();
-   const s = S();
 
-   const isEoc = d.reportType === "eoc";
-
-   /* Header */
-   $("hdr-name").textContent = d.student.name || "";
+function renderHeader(d, s, isEoc) {
+   setText("hdr-name", d.student.name || "");
    const courseProgramLevel = [d.student.courseCode, d.student.program, d.student.level].filter((x) => !blank(x)).join(" - ");
-   $("hdr-course").textContent = courseProgramLevel || "";
+   setText("hdr-course", courseProgramLevel || "");
    const badgeEl = document.querySelector("[data-i18n='periodBadge']");
    if (badgeEl && isEoc) badgeEl.textContent = s.periodBadgeEoc;
    if (d.period) {
-      $("hdr-period").textContent = `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)}`;
+      setText("hdr-period", `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)}`);
       document.title = isEoc ? `${monthName(d.period)} End of Course Progress Report – ${d.student.name}` : `${monthName(d.period)} Progress Report – ${d.student.name}`;
    }
+}
 
-   /* Staff */
+function renderStaff(d) {
    const staff = d.staff;
    if (staff && (!blank(staff.teachers) || !blank(staff.teachingAssistants))) {
       const renderNames = (names) =>
@@ -226,45 +236,52 @@ function render(d, cfg) {
             .join("");
       const teachersHtml = renderNames(staff.teachers);
       const tasHtml = renderNames(staff.teachingAssistants);
-      $("staff-teachers").innerHTML = teachersHtml;
-      $("staff-tas").innerHTML = tasHtml;
-      if (!teachersHtml) $("staff-teachers-group").classList.add("hidden");
-      if (!tasHtml) $("staff-tas-group").classList.add("hidden");
+      setHtml("staff-teachers", teachersHtml);
+      setHtml("staff-tas", tasHtml);
+      if (!teachersHtml) $("staff-teachers-group")?.classList.add("hidden");
+      if (!tasHtml) $("staff-tas-group")?.classList.add("hidden");
    } else {
-      $("sec-staff").classList.add("hidden");
+      $("sec-staff")?.classList.add("hidden");
    }
+}
 
+function renderFeedback(d, lang) {
    /* Feedback — use lang, fall back to en */
    if (d.AiFeedback) {
       const feedbackText = d.AiFeedback[lang] ?? d.AiFeedback.en;
-      if (feedbackText) $("feedback-summary").textContent = feedbackText;
+      if (feedbackText) setText("feedback-summary", feedbackText);
    }
+}
 
-   /* Attendance */
+function renderAttendance(d, cfg, s) {
    if (!blank(d.attendance)) {
       const pct = num(d.attendance);
       const c = col(pct, cfg);
-      $("att-num").textContent = pct + "%";
-      $("att-num").className = "att-num " + c.cls;
-      $("att-fill").style.width = pct + "%";
-      $("att-fill").style.background = c.fill;
-      $("att-track").style.background = c.trk;
-      $("att-msg").className = "att-msg " + c.cls;
+      setText("att-num", pct + "%");
+      const attNumEl = $("att-num");
+      if (attNumEl) attNumEl.className = "att-num " + c.cls;
+      const attFillEl = $("att-fill");
+      if (attFillEl) { attFillEl.style.width = pct + "%"; attFillEl.style.background = c.fill; }
+      const attTrackEl = $("att-track");
+      if (attTrackEl) attTrackEl.style.background = c.trk;
+      const attMsgEl = $("att-msg");
+      if (attMsgEl) attMsgEl.className = "att-msg " + c.cls;
       const attCfg = cfg?.attendance ?? {};
       const attThresholds = attCfg.thresholds ?? [];
       const found = attThresholds.find((t) => pct >= t.min) ?? {};
-      $("att-msg").textContent = tMsg(found.message) ?? tMsg(attCfg.defaultMessage) ?? s.attFallback;
+      setText("att-msg", tMsg(found.message) ?? tMsg(attCfg.defaultMessage) ?? s.attFallback);
    } else {
-      $("sec-att").classList.add("hidden");
+      $("sec-att")?.classList.add("hidden");
    }
+}
 
-   /* Language Skills */
+function renderLanguageSkills(d, s) {
    if (d.languageSkills && !blank(d.languageSkills)) {
       const labels = s.skillLabels;
       let html = "";
       for (const [key, lbl] of Object.entries(labels)) {
          const v = d.languageSkills[key];
-         if (v === null || v === undefined || v === "") continue;
+         if (blank(v)) continue;
          const score = num(v);
          const pct = (score / 5) * 100;
          const c = skillCol(score);
@@ -278,64 +295,41 @@ function render(d, cfg) {
   <div class="skill-max">/ 5.0</div>
 </div>`;
       }
-      $("skills-list").innerHTML = html;
-      if (!html) $("sec-outcomes").classList.add("hidden");
+      setHtml("skills-list", html);
+      if (!html) $("sec-outcomes")?.classList.add("hidden");
    } else {
-      $("sec-outcomes").classList.add("hidden");
+      $("sec-outcomes")?.classList.add("hidden");
    }
+}
 
-   /* Homework */
-   const hw = d.homework;
-   const hwOk = hw && !blank(hw);
-   if (hwOk) {
-      const score = num(hw.averageScore);
-      const comp = num(hw.completionRate);
-      $("hw-donut-wrap").innerHTML = score != null ? buildDonut(score, "hw", cfg) : "";
-      if (score != null) $("hw-avg").textContent = score + "%";
-      if (comp != null) $("hw-completion").textContent = comp + "%";
-      $("hw-note").textContent = performanceNote(hw.averageScore, hw.completionRate, cfg);
-      requestAnimationFrame(() =>
-         setTimeout(() => {
-            if (score != null) animateDonut("hw", score);
-         }, 150),
-      );
+function renderScoreSection(data, idPrefix, cfg) {
+   const ok = data && !blank(data);
+   if (ok) {
+      const score = num(data.averageScore);
+      const comp = num(data.completionRate);
+      setHtml(`${idPrefix}-donut-wrap`, score != null ? buildDonut(score, idPrefix, cfg) : "");
+      if (score != null) setText(`${idPrefix}-avg`, score + "%");
+      if (comp != null) setText(`${idPrefix}-completion`, comp + "%");
+      setText(`${idPrefix}-note`, activitiesNote(data.averageScore, data.completionRate, cfg));
+      if (score != null) scheduleDonutAnim(idPrefix, score);
    } else {
-      $("sec-hw").classList.add("hidden");
+      $(`sec-${idPrefix}`)?.classList.add("hidden");
    }
+}
 
-   /* Vocabulary */
-   const vcb = d.vocabulary;
-   const vOk = vcb && !blank(vcb);
-   if (vOk) {
-      const score = num(vcb.averageScore);
-      const comp = num(vcb.completionRate);
-      $("vocab-donut-wrap").innerHTML = score != null ? buildDonut(score, "vocab", cfg) : "";
-      if (score != null) $("vocab-avg").textContent = score + "%";
-      if (comp != null) $("vocab-completion").textContent = comp + "%";
-      $("vocab-note").textContent = performanceNote(vcb.averageScore, vcb.completionRate, cfg);
-      requestAnimationFrame(() =>
-         setTimeout(() => {
-            if (score != null) animateDonut("vocab", score);
-         }, 150),
-      );
-   } else {
-      $("sec-vocab").classList.add("hidden");
-   }
-
-   /* 21st Century Skills */
+function renderPBL(d, s) {
    const pblScores = d.pbl?.scores;
    if (pblScores && !blank(pblScores)) {
       const labels = s.pblLabels;
-      const PATH = `<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>`;
       let html = "";
       for (const [key, lbl] of Object.entries(labels)) {
          const v = pblScores[key];
-         if (v === null || v === undefined || v === "") continue;
+         if (blank(v)) continue;
          const score = Math.round(num(v));
          const fill = starFill(score);
          let stars = "";
          for (let i = 1; i <= 5; i++) {
-            stars += `<svg class="pbl-star${i <= score ? " on" : ""}" viewBox="0 0 24 24" fill="${i <= score ? fill : "var(--star-off)"}">${PATH}</svg>`;
+            stars += `<svg class="pbl-star${i <= score ? " on" : ""}" viewBox="0 0 24 24" fill="${i <= score ? fill : "var(--star-off)"}">${STAR_PATH}</svg>`;
          }
          html += `
 <div class="pbl-row">
@@ -344,39 +338,40 @@ function render(d, cfg) {
   <div class="pbl-num">${score}/5</div>
 </div>`;
       }
-      $("pbl-rows").innerHTML = html;
-      if (!html) $("sec-pbl").classList.add("hidden");
+      setHtml("pbl-rows", html);
+      if (!html) $("sec-pbl")?.classList.add("hidden");
       const pblDates = Array.isArray(d.pbl.dates) && d.pbl.dates.length ? d.pbl.dates.map(fmtDate).join(" · ") : "";
-      $("pbl-dates-note").textContent = pblDates ? `${s.pblDatesPrefix}${pblDates}` : s.pblDefaultNote;
+      setText("pbl-dates-note", pblDates ? `${s.pblDatesPrefix}${pblDates}` : s.pblDefaultNote);
    } else {
-      $("sec-pbl").classList.add("hidden");
+      $("sec-pbl")?.classList.add("hidden");
    }
+}
 
-   /* Cambridge Test */
+function renderCambridge(d, cfg, s, lang) {
    const camb = d.cambridgeTest?.scores;
    if (camb && !blank(camb)) {
       const cambType = d.cambridgeTest.type ?? "";
       const isKey = cambType.includes("Key");
       const isPrelim = cambType.includes("Preliminary");
+      const useScaleScore = isKey || isPrelim;
+      const baseScore = isPrelim ? 120 : 100;
+      const labels = isPrelim
+         ? [
+              ["reading", s.cambridgeLabels.reading],
+              ["writing", s.cambridgeLabels.writing],
+              ["speaking", s.cambridgeLabels.speaking],
+              ["listening", s.cambridgeLabels.listening],
+           ]
+         : [
+              ["readingWriting", s.cambridgeLabels.readingWriting],
+              ["speaking", s.cambridgeLabels.speaking],
+              ["listening", s.cambridgeLabels.listening],
+           ];
       let html = "";
-
-      if (isKey || isPrelim) {
-         const baseScore = isPrelim ? 120 : 100;
-         const labels = isPrelim
-            ? [
-                 ["reading", s.cambridgeLabels.reading],
-                 ["writing", s.cambridgeLabels.writing],
-                 ["speaking", s.cambridgeLabels.speaking],
-                 ["listening", s.cambridgeLabels.listening],
-              ]
-            : [
-                 ["readingWriting", s.cambridgeLabels.readingWriting],
-                 ["speaking", s.cambridgeLabels.speaking],
-                 ["listening", s.cambridgeLabels.listening],
-              ];
-         for (const [key, lbl] of labels) {
-            const v = camb[key];
-            if (v === null || v === undefined || v === "") continue;
+      for (const [key, lbl] of labels) {
+         const v = camb[key];
+         if (blank(v)) continue;
+         if (useScaleScore) {
             const ceScore = Math.round(baseScore + 0.5 * num(v));
             const cefr = getCefrLevel(ceScore, cfg.cambridgeCefrTable);
             html += `
@@ -387,23 +382,10 @@ function render(d, cfg) {
     <span class="cambridge-cefr-badge">${cefr}</span>
   </div>
 </div>`;
-         }
-      } else {
-         const labels = [
-            ["readingWriting", s.cambridgeLabels.readingWriting],
-            ["speaking", s.cambridgeLabels.speaking],
-            ["listening", s.cambridgeLabels.listening],
-         ];
-         for (const [key, lbl] of labels) {
-            const v = camb[key];
-            if (v === null || v === undefined || v === "") continue;
+         } else {
             const score = num(v);
             const shields = percentToShields(score);
-            const shieldsHtml = Array.from({ length: 5 }, (_, i) =>
-               i < shields
-                  ? `<svg class="shield-icon shield-on" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="currentColor"/></svg>`
-                  : `<svg class="shield-icon shield-off" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>`,
-            ).join("");
+            const shieldsHtml = Array.from({ length: 5 }, (_, i) => buildShield(i < shields)).join("");
             html += `
 <div class="mini-card">
   <div class="mini-label">${lbl}</div>
@@ -412,31 +394,32 @@ function render(d, cfg) {
          }
       }
 
-      $("cambridge-grid").innerHTML = html;
-      if (!html) $("sec-cambridge").classList.add("hidden");
-      $("cambridge-note").textContent = d.cambridgeTest.type ? s.cambridgeNoteType.replace("{type}", d.cambridgeTest.type) : s.cambridgeNoteDefault;
+      setHtml("cambridge-grid", html);
+      if (!html) $("sec-cambridge")?.classList.add("hidden");
+      setText("cambridge-note", d.cambridgeTest.type ? s.cambridgeNoteType.replace("{type}", d.cambridgeTest.type) : s.cambridgeNoteDefault);
 
       const slug = Object.entries(cfg.cambridgeTypeSlug).find(([k]) => cambType.includes(k))?.[1];
       const infoEl = $("cambridge-info");
       if (slug && d.cambridgeTest.type) {
          const url =
-            getLang() === "en" ? `https://www.cambridgeenglish.org/exams-and-tests/qualifications/${slug}/` : `https://www.cambridgeenglish.org/vn/exams-and-tests/${slug}/`;
+            lang === "en" ? `https://www.cambridgeenglish.org/exams-and-tests/qualifications/${slug}/` : `https://www.cambridgeenglish.org/vn/exams-and-tests/${slug}/`;
          const linkText = s.cambridgeInfoLink.replace("{type}", d.cambridgeTest.type);
          const link = `<a href="${url}" target="_blank" rel="noopener">${linkText}</a>`;
-         infoEl.innerHTML = s.cambridgeInfo.replace("{link}", link);
+         if (infoEl) infoEl.innerHTML = s.cambridgeInfo.replace("{link}", link);
       } else {
-         infoEl.textContent = "";
+         if (infoEl) infoEl.textContent = "";
       }
    } else {
-      $("sec-cambridge").classList.add("hidden");
+      $("sec-cambridge")?.classList.add("hidden");
    }
+}
 
-   /* Progress Test */
+function renderProgressTest(d, cfg, s) {
    const prog = d.progressTest?.scores;
    if (prog && !blank(prog)) {
       let html = "";
       for (const [key, v] of Object.entries(prog)) {
-         if (v === null || v === undefined || v === "") continue;
+         if (blank(v)) continue;
          const lbl = s.progressLabels[key] ?? key;
          const score = num(v);
          const c = col(score, cfg);
@@ -446,28 +429,92 @@ function render(d, cfg) {
   <div class="mini-value ${c.cls}">${Math.round(score)}%</div>
 </div>`;
       }
-      $("progress-grid").innerHTML = html;
-      if (!html) $("sec-progress").classList.add("hidden");
+      setHtml("progress-grid", html);
+      if (!html) $("sec-progress")?.classList.add("hidden");
    } else {
-      $("sec-progress").classList.add("hidden");
+      $("sec-progress")?.classList.add("hidden");
    }
+}
 
-   /* Final Score */
+function renderFinalScore(d, cfg, s) {
    const finalScore = num(d.finalScore);
    if (finalScore !== null) {
-      $("final-donut-wrap").innerHTML = buildDonut(finalScore, "final", cfg);
-      $("final-note").textContent = s.finalCalcNote.replace("{score}", Math.round(finalScore));
-      requestAnimationFrame(() => setTimeout(() => animateDonut("final", finalScore), 150));
+      setHtml("final-donut-wrap", buildDonut(finalScore, "final", cfg));
+      setText("final-note", s.finalCalcNote.replace("{score}", Math.round(finalScore)));
+      scheduleDonutAnim("final", finalScore);
    } else {
-      $("sec-final").classList.add("hidden");
+      $("sec-final")?.classList.add("hidden");
    }
+}
 
-   /* Recommendations */
+function renderAiRecommendations(d, lang) {
+   const aiRec = d.AiRecommendations?.[lang] ?? d.AiRecommendations?.en ?? "";
+   setText("ai-recommendations", aiRec);
+}
+
+function renderFooter(d, s, isEoc) {
+   setText("ftr-course", `© Copyright ${new Date().getFullYear()} ILA Vietnam`);
+   setText(
+      "ftr-date",
+      d.period
+         ? (isEoc ? s.footerReportEoc : s.footerReport).replace("{month}", monthName(d.period))
+         : isEoc
+           ? s.footerFallbackEoc
+           : s.footerMonthlyReport,
+   );
+}
+
+/* ════════════════════════════════════════════
+   RENDER
+════════════════════════════════════════════ */
+function render(d, cfg) {
+   const lang = getLang();
+   const s = S();
+
+   const isEoc = d.reportType === "eoc";
+
+   /* Header */
+   renderHeader(d, s, isEoc);
+
+   /* Staff */
+   renderStaff(d);
+
+   /* Feedback */
+   renderFeedback(d, lang);
+
+   /* Attendance */
+   renderAttendance(d, cfg, s);
+
+   /* Language Skills */
+   renderLanguageSkills(d, s);
+
+   /* Homework */
+   renderScoreSection(d.homework, "hw", cfg);
+
+   /* Vocabulary */
+   renderScoreSection(d.vocabulary, "vocab", cfg);
+
+   /* 21st Century Skills */
+   renderPBL(d, s);
+
+   /* Cambridge Test */
+   renderCambridge(d, cfg, s, lang);
+
+   /* Progress Test */
+   renderProgressTest(d, cfg, s);
+
+   /* Final Score */
+   renderFinalScore(d, cfg, s);
+
+   /* AI Recommendations */
+   renderAiRecommendations(d, lang);
+
+   /* Recommendations (commented out — trial of AiRecommendations above)
    const recCfg = cfg?.recommendations ?? {};
    const recList = [];
 
    if (Array.isArray(d.recommendations) && d.recommendations.length) {
-      /* Use pre-built recommendations from data JSON — use lang, fall back to en */
+      // Use pre-built recommendations from data JSON — use lang, fall back to en
       d.recommendations.forEach((rec) => {
          const text = rec[lang] ?? rec.en;
          const subHtml =
@@ -477,7 +524,7 @@ function render(d, cfg) {
          recList.push(`${text}${subHtml}`);
       });
    } else {
-      /* Fallback: generate from config thresholds */
+      // Fallback: generate from config thresholds
       const vocabComp = vOk ? num(vcb.completionRate) : null;
       const hwComp = hwOk ? num(hw.completionRate) : null;
       const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
@@ -492,14 +539,10 @@ function render(d, cfg) {
    }
 
    $("recommendations-list").innerHTML = recList.map((r) => `<li>${r}</li>`).join("");
+   */
 
    /* Footer */
-   $("ftr-course").textContent = `© Copyright ${new Date().getFullYear()} ILA Vietnam`;
-   $("ftr-date").textContent = d.period
-      ? (isEoc ? s.footerReportEoc : s.footerReport).replace("{month}", monthName(d.period))
-      : isEoc
-        ? s.footerFallbackEoc
-        : s.footerMonthlyReport;
+   renderFooter(d, s, isEoc);
 }
 
 let appConfig;

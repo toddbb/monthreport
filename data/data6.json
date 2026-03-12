@@ -54,16 +54,20 @@
          ]
       },
       {
-         "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
-         "vn": "Khuyến khích con sử dụng ứng dụng luyện nói như ELSA Speak hoặc Oxford Learner's Bookshelf 5–10 phút vài lần mỗi tuần.",
+         "en": "Encourage your child to repeat simple English words or sentences from class for a few minutes several times a week.",
+         "vn": "Khuyến khích con lặp lại các từ hoặc câu tiếng Anh đơn giản đã học trên lớp trong vài phút, vài lần mỗi tuần.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to teach you the sounds or rhymes they learned in class — teaching someone else is one of the best ways to remember.",
-         "vn": "Nhờ con dạy lại cho bạn các âm hoặc bài vần đã học trên lớp — dạy lại cho người khác là một trong những cách ghi nhớ tốt nhất.",
+         "en": "Ask your child to repeat the sounds, rhymes, or words they learned in class to help improve pronunciation.",
+         "vn": "Hãy nhờ con lặp lại các âm, vần, hoặc từ đã học trên lớp để cải thiện phát âm.",
          "subPoints": []
       }
    ],
+   "AiRecommendations": {
+      "en": "Minh Thi Hung has shown impressive growth across this course, with assessment scores improving from 79 to 92, clear evidence of consistent effort and effective learning. Listening is a standout strength, and speaking continues to develop well. To build further, aim to complete all vocabulary exercises each lesson, as the 67% completion rate means some practice is being missed. Regular home review of new vocabulary and phrases will reinforce classroom learning and support continued progress. With this positive trajectory, consistent effort in the next course will deliver even stronger outcomes.",
+      "vn": "Minh Thi Hùng đã thể hiện sự tiến bộ ấn tượng trong khóa học này, với điểm kiểm tra tăng từ 79 lên 92, bằng chứng rõ ràng về sự nỗ lực nhất quán và học tập hiệu quả. Kỹ năng nghe là điểm mạnh nổi bật và kỹ năng nói tiếp tục phát triển tốt. Để tiến bộ hơn nữa, hãy cố gắng hoàn thành tất cả các bài tập từ vựng mỗi buổi học, vì tỷ lệ hoàn thành 67% có nghĩa là một số bài luyện tập đang bị bỏ lỡ. Ôn lại từ vựng và cụm từ mới đều đặn ở nhà sẽ củng cố việc học trên lớp và hỗ trợ sự tiến bộ liên tục. Với xu hướng tích cực này, sự cố gắng nhất quán trong khóa học tiếp theo sẽ mang lại kết quả tốt hơn nữa."
+   },
    "lessons": [
       {
          "id": "SJ_PR_001V2",

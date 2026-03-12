@@ -12,8 +12,15 @@
       "end": "2026-03-17"
    },
    "staff": {
-      "teachers": ["David Franklin", "Nguyen Mai Thi"],
-      "teachingAssistants": ["Pham Trinh Tu", "Dao Khoi Anh", "Trinh Trieu Thanh"]
+      "teachers": [
+         "David Franklin",
+         "Nguyen Mai Thi"
+      ],
+      "teachingAssistants": [
+         "Pham Trinh Tu",
+         "Dao Khoi Anh",
+         "Trinh Trieu Thanh"
+      ]
    },
    "attendance": 97,
    "languageSkills": {
@@ -31,7 +38,10 @@
       "completionRate": 67
    },
    "pbl": {
-      "dates": ["2026-03-25", "2026-03-26"],
+      "dates": [
+         "2026-03-25",
+         "2026-03-26"
+      ],
       "scores": {
          "creativity": 5,
          "collaboration": 4,
@@ -66,19 +76,25 @@
       {
          "en": "Complete or retry these vocabulary exercises:",
          "vn": "Hoàn thành hoặc làm lại các bài tập từ vựng sau:",
-         "subPoints": ["Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (0%)"]
+         "subPoints": [
+            "Shapes in Our Classroom – Listening and Speaking (12 Mar 2026): Vocabulary (0%)"
+         ]
       },
       {
-         "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
-         "vn": "Khuyến khích con sử dụng ứng dụng luyện nói như ELSA Speak hoặc Oxford Learner's Bookshelf 5–10 phút vài lần mỗi tuần.",
+         "en": "Encourage your child to repeat simple English words or sentences from class for a few minutes several times a week.",
+         "vn": "Khuyến khích con lặp lại các từ hoặc câu tiếng Anh đơn giản đã học trên lớp trong vài phút, vài lần mỗi tuần.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to teach you the sounds or rhymes they learned in class — teaching someone else is one of the best ways to remember.",
-         "vn": "Nhờ con dạy lại cho bạn các âm hoặc bài vần đã học trên lớp — dạy lại cho người khác là một trong những cách ghi nhớ tốt nhất.",
+         "en": "Ask your child to repeat the sounds, rhymes, or words they learned in class to help improve pronunciation.",
+         "vn": "Hãy nhờ con lặp lại các âm, vần, hoặc từ đã học trên lớp để cải thiện phát âm.",
          "subPoints": []
       }
    ],
+   "AiRecommendations": {
+      "en": "My Hang has had an excellent course with strong performance across all lessons. To continue improving, encourage regular completion of vocabulary exercises; one was missed this month, and consistent practice will strengthen word retention. Listening, while already a strength, scored slightly lower in formal assessments, so short daily exposure to English audio at home will help. Writing and speaking will benefit from regular practice using grammar structures and phrases from class. With continued effort and home support, My Hang is well prepared for the next stage of learning.",
+      "vn": "My Hang đã hoàn thành khóa học xuất sắc với kết quả tốt trong tất cả các bài học. Để tiếp tục tiến bộ, hãy khuyến khích con hoàn thành đều đặn các bài tập từ vựng; một bài đã bị bỏ lỡ trong tháng này và việc luyện tập thường xuyên sẽ giúp củng cố khả năng ghi nhớ từ. Kỹ năng nghe dù đã là điểm mạnh nhưng điểm số trong các bài kiểm tra chính thức vẫn còn thấp hơn, vì vậy hãy cho con nghe tiếng Anh ngắn mỗi ngày ở nhà. Kỹ năng viết và nói sẽ tiến bộ nhờ luyện tập thường xuyên với cấu trúc ngữ pháp và cụm từ đã học. Với sự cố gắng và hỗ trợ từ gia đình, My Hang đã sẵn sàng cho giai đoạn học tiếp theo."
+   },
    "lessons": [
       {
          "id": "SJ_PR_001V2",
@@ -171,7 +187,9 @@
                "vn": "Người học xác định các đồ vật trong lớp học."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
          },
          "outcomes": [
             {
@@ -232,7 +250,9 @@
                "vn": "Học sinh lắng nghe những đồ vật ở trường và cho biết đồ vật có hình dạng như thế nào."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
          },
          "outcomes": [
             {
@@ -293,7 +313,9 @@
                "vn": "Người học đọc một đoạn truyện tranh sau đó luyện viết các câu ngắn."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
          },
          "outcomes": [
             {
@@ -354,7 +376,9 @@
                "vn": "Người học xem lại nội dung lớp học sau đó hoàn thành một bài kiểm tra hình thành ngắn."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."]
+            "grammar": [
+               "Receptive language: Look at the ... / Point to the ... Productive language: What is it? It is a / It's a (noun)."
+            ]
          },
          "outcomes": [
             {
@@ -415,7 +439,9 @@
                "vn": "Người học thực hành màu sắc, số 1-5 và chữ cái Hh-Kk."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Wh- questions: What color is it? It's… Do you like…? Yes, I do. No, I don't."]
+            "grammar": [
+               "Wh- questions: What color is it? It's… Do you like…? Yes, I do. No, I don't."
+            ]
          },
          "outcomes": [
             {
@@ -476,7 +502,9 @@
                "vn": "Học sinh lắng nghe và cho biết đồ vật có màu gì."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Wh- questions: What color is it? It's… Do you like? Yes, I do. No, I don't."]
+            "grammar": [
+               "Wh- questions: What color is it? It's… Do you like? Yes, I do. No, I don't."
+            ]
          },
          "outcomes": [
             {
@@ -537,7 +565,9 @@
                "vn": "Học sinh đọc và mô tả một lớp học đầy màu sắc."
             },
             "cefr": "Pre-A1",
-            "grammar": ["Wh- questions: What color is it? It's… What is it? It's a …"]
+            "grammar": [
+               "Wh- questions: What color is it? It's… What is it? It's a …"
+            ]
          },
          "outcomes": [
             {

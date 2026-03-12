@@ -2,10 +2,10 @@
    "reportType": "eoc",
    "student": {
       "name": "Le Thi Phuong",
-      "courseCode": "H99YJ-1A-2603",
+      "courseCode": "H99YJ-2A-2603",
       "centreId": "TC-HCMC99",
       "program": "Super Juniors",
-      "level": "1A"
+      "level": "2A"
    },
    "period": {
       "start": "2026-01-02",
@@ -74,8 +74,8 @@
    },
    "recommendations": [
       {
-         "en": "Set a regular homework time each day and sit nearby while your child works — your presence and encouragement matter even if you cannot help with the English.",
-         "vn": "Sắp xếp thời gian cố định để làm bài tập mỗi ngày và ngồi gần con khi con học — sự hiện diện và động viên của bạn rất quan trọng, dù bạn không thể hỗ trợ trực tiếp bằng tiếng Anh.",
+         "en": "Set a regular homework time and encourage your child to complete each task before the next lesson. Sitting nearby to keep them focused can help.",
+         "vn": "Hãy sắp xếp thời gian làm bài tập cố định và khuyến khích con hoàn thành từng nhiệm vụ trước buổi học tiếp theo. Ngồi gần để giúp con tập trung cũng sẽ có ích.",
          "subPoints": [
             "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (0%)"
          ]
@@ -88,21 +88,25 @@
          ]
       },
       {
-         "en": "Ask your child to copy their vocabulary words or class sentences into a notebook for 5 minutes each day — regular handwriting practice builds accuracy.",
-         "vn": "Nhờ con chép lại các từ vựng hoặc câu học trên lớp vào vở 5 phút mỗi ngày — luyện viết tay thường xuyên giúp con viết chính xác hơn.",
+         "en": "Ask your child to copy key words or short class sentences into a notebook for a few minutes each day to build writing accuracy.",
+         "vn": "Hãy nhờ con chép lại các từ quan trọng hoặc câu ngắn đã học vào vở trong vài phút mỗi ngày để tăng độ chính xác khi viết.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to show you what they practiced in class — let them perform or explain it to you, even in Vietnamese. This builds speaking confidence.",
-         "vn": "Nhờ con kể lại hoặc thể hiện những gì đã luyện tập trên lớp — con có thể giải thích bằng tiếng Việt trước. Điều này giúp xây dựng sự tự tin khi nói.",
+         "en": "Ask your child to show or say the words and sentences they practiced in class. Even a short daily speaking routine helps build confidence.",
+         "vn": "Hãy nhờ con nói hoặc thể hiện lại các từ và câu đã luyện trên lớp. Chỉ cần một thói quen nói ngắn mỗi ngày cũng sẽ giúp con tự tin hơn.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to teach you the sounds or rhymes they learned in class — teaching someone else is one of the best ways to remember.",
-         "vn": "Nhờ con dạy lại cho bạn các âm hoặc bài vần đã học trên lớp — dạy lại cho người khác là một trong những cách ghi nhớ tốt nhất.",
+         "en": "Ask your child to repeat the sounds, rhymes, or words they learned in class to help improve pronunciation.",
+         "vn": "Hãy nhờ con lặp lại các âm, vần, hoặc từ đã học trên lớp để cải thiện phát âm.",
          "subPoints": []
       }
    ],
+   "AiRecommendations": {
+      "en": "Phuong has made steady progress this course and shows good effort in class. Speaking and writing are the areas with the most room to grow, and short daily practice at home using class vocabulary will build confidence over time. Completing all vocabulary exercises is important, as the 62% completion rate means valuable practice is being missed. Establishing a regular homework routine will also help consolidate lesson content. Listening to simple English content at home, even briefly, will support comprehension and assessment performance across all skills.",
+      "vn": "Phương đã có sự tiến bộ ổn định trong khóa học này và thể hiện sự cố gắng tốt trong lớp. Kỹ năng nói và viết là những lĩnh vực có nhiều tiềm năng phát triển nhất, và việc luyện tập ngắn hàng ngày ở nhà bằng từ vựng đã học sẽ giúp tăng sự tự tin theo thời gian. Việc hoàn thành tất cả các bài tập từ vựng rất quan trọng, vì tỷ lệ hoàn thành 62% cho thấy một số bài luyện tập có giá trị đang bị bỏ lỡ. Xây dựng thói quen làm bài tập về nhà đều đặn cũng sẽ giúp củng cố nội dung bài học. Nghe nội dung tiếng Anh đơn giản ở nhà, dù chỉ trong thời gian ngắn, sẽ hỗ trợ khả năng hiểu và kết quả đánh giá trên tất cả các kỹ năng."
+   },
    "lessons": [
       {
          "id": "SJ_PR_001V2",

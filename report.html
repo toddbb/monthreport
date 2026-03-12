@@ -5,7 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Monthly Report</title>
       <!-- Set lang before CSS renders to avoid toggle flash -->
-      <script>document.documentElement.lang = localStorage.getItem('lang') || 'vn';</script>
+      <script>
+         document.documentElement.lang = localStorage.getItem("lang") || "vn";
+      </script>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -19,7 +21,7 @@
                <div class="brand">
                   <div class="brand-mark"><img src="https://placehold.co/50x50/FFFFFF/333?text=Logo" alt="ILA Logo" /></div>
                   <div>
-                     <div class="brand-name">XYX School</div>
+                     <div class="brand-name">XYZ School</div>
                   </div>
                </div>
                <div class="header-top-right">
@@ -80,7 +82,10 @@
          <section class="feedback-section">
             <div class="feedback-card">
                <div class="feedback-header">
-                  <span class="feedback-title" data-i18n="feedbackTitle">Monthly Learning Summary</span>
+                  <div>
+                     <span class="feedback-title" data-i18n="feedbackTitle">Monthly Learning Summary</span>
+                     <p class="small-note" data-i18n="feedbackSubtitle">Based on Teacher and Teaching Assistant feedback and assessments.</p>
+                  </div>
                   <span class="ai-badge" data-i18n="feedbackBadge">Summary</span>
                </div>
                <div class="feedback-body">
@@ -227,10 +232,14 @@
          <div class="section rise recommendations">
             <div class="card">
                <div class="sec-head">
-                  <h2 class="sec-head-title" data-i18n="sectionRecommendations">Recommendations</h2>
-                  <div class="badge" data-i18n="recommendationsBadge">At home support</div>
+                  <div>
+                     <h2 class="sec-head-title" data-i18n="sectionRecommendations">Recommendations</h2>
+                     <p class="small-note" data-i18n="recommendationsSubtitle">Recommendations from Teacher and Teaching Assistant Feedback and Assessments.</p>
+                  </div>
+                  <div class="badge" data-i18n="recommendationsBadge">Learning Plan</div>
                </div>
-               <ul id="recommendations-list"></ul>
+               <!-- <ul id="recommendations-list"></ul> -->
+               <p id="ai-recommendations"></p>
             </div>
          </div>
 

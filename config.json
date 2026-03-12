@@ -11,7 +11,7 @@
       "greenMin": 85,
       "yellowMin": 70
    },
-   "performanceNote": {
+   "activitiesNote": {
       "strongScoreMin": 85,
       "goodScoreMin": 80,
       "strongCompletionMin": 80,
@@ -60,12 +60,20 @@
       "vyl": ["Step Up", "Jumpstart"]
    },
 
+
+
+
+
+
+
+   
+
    "scoring": {
       "weights": {
-         "languageSkill": 0.50,
+         "languageSkill": 0.5,
          "outcomeAvg": 0.25,
          "testScore": 0.15,
-         "hwByFocus": 0.10
+         "hwByFocus": 0.1
       },
       "skillThresholds": {
          "strong": 60,
@@ -101,93 +109,97 @@
    "vylAssessment": {
       "threshold": 65,
       "message": {
-         "en": "Ask your child to show you what they learned this month — let them explain or demonstrate in Vietnamese if needed. Then encourage them to use their workbook or a learning app to review.",
-         "vn": "Nhờ con kể lại những gì đã học tháng này — con có thể giải thích bằng tiếng Việt nếu cần. Sau đó khuyến khích con dùng sách bài tập hoặc ứng dụng học tập để ôn lại."
+         "en": "Ask your child to show you what they learned this month by saying, pointing, or demonstrating it. Then encourage a short review using their workbook, class materials, or a short English video on YouTube Kids.",
+         "vn": "Hãy nhờ con cho bạn xem những gì đã học trong tháng này bằng cách nói, chỉ vào hình, hoặc thể hiện lại. Sau đó, khuyến khích con ôn tập ngắn bằng sách bài tập, tài liệu lớp học, hoặc một video tiếng Anh ngắn trên YouTube Kids."
       }
    },
-
    "skillRecommendations": {
       "speaking": {
          "strong": {
-            "en": "Ask your child to show you what they practiced in class — let them perform or explain it to you, even in Vietnamese. This builds speaking confidence.",
-            "vn": "Nhờ con kể lại hoặc thể hiện những gì đã luyện tập trên lớp — con có thể giải thích bằng tiếng Việt trước. Điều này giúp xây dựng sự tự tin khi nói."
+            "en": "Ask your child to show or say the words and sentences they practiced in class. Even a short daily speaking routine helps build confidence.",
+            "vn": "Hãy nhờ con nói hoặc thể hiện lại các từ và câu đã luyện trên lớp. Chỉ cần một thói quen nói ngắn mỗi ngày cũng sẽ giúp con tự tin hơn."
          },
          "moderate": {
-            "en": "Encourage your child to use a speaking practice app such as ELSA Speak or the Oxford Learner's Bookshelf app for 5–10 minutes a few times a week.",
-            "vn": "Khuyến khích con sử dụng ứng dụng luyện nói như ELSA Speak hoặc Oxford Learner's Bookshelf 5–10 phút vài lần mỗi tuần."
+            "en": "Encourage your child to repeat simple English words or sentences from class for a few minutes several times a week.",
+            "vn": "Khuyến khích con lặp lại các từ hoặc câu tiếng Anh đơn giản đã học trên lớp trong vài phút, vài lần mỗi tuần."
          }
       },
       "listening": {
          "strong": {
-            "en": "Play English cartoons or YouTube Kids videos (e.g. Peppa Pig, Bluey) daily — even as background — to build listening familiarity.",
-            "vn": "Mở các chương trình hoạt hình tiếng Anh hoặc video YouTube Kids (ví dụ Peppa Pig, Bluey) hàng ngày — kể cả làm nền — để giúp con quen với việc nghe tiếng Anh."
+            "en": "Play short English cartoons, songs, or simple videos regularly to help your child become more familiar with English sounds and meaning. For children under 13, use YouTube Kids.",
+            "vn": "Mở hoạt hình, bài hát, hoặc video tiếng Anh ngắn thường xuyên để giúp con quen hơn với âm thanh và ý nghĩa trong tiếng Anh. Với trẻ dưới 13 tuổi, hãy dùng YouTube Kids."
          },
          "moderate": {
-            "en": "Make English audio part of your child's daily routine — songs, audiobooks, or short cartoons work well.",
-            "vn": "Đưa nội dung tiếng Anh vào sinh hoạt hàng ngày của con — bài hát, sách nói, hoặc phim hoạt hình ngắn đều phù hợp."
+            "en": "Make English listening part of the weekly routine with songs, short cartoons, or simple videos. For children under 13, use YouTube Kids.",
+            "vn": "Hãy đưa việc nghe tiếng Anh vào thói quen hằng tuần bằng bài hát, hoạt hình ngắn, hoặc video đơn giản. Với trẻ dưới 13 tuổi, hãy dùng YouTube Kids."
          }
       },
       "reading": {
          "strong": {
-            "en": "Use a phonics or reading app such as Starfall, Jolly Phonics, or Oxford Reading Tree for 5–10 minutes daily. Ask your child to read the words aloud as they go.",
-            "vn": "Sử dụng ứng dụng học đọc như Starfall, Jolly Phonics hoặc Oxford Reading Tree 5–10 phút mỗi ngày. Nhắc con đọc to các từ khi thực hành."
+            "en": "Encourage your child to look through their workbook or class materials and read words or short sentences aloud for a few minutes each day.",
+            "vn": "Khuyến khích con xem lại sách bài tập hoặc tài liệu lớp học và đọc to các từ hoặc câu ngắn trong vài phút mỗi ngày."
          },
          "moderate": {
-            "en": "Sit with your child while they look through their English workbook or class materials — ask them to point to and name things in the pictures.",
-            "vn": "Ngồi cùng con khi con xem lại sách bài tập hoặc tài liệu trên lớp — nhờ con chỉ và gọi tên các đồ vật trong hình."
+            "en": "Ask your child to point to pictures, words, or short sentences in their class materials and read what they can.",
+            "vn": "Hãy nhờ con chỉ vào tranh, từ, hoặc câu ngắn trong tài liệu lớp học và đọc những gì con có thể đọc được."
          }
       },
       "writing": {
          "strong": {
-            "en": "Ask your child to copy their vocabulary words or class sentences into a notebook for 5 minutes each day — regular handwriting practice builds accuracy.",
-            "vn": "Nhờ con chép lại các từ vựng hoặc câu học trên lớp vào vở 5 phút mỗi ngày — luyện viết tay thường xuyên giúp con viết chính xác hơn."
+            "en": "Ask your child to copy key words or short class sentences into a notebook for a few minutes each day to build writing accuracy.",
+            "vn": "Hãy nhờ con chép lại các từ quan trọng hoặc câu ngắn đã học vào vở trong vài phút mỗi ngày để tăng độ chính xác khi viết."
          },
          "moderate": {
-            "en": "Encourage your child to complete any unfinished writing activities in their workbook before the next class.",
-            "vn": "Khuyến khích con hoàn thành các bài luyện viết còn dang dở trong sách bài tập trước buổi học tiếp theo."
+            "en": "Encourage your child to finish any incomplete writing tasks in their workbook and to write neatly and carefully.",
+            "vn": "Khuyến khích con hoàn thành các bài viết còn dang dở trong sách bài tập và viết cẩn thận, rõ ràng."
          }
       },
       "grammar": {
          "strong": {
-            "en": "Ask your child to complete grammar exercises in their workbook and review any mistakes together — even if you cannot read English, checking that answers are filled in helps build the habit.",
-            "vn": "Nhờ con hoàn thành các bài tập ngữ pháp trong sách bài tập và cùng xem lại các lỗi sai — dù bạn không đọc được tiếng Anh, việc kiểm tra xem con đã điền đầy đủ sẽ giúp hình thành thói quen tốt."
+            "en": "Encourage your child to complete grammar activities in the workbook and retry questions they found difficult.",
+            "vn": "Khuyến khích con hoàn thành các bài tập ngữ pháp trong sách bài tập và làm lại những câu mà con thấy khó."
          },
          "moderate": {
-            "en": "Encourage your child to use an English learning app such as Duolingo or Kahoot! for short grammar practice sessions a few times a week.",
-            "vn": "Khuyến khích con sử dụng ứng dụng học tiếng Anh như Duolingo hoặc Kahoot! để luyện ngữ pháp ngắn vài lần mỗi tuần."
+            "en": "Ask your child to review simple class sentences and complete short grammar practice from their workbook a few times each week.",
+            "vn": "Hãy nhờ con xem lại các câu đơn giản đã học trên lớp và làm các bài luyện ngữ pháp ngắn trong sách bài tập vài lần mỗi tuần."
          }
       },
       "pronunciation": {
          "strong": {
-            "en": "Play phonics songs or videos on YouTube daily — channels like Alphablocks, Super Simple Songs, or Jolly Phonics are excellent for pronunciation at this level.",
-            "vn": "Mở các bài hát hoặc video phonics trên YouTube hàng ngày — các kênh như Alphablocks, Super Simple Songs, hoặc Jolly Phonics rất phù hợp để luyện phát âm ở trình độ này."
+            "en": "Play phonics songs or pronunciation videos regularly and encourage your child to repeat the sounds clearly. For children under 13, use YouTube Kids.",
+            "vn": "Mở bài hát phonics hoặc video luyện phát âm thường xuyên và khuyến khích con lặp lại các âm rõ ràng. Với trẻ dưới 13 tuổi, hãy dùng YouTube Kids."
          },
          "moderate": {
-            "en": "Ask your child to teach you the sounds or rhymes they learned in class — teaching someone else is one of the best ways to remember.",
-            "vn": "Nhờ con dạy lại cho bạn các âm hoặc bài vần đã học trên lớp — dạy lại cho người khác là một trong những cách ghi nhớ tốt nhất."
+            "en": "Ask your child to repeat the sounds, rhymes, or words they learned in class to help improve pronunciation.",
+            "vn": "Hãy nhờ con lặp lại các âm, vần, hoặc từ đã học trên lớp để cải thiện phát âm."
          }
       }
    },
-
    "recommendations": {
       "vocabulary": {
          "scoreThreshold": 60,
-         "message": { "en": "Use flashcard apps such as Quizlet or the class vocabulary list to review words for 5–10 minutes, three times each week.", "vn": "Sử dụng ứng dụng thẻ từ như Quizlet hoặc danh sách từ vựng của lớp để ôn tập 5–10 phút, ba lần mỗi tuần." }
+         "message": {
+            "en": "Encourage your child to review class vocabulary regularly using their class materials, workbook, or short word videos on YouTube Kids / YouTube.",
+            "vn": "Khuyến khích con ôn lại từ vựng thường xuyên bằng tài liệu lớp học, sách bài tập, hoặc các video từ vựng ngắn trên YouTube Kids / YouTube."
+         }
       },
       "homework": {
          "scoreThreshold": 50,
-         "message": { "en": "Set a regular homework time each day and sit nearby while your child works — your presence and encouragement matter even if you cannot help with the English.", "vn": "Sắp xếp thời gian cố định để làm bài tập mỗi ngày và ngồi gần con khi con học — sự hiện diện và động viên của bạn rất quan trọng, dù bạn không thể hỗ trợ trực tiếp bằng tiếng Anh." }
+         "message": {
+            "en": "Set a regular homework time and encourage your child to complete each task before the next lesson. Sitting nearby to keep them focused can help.",
+            "vn": "Hãy sắp xếp thời gian làm bài tập cố định và khuyến khích con hoàn thành từng nhiệm vụ trước buổi học tiếp theo. Ngồi gần để giúp con tập trung cũng sẽ có ích."
+         }
       },
       "defaults": {
          "en": [
-            "Set aside 10 minutes each day for your child to review class materials, use a learning app, or watch an English video.",
-            "Celebrate small wins — a new word learned, a page completed, a song sung — to keep motivation high.",
-            "Make sure your child has a quiet, consistent space and time for English practice at home."
+            "Set aside 10 minutes each day for your child to review class materials, complete workbook tasks, or watch a short English video on YouTube Kids / YouTube.",
+            "Celebrate small progress, such as completing an activity, remembering a new word, or speaking more confidently.",
+            "Make sure your child has a quiet, regular time and space for English study at home."
          ],
          "vn": [
-            "Dành 10 phút mỗi ngày để con ôn lại tài liệu lớp học, sử dụng ứng dụng học tập, hoặc xem một video tiếng Anh.",
-            "Khen ngợi những tiến bộ nhỏ — một từ mới học được, một trang hoàn thành, một bài hát thuộc lòng — để duy trì động lực.",
-            "Đảm bảo con có một không gian yên tĩnh và thời gian cố định để luyện tập tiếng Anh ở nhà."
+            "Dành 10 phút mỗi ngày để con ôn lại tài liệu lớp học, hoàn thành bài trong sách bài tập, hoặc xem một video tiếng Anh ngắn trên YouTube Kids / YouTube.",
+            "Khen ngợi những tiến bộ nhỏ của con, như hoàn thành một hoạt động, nhớ được từ mới, hoặc nói tự tin hơn.",
+            "Đảm bảo con có thời gian và không gian yên tĩnh, ổn định để học tiếng Anh ở nhà."
          ]
       }
    }

@@ -17,6 +17,7 @@ const STRINGS = {
       // Feedback
       feedbackTitle: "Monthly Learning Summary",
       feedbackBadge: "Summary",
+      feedbackSubtitle: "Based on Teacher and Teaching Assistant feedback and assessments.",
 
       // Attendance
       attTitle: "Attendance",
@@ -85,6 +86,7 @@ const STRINGS = {
       // Recommendations
       sectionRecommendations: "Recommendations",
       recommendationsBadge: "At home support",
+      recommendationsSubtitle: "Recommendations from Teacher and Teaching Assistant Feedback and Assessments.",
       recVocab: "Review vocabulary for 5–10 minutes, three times each week.",
       recHomework: "Set a regular homework time at home to improve completion.",
       recSpeaking: "Ask your child to answer simple English questions aloud at home.",
@@ -126,6 +128,13 @@ const STRINGS = {
       footerMonthlyReport: "Monthly Progress Report",
       shareTitle: "{name}'s Monthly Progress Report — {school}",
       copiedAlert: "Link copied to clipboard.",
+      shareDefaultLines: [
+         "📊 {name} just received their monthly learning report from {school}!",
+         "Program: {program}",
+         "Period: {period}",
+         "At {school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.",
+         "Tap the link to view the full report 👇",
+      ],
 
       // EOC variants
       periodBadgeEoc: "End of Course Progress Report",
@@ -148,6 +157,7 @@ const STRINGS = {
       // Feedback
       feedbackTitle: "Tóm Tắt Học Tập Tháng Này",
       feedbackBadge: "Tóm Tắt",
+      feedbackSubtitle: "Dựa trên phản hồi và đánh giá từ Giáo viên và Trợ giảng.",
 
       // Attendance
       attTitle: "Điểm Danh",
@@ -216,6 +226,7 @@ const STRINGS = {
       // Recommendations
       sectionRecommendations: "Khuyến Nghị",
       recommendationsBadge: "Hỗ trợ tại nhà",
+      recommendationsSubtitle: "Khuyến nghị dựa trên phản hồi và đánh giá từ Giáo viên và Trợ giảng.",
       recVocab: "Ôn tập từ vựng 5–10 phút, ba lần mỗi tuần.",
       recHomework: "Đặt thời gian cố định cho bài tập về nhà để cải thiện tỷ lệ hoàn thành.",
       recSpeaking: "Khuyến khích con trả lời các câu hỏi tiếng Anh đơn giản to tiếng ở nhà.",
@@ -270,6 +281,13 @@ const STRINGS = {
       footerMonthlyReport: "Báo Cáo Tiến Độ Hàng Tháng",
       shareTitle: "Báo Cáo Tiến Độ Tháng Này của {name} — {school}",
       copiedAlert: "Đã sao chép liên kết.",
+      shareDefaultLines: [
+         "📊 {name} vừa nhận được báo cáo học tập tháng này từ {school}!",
+         "Chương trình: {program}",
+         "Kỳ học: {period}",
+         "Tại {school}, chúng tôi giúp các em xây dựng kỹ năng tiếng Anh thực sự qua các bài học hấp dẫn và có cấu trúc. Mỗi tháng, phụ huynh nhận báo cáo chi tiết theo dõi điểm danh, kỹ năng ngôn ngữ, bài tập về nhà, từ vựng và nhiều hơn nữa.",
+         "Nhấn vào đường dẫn để xem báo cáo đầy đủ 👇",
+      ],
 
       // EOC variants
       periodBadgeEoc: "Báo Cáo Tiến Độ Cuối Khóa",

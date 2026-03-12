@@ -160,19 +160,18 @@ body.loaded {
 }
 
 .brand-mark {
-   height: 40px;
-   width: auto;
-   border-radius: 8px;
+   width: 44px;
+   height: 44px;
+   border-radius: 50%;
    background: #fff;
-   padding: 8px 4px;
-   display: flex;
-   align-items: center;
+   padding: 0;
    flex-shrink: 0;
    overflow: hidden;
 }
 .brand-mark img {
-   height: 36px;
-   width: auto;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
    display: block;
 }
 .brand-name {
@@ -403,10 +402,13 @@ html[lang="vn"] .lang-toggle [data-lang="vn"] {
 /* ── SECTION HEAD (with badge) ──────────────── */
 .sec-head {
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    justify-content: space-between;
    gap: 12px;
    margin-bottom: 14px;
+}
+.sec-head .small-note {
+   margin-top: 3px;
 }
 .sec-head-title {
    font-size: 1rem;
@@ -876,10 +878,13 @@ summary::-webkit-details-marker {
 }
 .feedback-header {
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    justify-content: space-between;
    gap: 12px;
-   margin-bottom: 16px;
+   margin-bottom: 14px;
+}
+.feedback-header .small-note {
+   margin-top: 3px;
 }
 .feedback-title {
    font-size: 1rem;

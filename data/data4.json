@@ -43,8 +43,8 @@
    },
    "recommendations": [
       {
-         "en": "Set a regular homework time each day and sit nearby while your child works — your presence and encouragement matter even if you cannot help with the English.",
-         "vn": "Sắp xếp thời gian cố định để làm bài tập mỗi ngày và ngồi gần con khi con học — sự hiện diện và động viên của bạn rất quan trọng, dù bạn không thể hỗ trợ trực tiếp bằng tiếng Anh.",
+         "en": "Set a regular homework time and encourage your child to complete each task before the next lesson. Sitting nearby to keep them focused can help.",
+         "vn": "Hãy sắp xếp thời gian làm bài tập cố định và khuyến khích con hoàn thành từng nhiệm vụ trước buổi học tiếp theo. Ngồi gần để giúp con tập trung cũng sẽ có ích.",
          "subPoints": [
             "Let's Review! – Review and Unit Assessment (19 Mar 2026): Homework (0%)"
          ]
@@ -57,21 +57,25 @@
          ]
       },
       {
-         "en": "Ask your child to complete grammar exercises in their workbook and review any mistakes together — even if you cannot read English, checking that answers are filled in helps build the habit.",
-         "vn": "Nhờ con hoàn thành các bài tập ngữ pháp trong sách bài tập và cùng xem lại các lỗi sai — dù bạn không đọc được tiếng Anh, việc kiểm tra xem con đã điền đầy đủ sẽ giúp hình thành thói quen tốt.",
+         "en": "Encourage your child to complete grammar activities in the workbook and retry questions they found difficult.",
+         "vn": "Khuyến khích con hoàn thành các bài tập ngữ pháp trong sách bài tập và làm lại những câu mà con thấy khó.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to copy their vocabulary words or class sentences into a notebook for 5 minutes each day — regular handwriting practice builds accuracy.",
-         "vn": "Nhờ con chép lại các từ vựng hoặc câu học trên lớp vào vở 5 phút mỗi ngày — luyện viết tay thường xuyên giúp con viết chính xác hơn.",
+         "en": "Ask your child to copy key words or short class sentences into a notebook for a few minutes each day to build writing accuracy.",
+         "vn": "Hãy nhờ con chép lại các từ quan trọng hoặc câu ngắn đã học vào vở trong vài phút mỗi ngày để tăng độ chính xác khi viết.",
          "subPoints": []
       },
       {
-         "en": "Ask your child to show you what they practiced in class — let them perform or explain it to you, even in Vietnamese. This builds speaking confidence.",
-         "vn": "Nhờ con kể lại hoặc thể hiện những gì đã luyện tập trên lớp — con có thể giải thích bằng tiếng Việt trước. Điều này giúp xây dựng sự tự tin khi nói.",
+         "en": "Ask your child to show or say the words and sentences they practiced in class. Even a short daily speaking routine helps build confidence.",
+         "vn": "Hãy nhờ con nói hoặc thể hiện lại các từ và câu đã luyện trên lớp. Chỉ cần một thói quen nói ngắn mỗi ngày cũng sẽ giúp con tự tin hơn.",
          "subPoints": []
       }
    ],
+   "AiRecommendations": {
+      "en": "Phuong has shown good effort in class this month. Speaking and writing will benefit most from regular home practice; encourage her to use new vocabulary and sentence patterns in short daily conversations. Completing all vocabulary exercises, including the one missed this month, will strengthen word retention. Setting a consistent homework time will help ensure all tasks are finished. Even a few minutes of English practice each day will build Phuong's confidence and accuracy over time.",
+      "vn": "Phương đã thể hiện sự cố gắng tốt trong lớp tháng này. Kỹ năng nói và viết sẽ được hỗ trợ nhiều nhất từ việc luyện tập thường xuyên ở nhà; hãy khuyến khích con sử dụng từ vựng và mẫu câu mới trong các cuộc trò chuyện ngắn hàng ngày. Hoàn thành tất cả các bài tập từ vựng, bao gồm cả bài đã bỏ lỡ trong tháng này, sẽ giúp củng cố khả năng ghi nhớ từ. Đặt giờ làm bài tập cố định sẽ giúp đảm bảo hoàn thành tất cả các nhiệm vụ. Chỉ cần vài phút luyện tiếng Anh mỗi ngày cũng sẽ giúp Phương tự tin và chính xác hơn theo thời gian."
+   },
    "lessons": [
       {
          "id": "SJ_PR_001V2",
