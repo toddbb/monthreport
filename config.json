@@ -25,37 +25,36 @@
    "shareText": {
       "en": [
          "📊 {name} just received their Monthly Learning Report from {school}!",
-         "",
-         "",
          "Program: {program}",
          "Period: {period}",
-         "",
-         "",
          "See {name}'s progress in English, including attendance, language skills, homework, and vocabulary.",
-         "",
-         "",
          "At {school}, we help young learners build real English skills through engaging, structured lessons. Every month, parents receive a detailed report tracking attendance, language skills, homework, vocabulary, and more.",
-         "",
-         "",
          "Tap the link to view the full report 👇"
       ],
       "vn": [
          "📊 {name} vừa nhận được Báo Cáo Học Tập Hàng Tháng từ {school}!",
-         "",
-         "",
          "Chương trình: {program}",
          "Kỳ báo cáo: {period}",
-         "",
-         "",
          "Xem tiến trình học tiếng Anh của {name}, bao gồm điểm danh, kỹ năng ngôn ngữ, bài tập về nhà và từ vựng.",
-         "",
-         "",
          "Tại {school}, chúng tôi giúp các em nhỏ xây dựng kỹ năng tiếng Anh thực tế thông qua các bài học hấp dẫn và có cấu trúc. Mỗi tháng, phụ huynh sẽ nhận được một báo cáo chi tiết theo dõi điểm danh, kỹ năng ngôn ngữ, bài tập về nhà, từ vựng và nhiều hơn nữa.",
-         "",
-         "",
          "Nhấn vào liên kết để xem báo cáo đầy đủ 👇"
       ]
    },
+
+   "cambridgeTypeSlug": {
+      "Key": "key",
+      "Preliminary": "preliminary",
+      "Starters": "starters",
+      "Movers": "movers",
+      "Flyers": "flyers"
+   },
+
+   "cambridgeCefrTable": [
+      { "min": 160, "max": 170, "cefr": "B2" },
+      { "min": 140, "max": 159, "cefr": "B1" },
+      { "min": 120, "max": 139, "cefr": "A2" },
+      { "min": 100, "max": 119, "cefr": "A1" }
+   ],
 
    "programmes": {
       "vyl": ["Step Up", "Jumpstart"]

@@ -19,6 +19,11 @@ function percentToShields(percent) {
    return Math.min(5, Math.floor(clamped / 20) + 1);
 }
 
+function getCefrLevel(ceScore, table) {
+   const entry = table.find((r) => ceScore >= r.min && ceScore <= r.max);
+   return entry ? entry.cefr : "—";
+}
+
 function average(values) {
    const nums = values.map(num).filter((v) => v !== null);
    if (!nums.length) return null;
@@ -127,7 +132,7 @@ function shareReport() {
    const s = S();
    const url = window.location.href;
    const name = document.getElementById("hdr-name")?.textContent || "Student";
-   const school = document.querySelector(".brand-name")?.textContent || "XYX School";
+   const school = document.querySelector(".brand-name")?.textContent || "XYZ School";
    const period = document.getElementById("hdr-period")?.textContent || "";
    const program = document.getElementById("hdr-program")?.textContent || "";
    const isEocShare = appData?.reportType === "eoc";
@@ -144,7 +149,7 @@ function shareReport() {
    const text = (appConfig?.shareText?.[lang] ?? appConfig?.shareText?.en ?? defaultLines)
       .map((line) => line.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? ""))
       .filter((line) => line !== "" && !line.endsWith(": "))
-      .join("\n");
+      .join("\n\n");
    if (navigator.share) {
       navigator.share({ title, text, url });
    } else {
@@ -208,9 +213,7 @@ function render(d, cfg) {
    if (badgeEl && isEoc) badgeEl.textContent = s.periodBadgeEoc;
    if (d.period) {
       $("hdr-period").textContent = `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)}`;
-      document.title = isEoc
-         ? `${monthName(d.period)} End of Course Progress Report – ${d.student.name}`
-         : `${monthName(d.period)} Progress Report – ${d.student.name}`;
+      document.title = isEoc ? `${monthName(d.period)} End of Course Progress Report – ${d.student.name}` : `${monthName(d.period)} Progress Report – ${d.student.name}`;
    }
 
    /* Staff */
@@ -352,34 +355,78 @@ function render(d, cfg) {
    /* Cambridge Test */
    const camb = d.cambridgeTest?.scores;
    if (camb && !blank(camb)) {
-      const labels = [
-         ["readingWriting", s.cambridgeLabels.readingWriting],
-         ["speaking", s.cambridgeLabels.speaking],
-         ["listening", s.cambridgeLabels.listening],
-      ];
+      const cambType = d.cambridgeTest.type ?? "";
+      const isKey = cambType.includes("Key");
+      const isPrelim = cambType.includes("Preliminary");
       let html = "";
-      for (const [key, lbl] of labels) {
-         const v = camb[key];
-         if (v === null || v === undefined || v === "") continue;
-         const score = num(v);
-         const c = col(score, cfg);
-         const shields = percentToShields(score);
-         const shieldsHtml = Array.from({length: 5}, (_, i) =>
-            i < shields
-               ? `<svg class="shield-icon shield-on" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="currentColor"/></svg>`
-               : `<svg class="shield-icon shield-off" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>`
-         ).join("");
-         html += `
+
+      if (isKey || isPrelim) {
+         const baseScore = isPrelim ? 120 : 100;
+         const labels = isPrelim
+            ? [
+                 ["reading", s.cambridgeLabels.reading],
+                 ["writing", s.cambridgeLabels.writing],
+                 ["speaking", s.cambridgeLabels.speaking],
+                 ["listening", s.cambridgeLabels.listening],
+              ]
+            : [
+                 ["readingWriting", s.cambridgeLabels.readingWriting],
+                 ["speaking", s.cambridgeLabels.speaking],
+                 ["listening", s.cambridgeLabels.listening],
+              ];
+         for (const [key, lbl] of labels) {
+            const v = camb[key];
+            if (v === null || v === undefined || v === "") continue;
+            const ceScore = Math.round(baseScore + 0.5 * num(v));
+            const cefr = getCefrLevel(ceScore, cfg.cambridgeCefrTable);
+            html += `
+<div class="mini-card">
+  <div class="mini-label">${lbl}</div>
+  <div class="cambridge-ce-row">
+    <span class="cambridge-ce-score">${ceScore}</span>
+    <span class="cambridge-cefr-badge">${cefr}</span>
+  </div>
+</div>`;
+         }
+      } else {
+         const labels = [
+            ["readingWriting", s.cambridgeLabels.readingWriting],
+            ["speaking", s.cambridgeLabels.speaking],
+            ["listening", s.cambridgeLabels.listening],
+         ];
+         for (const [key, lbl] of labels) {
+            const v = camb[key];
+            if (v === null || v === undefined || v === "") continue;
+            const score = num(v);
+            const shields = percentToShields(score);
+            const shieldsHtml = Array.from({ length: 5 }, (_, i) =>
+               i < shields
+                  ? `<svg class="shield-icon shield-on" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="currentColor"/></svg>`
+                  : `<svg class="shield-icon shield-off" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L19 5 L19 12 C19 18 10 23 10 23 C10 23 1 18 1 12 L1 5 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>`,
+            ).join("");
+            html += `
 <div class="mini-card">
   <div class="mini-label">${lbl}</div>
   <div class="mini-shields">${shieldsHtml}</div>
 </div>`;
+         }
       }
+
       $("cambridge-grid").innerHTML = html;
       if (!html) $("sec-cambridge").classList.add("hidden");
-      $("cambridge-note").textContent = d.cambridgeTest.type
-         ? s.cambridgeNoteType.replace("{type}", d.cambridgeTest.type)
-         : s.cambridgeNoteDefault;
+      $("cambridge-note").textContent = d.cambridgeTest.type ? s.cambridgeNoteType.replace("{type}", d.cambridgeTest.type) : s.cambridgeNoteDefault;
+
+      const slug = Object.entries(cfg.cambridgeTypeSlug).find(([k]) => cambType.includes(k))?.[1];
+      const infoEl = $("cambridge-info");
+      if (slug && d.cambridgeTest.type) {
+         const url =
+            getLang() === "en" ? `https://www.cambridgeenglish.org/exams-and-tests/qualifications/${slug}/` : `https://www.cambridgeenglish.org/vn/exams-and-tests/${slug}/`;
+         const linkText = s.cambridgeInfoLink.replace("{type}", d.cambridgeTest.type);
+         const link = `<a href="${url}" target="_blank" rel="noopener">${linkText}</a>`;
+         infoEl.innerHTML = s.cambridgeInfo.replace("{link}", link);
+      } else {
+         infoEl.textContent = "";
+      }
    } else {
       $("sec-cambridge").classList.add("hidden");
    }
@@ -434,18 +481,12 @@ function render(d, cfg) {
       const vocabComp = vOk ? num(vcb.completionRate) : null;
       const hwComp = hwOk ? num(hw.completionRate) : null;
       const speaking = d.languageSkills ? num(d.languageSkills.speaking) : null;
-      if (vocabComp !== null && vocabComp < (recCfg.vocabulary?.completionThreshold ?? 80))
-         recList.push(tMsg(recCfg.vocabulary?.message) ?? s.recVocab);
-      if (hwComp !== null && hwComp < (recCfg.homework?.completionThreshold ?? 85))
-         recList.push(tMsg(recCfg.homework?.message) ?? s.recHomework);
-      if (speaking !== null && speaking < (recCfg.speaking?.threshold ?? 4))
-         recList.push(tMsg(recCfg.speaking?.message) ?? s.recSpeaking);
+      if (vocabComp !== null && vocabComp < (recCfg.vocabulary?.completionThreshold ?? 80)) recList.push(tMsg(recCfg.vocabulary?.message) ?? s.recVocab);
+      if (hwComp !== null && hwComp < (recCfg.homework?.completionThreshold ?? 85)) recList.push(tMsg(recCfg.homework?.message) ?? s.recHomework);
+      if (speaking !== null && speaking < (recCfg.speaking?.threshold ?? 4)) recList.push(tMsg(recCfg.speaking?.message) ?? s.recSpeaking);
       if (!recList.length) {
          const defaults = recCfg.defaults;
-         const defaultList =
-            defaults && !Array.isArray(defaults)
-               ? (defaults[lang] ?? defaults.en ?? s.recDefaults)
-               : (defaults ?? s.recDefaults);
+         const defaultList = defaults && !Array.isArray(defaults) ? (defaults[lang] ?? defaults.en ?? s.recDefaults) : (defaults ?? s.recDefaults);
          defaultList.forEach((r) => recList.push(r));
       }
    }
@@ -456,7 +497,9 @@ function render(d, cfg) {
    $("ftr-course").textContent = `© Copyright ${new Date().getFullYear()} ILA Vietnam`;
    $("ftr-date").textContent = d.period
       ? (isEoc ? s.footerReportEoc : s.footerReport).replace("{month}", monthName(d.period))
-      : (isEoc ? s.footerFallbackEoc : s.footerMonthlyReport);
+      : isEoc
+        ? s.footerFallbackEoc
+        : s.footerMonthlyReport;
 }
 
 let appConfig;
@@ -475,16 +518,17 @@ const studentParam = new URLSearchParams(window.location.search).get("student") 
 const dataFile = `data/data${studentParam}.json`;
 
 /* ── Student photo (with SVG fallback) ──────── */
-(function () {
+function loadStudentPhoto(photoFile) {
+   if (!photoFile) return;
    const wrap = document.getElementById("avatar-wrap");
    const img = new Image();
-   img.src = `assets/images/student${studentParam}.png`;
+   img.src = `assets/images/${photoFile}`;
    img.alt = "Student photo";
    img.onload = () => {
       wrap.innerHTML = "";
       wrap.appendChild(img);
    };
-})();
+}
 
 Promise.all([
    fetch(dataFile).then((r) => {
@@ -499,6 +543,7 @@ Promise.all([
    .then(([data, config]) => {
       appConfig = config;
       appData = data;
+      loadStudentPhoto(data.student?.photo);
       render(data, config);
       document.body.classList.add("loaded");
    })

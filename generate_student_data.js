@@ -1,3 +1,8 @@
+
+/******************************************************************************/
+//**** IMPORTANT!!!! This is only for DEVELOPMENT ****************************/
+
+
 const fs = require("fs");
 const path = require("path");
 

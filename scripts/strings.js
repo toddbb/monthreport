@@ -63,7 +63,9 @@ const STRINGS = {
       cambridgeTitle: "Cambridge Practice Test",
       cambridgeNoteType: "Results for {type} practice test.",
       cambridgeNoteDefault: "Results from the Cambridge practice test.",
-      cambridgeLabels: { readingWriting: "Reading & Writing", speaking: "Speaking", listening: "Listening" },
+      cambridgeLabels: { readingWriting: "Reading & Writing", reading: "Reading", writing: "Writing", speaking: "Speaking", listening: "Listening" },
+      cambridgeInfo: "Cambridge English qualifications are internationally recognized exams developed by the University of Cambridge. {link}",
+      cambridgeInfoLink: "Learn more about {type}",
 
       // Progress Test
       progressTitle: "Progress Test",
@@ -192,7 +194,9 @@ const STRINGS = {
       cambridgeTitle: "Bài Kiểm Tra Cambridge",
       cambridgeNoteType: "Kết quả bài kiểm tra {type}.",
       cambridgeNoteDefault: "Kết quả từ bài kiểm tra Cambridge.",
-      cambridgeLabels: { readingWriting: "Đọc & Viết", speaking: "Nói", listening: "Nghe" },
+      cambridgeLabels: { readingWriting: "Đọc & Viết", reading: "Đọc", writing: "Viết", speaking: "Nói", listening: "Nghe" },
+      cambridgeInfo: "Các chứng chỉ Cambridge English là các kỳ thi tiếng Anh được công nhận quốc tế, được phát triển bởi Đại học Cambridge. {link}",
+      cambridgeInfoLink: "Tìm hiểu thêm về {type}",
 
       // Progress Test
       progressTitle: "Kiểm Tra Tiến Độ",

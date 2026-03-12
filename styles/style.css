@@ -733,6 +733,36 @@ html[lang="vn"] .lang-toggle [data-lang="vn"] {
    flex-shrink: 0;
    color: #f5b800;
 }
+.cambridge-ce-row {
+   display: flex;
+   align-items: baseline;
+   gap: 8px;
+   margin-top: 4px;
+}
+.cambridge-ce-score {
+   font-size: 1.6rem;
+   font-weight: 800;
+   line-height: 1;
+}
+.cambridge-cefr-badge {
+   font-size: 0.7rem;
+   font-weight: 700;
+   padding: 2px 8px;
+   border-radius: 20px;
+   background: var(--border);
+   color: var(--ink-1);
+   letter-spacing: 0.05em;
+}
+.cambridge-info-text {
+   margin-top: 12px;
+   font-size: 0.75rem;
+   color: var(--ink-3);
+   line-height: 1.5;
+}
+.cambridge-info-text a {
+   color: var(--ink-2);
+   text-decoration: underline;
+}
 .shield-off {
    opacity: 0.25;
 }
