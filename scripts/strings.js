@@ -86,7 +86,7 @@ const STRINGS = {
 
       // Recommendations
       sectionRecommendations: "Recommendations",
-      recommendationsBadge: "At home support",
+      recommendationsBadge: "Personal Learning Plan",
       recommendationsSubtitle: "Recommendations from Teacher and Teaching Assistant Feedback and Assessments.",
       recVocab: "Review vocabulary for 5–10 minutes, three times each week.",
       recHomework: "Set a regular homework time at home to improve completion.",
@@ -103,7 +103,7 @@ const STRINGS = {
       faq: [
          {
             q: "What do these scores mean?",
-            a: "This report is designed to be easy to understand. Higher numbers and fuller charts indicate stronger performance or more completed practice. Sections that are missing simply have no data available for this month.",
+            a: "This report is designed to be easy to understand. Higher numbers and fuller charts indicate stronger performance or more completed practice. Sections that are missing simply have no data available for this period.",
          },
          {
             id: "faq-lang-skills",
@@ -142,6 +142,7 @@ const STRINGS = {
       footerReportEoc: "{month} End of Course Progress Report",
       footerFallbackEoc: "End of Course Progress Report",
       shareTitleEoc: "{name}'s End of Course Progress Report — {school}",
+      feedbackTitleEoc: "End of Course Summary",
    },
 
    vn: {
@@ -296,5 +297,6 @@ const STRINGS = {
       footerReportEoc: "Báo Cáo Tiến Độ Cuối Khóa {month}",
       footerFallbackEoc: "Báo Cáo Tiến Độ Cuối Khóa",
       shareTitleEoc: "Báo Cáo Tiến Độ Cuối Khóa của {name} — {school}",
+      feedbackTitleEoc: "Tóm Tắt Cuối Khóa",
    },
 };

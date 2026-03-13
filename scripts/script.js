@@ -220,6 +220,8 @@ function renderHeader(d, s, isEoc) {
    setText("hdr-course", courseProgramLevel || "");
    const badgeEl = document.querySelector("[data-i18n='periodBadge']");
    if (badgeEl && isEoc) badgeEl.textContent = s.periodBadgeEoc;
+   const feedbackTitleEl = document.querySelector("[data-i18n='feedbackTitle']");
+   if (feedbackTitleEl && isEoc) feedbackTitleEl.textContent = s.feedbackTitleEoc;
    if (d.period) {
       setText("hdr-period", `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)}`);
       document.title = isEoc ? `${monthName(d.period)} End of Course Progress Report – ${d.student.name}` : `${monthName(d.period)} Progress Report – ${d.student.name}`;
